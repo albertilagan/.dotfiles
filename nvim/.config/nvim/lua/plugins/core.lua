@@ -12,4 +12,9 @@ return {
       colorscheme = "catppuccin",
     },
   },
+  { "prisma/vim-prisma" },
+  { "ThePrimeagen/vim-be-good" },
+  { "neovim/nvim-lspconfig" },
+  { "jose-elias-alvarez/null-ls.nvim" },
+  { "MunifTanjim/prettier.nvim" },
 }
