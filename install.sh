@@ -1,9 +1,11 @@
 # install/run nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 else
 	command -v nix &>/dev/null || curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 fi
+
+echo "trusted-users = root $USER" | sudo tee -a /etc/nix/nix.conf && sudo pkill nix-daemon
 
 # install cachix
 if ! command -v cachix &>/dev/null; then
@@ -17,14 +19,15 @@ command -v devenv &>/dev/null || nix --experimental-features 'nix-command flakes
 nix --experimental-features 'nix-command flakes' profile install --priority 4 \
 	nixpkgs#zsh \
 	nixpkgs#git \
+	nixpkgs#lazygit \
 	nixpkgs#neovim \
 	nixpkgs#vimPlugins.LazyVim \
 	nixpkgs#stow \
 	nixpkgs#tmux \
 	nixpkgs#fzf \
 	nixpkgs#direnv \
-	nixpkgs#google-cloud-sdk \
 	nixpkgs#zoxide \
+	nixpkgs#glow \
 	nixpkgs#starship
 
 # stow
