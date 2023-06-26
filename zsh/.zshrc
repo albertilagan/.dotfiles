@@ -8,6 +8,7 @@ alias vim="nvim $@"
 alias nix="nix --extra-experimental-features nix-command --extra-experimental-features flakes $@"
 alias la="ls -la"
 alias lg="lazygit"
+alias cat="bat $@"
 
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
