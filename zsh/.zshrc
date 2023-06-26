@@ -5,7 +5,6 @@ alias c="clear"
 alias pn="pnpm $@"
 alias ip="ifconfig en0 | grep inet | awk '{ print \$2 }'"
 alias vim="nvim $@"
-alias code="code-insiders $@"
 alias nix="nix --extra-experimental-features nix-command --extra-experimental-features flakes $@"
 alias la="ls -la"
 alias lg="lazygit"
@@ -42,3 +41,4 @@ if [ -f '/Users/albertilagan/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/al
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/albertilagan/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/albertilagan/google-cloud-sdk/completion.zsh.inc'; fi
+

@@ -28,6 +28,7 @@ nix --experimental-features 'nix-command flakes' profile install --priority 4 \
 	nixpkgs#direnv \
 	nixpkgs#zoxide \
 	nixpkgs#glow \
+	nixpkgs#ripgrep \
 	nixpkgs#starship
 
 # stow
