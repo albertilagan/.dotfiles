@@ -34,7 +34,8 @@ return {
     },
     keys = function()
       return {
-        { "<C-p>", "<cmd>Telescope find_files<cr>", desc = "Find Files (root dir)", remap = true },
+        { "<C-p>", "<cmd>Telescope git_files show_untracked=true<cr>", desc = "Find Files (root dir)", remap = true },
+        { "<leader>pf", "<cmd>Telescope find_files<cr>", desc = "Find Files (root dir)", remap = true },
         { "<C-b>", "<cmd>Telescope buffers<cr>", desc = "All Buffers", remap = true },
         { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Live Grep", remap = true },
       }
