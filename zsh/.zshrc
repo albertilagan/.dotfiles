@@ -1,23 +1,3 @@
-alias zshrc="vim ~/.zshrc"
-alias vimrc="vim ~/.config/nvim/"
-alias tmuxconf="vim ~/.config/tmux/tmux.conf"
-alias c="clear"
-alias pn="pnpm"
-alias ip="ifconfig en0 | grep inet | awk '{ print \$2 }'"
-alias vim="nvim"
-alias nix="nix --extra-experimental-features nix-command --extra-experimental-features flakes $@"
-alias lg="lazygit"
-
-if command -v exa > /dev/null; then
-  alias ls="exa"
-  alias ll="exa -alh"
-  alias tree="exa --tree"
-fi
-
-if command -v bat > /dev/null; then
-  alias cat="bat"
-fi
-
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
@@ -50,4 +30,23 @@ if [ -f '/Users/albertilagan/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/al
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/albertilagan/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/albertilagan/google-cloud-sdk/completion.zsh.inc'; fi
+
+# custom alias
+alias zshrc="vim ~/.zshrc"
+alias vimrc="vim ~/.config/nvim/"
+alias tmuxconf="vim ~/.config/tmux/tmux.conf"
+alias c="clear"
+alias pn="pnpm"
+alias ip="ifconfig en0 | grep inet | awk '{ print \$2 }'"
+alias vim="nvim"
+alias nix="nix --extra-experimental-features nix-command --extra-experimental-features flakes $@"
+alias lg="lazygit"
+
+# alias ls="exa"
+# alias ll="exa -alh"
+alias ls="exa --tree"
+alias ll="exa --tree --long"
+alias tree="exa --tree"
+
+alias cat="bat"
 
