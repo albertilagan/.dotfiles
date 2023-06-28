@@ -2,13 +2,21 @@ alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.config/nvim/"
 alias tmuxconf="vim ~/.config/tmux/tmux.conf"
 alias c="clear"
-alias pn="pnpm $@"
+alias pn="pnpm"
 alias ip="ifconfig en0 | grep inet | awk '{ print \$2 }'"
-alias vim="nvim $@"
+alias vim="nvim"
 alias nix="nix --extra-experimental-features nix-command --extra-experimental-features flakes $@"
-alias la="ls -la"
 alias lg="lazygit"
-alias cat="bat $@"
+
+if command -v exa > /dev/null; then
+  alias ls="exa"
+  alias ll="exa -alh"
+  alias tree="exa --tree"
+fi
+
+if command -v bat > /dev/null; then
+  alias cat="bat"
+fi
 
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
