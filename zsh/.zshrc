@@ -44,9 +44,9 @@ alias lg="lazygit"
 
 # alias ls="exa"
 # alias ll="exa -alh"
-alias ls="exa --tree"
-alias ll="exa --tree --long"
+alias ls="exa"
+alias ll="exa -alh"
 alias tree="exa --tree"
 
 alias cat="bat"
-
+alias fme="~/.dotfiles/scripts/search.sh"
