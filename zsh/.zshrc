@@ -31,6 +31,9 @@ if [ -f '/Users/albertilagan/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/al
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/albertilagan/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/albertilagan/google-cloud-sdk/completion.zsh.inc'; fi
 
+export DISABLE_AUTO_TITLE="true"
+unset PROMPT_COMMAND
+
 # custom alias
 alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.config/nvim/"

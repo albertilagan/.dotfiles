@@ -32,6 +32,7 @@ nix --experimental-features 'nix-command flakes' profile install --priority 4 \
 	nixpkgs#bat \
 	nixpkgs#exa \
 	nixpkgs#lf \
+	nixpkgs#gpg \
 	nixpkgs#starship
 
 # stow
