@@ -18,6 +18,8 @@ command -v devenv &>/dev/null || nix --experimental-features 'nix-command flakes
 
 nix --experimental-features 'nix-command flakes' profile install --priority 4 \
 	nixpkgs#zsh \
+	nixpkgs#fish \
+	nixpkgs#starship \
 	nixpkgs#git \
 	nixpkgs#lazygit \
 	nixpkgs#neovim \
@@ -25,6 +27,7 @@ nix --experimental-features 'nix-command flakes' profile install --priority 4 \
 	nixpkgs#stow \
 	nixpkgs#tmux \
 	nixpkgs#fzf \
+	nixpkgs#fd \
 	nixpkgs#direnv \
 	nixpkgs#zoxide \
 	nixpkgs#glow \
@@ -33,7 +36,8 @@ nix --experimental-features 'nix-command flakes' profile install --priority 4 \
 	nixpkgs#exa \
 	nixpkgs#lf \
 	nixpkgs#gnupg \
-	nixpkgs#starship
+	nixpkgs#mkcert \
+	nixpkgs#neofetch
 
 # stow
 stow nvim
