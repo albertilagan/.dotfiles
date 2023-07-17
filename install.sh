@@ -37,7 +37,8 @@ nix --experimental-features 'nix-command flakes' profile install --priority 4 \
 	nixpkgs#lf \
 	nixpkgs#gnupg \
 	nixpkgs#mkcert \
-	nixpkgs#neofetch
+	nixpkgs#neofetch \
+	nixpkgs#htop
 
 # stow
 stow nvim
