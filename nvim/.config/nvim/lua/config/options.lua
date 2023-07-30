@@ -6,5 +6,8 @@ local opt = vim.opt
 
 vim.g.mapleader = ","
 opt.conceallevel = 0
+opt.showtabline = 0
 -- opt.clipboard = ""
 vim.api.nvim_set_keymap("n", "<esc><esc>", ":noh<cr>", { noremap = true, silent = true })
+
+-- let g:prettier#config#config_precedence = 'file-override'

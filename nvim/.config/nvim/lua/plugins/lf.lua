@@ -9,6 +9,6 @@ return {
     escape_quit = true,
   },
   keys = {
-    { "<leader>ff", "<cmd>Lf<cr>", desc = "NeoTree" },
+    { "<leader>e", "<cmd>Lf<cr>", desc = "NeoTree" },
   },
 }

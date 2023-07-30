@@ -21,6 +21,7 @@ return {
       build = "make",
       config = function()
         require("telescope").load_extension("fzf")
+        require("telescope").load_extension("harpoon")
       end,
     },
     opts = {
@@ -41,7 +42,7 @@ return {
           desc = "Git Files (root dir)",
           remap = true,
         },
-        { "<leader>pf", "<cmd>Telescope find_files<cr>", desc = "Find Files (root dir)", remap = true },
+        { "<leader>pf", "<cmd>Telescope find_files hidden=true<cr>", desc = "Find Files (root dir)", remap = true },
         { "<C-b>", "<cmd>Telescope buffers<cr>", desc = "All Buffers", remap = true },
         { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Live Grep", remap = true },
       }

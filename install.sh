@@ -44,8 +44,8 @@ nix --experimental-features 'nix-command flakes' profile install --priority 4 \
 stow nvim
 stow zsh
 
-# add zsh to valid login shells
-command -v zsh | sudo tee -a /etc/shells
+# add fish to valid login shells
+command -v fish | sudo tee -a /etc/shells
 
-# use zsh as default shell
-sudo chsh -s "$(command -v zsh)" "${USER}"
+# use fish as default shell
+sudo chsh -s "$(command -v fish)" "${USER}"

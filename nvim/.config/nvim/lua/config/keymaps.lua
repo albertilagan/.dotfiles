@@ -5,6 +5,16 @@
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
 
+-- generate codesnap on selected text (visual mode)
+vim.keymap.set(
+  "v",
+  "<leader>cc",
+  ":'<,'>Silicon ~/screenshot/output.png<CR>",
+  { silent = true, desc = "Silicon (selected)" }
+)
+-- generate codesnap on the whole buffer (normal mode)
+vim.keymap.set("n", "<leader>cc", ":Silicon ~/screenshot/output.png<CR>", { silent = true, desc = "Silicon (buffer)" })
+
 vim.keymap.set("n", "Y", "yg$", { silent = true })
 vim.keymap.set("n", "J", "mzJ`z`", { silent = true })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { silent = true })
@@ -19,3 +29,4 @@ vim.keymap.set("i", "<A-bs>", "<C-w>")
 -- vim.keymap.set("x", "<leader>p", '"_dP', { silent = true })
 -- vim.keymap.set("n", "<leader>d", '"_d', { silent = true })
 -- vim.keymap.set("v", "<leader>d", '"_d', { silent = true })
+--
