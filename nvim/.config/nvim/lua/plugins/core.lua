@@ -8,7 +8,6 @@ return {
   { "prisma/vim-prisma" },
   { "ThePrimeagen/vim-be-good" },
   { "yasuhiroki/github-actions-yaml.vim" },
-  -- { "prettier/vim-prettier" },
   { "nvim-lua/plenary.nvim" },
   { "ThePrimeagen/harpoon" },
   {
@@ -28,4 +27,24 @@ return {
   },
   { "zbirenbaum/copilot.lua" },
   { "zbirenbaum/copilot-cmp" },
+  { "kristijanhusak/vim-dadbod-ui" },
+  { "kristijanhusak/vim-dadbod-completion" },
+  {
+    "tpope/vim-dadbod",
+    opt = true,
+    requires = {
+      "kristijanhusak/vim-dadbod-ui",
+      "kristijanhusak/vim-dadbod-completion",
+    },
+    config = function()
+      require("config.custom.dadbod").setup()
+    end,
+  },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    event = "VeryLazy",
+    opts = function()
+      return require("config.custom.null-ls")
+    end,
+  },
 }
