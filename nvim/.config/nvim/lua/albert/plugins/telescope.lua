@@ -15,7 +15,7 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     enabled = true,
-    lazy = true,
+    lazy = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
       {
@@ -23,7 +23,7 @@ return {
         build = "make",
         config = function()
           require("telescope").load_extension("fzf")
-          -- require("telescope").load_extension("harpoon")
+          require("telescope").load_extension("harpoon")
         end,
       },
       "nvim-tree/nvim-web-devicons",

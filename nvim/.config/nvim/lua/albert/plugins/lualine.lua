@@ -1,72 +1,56 @@
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
-  config = function()
-    local lualine = require("lualine")
-    local lazy_status = require("lazy.status") -- to configure lazy pending updates count
-
-    local colors = {
-      blue = "#65D1FF",
-      green = "#3EFFDC",
-      violet = "#FF61EF",
-      yellow = "#FFDA7B",
-      red = "#FF4A4A",
-      black = "#000000",
-      fg = "#c3ccdc",
-      bg = "transparent",
-      inactive_bg = "transparent",
-    }
-
-    local my_lualine_theme = {
-      normal = {
-        a = { bg = colors.blue, fg = colors.black, gui = "bold" },
-        b = { bg = colors.bg, fg = colors.fg },
-        c = { bg = colors.bg, fg = colors.fg },
-      },
-      insert = {
-        a = { bg = colors.green, fg = colors.black, gui = "bold" },
-        b = { bg = colors.bg, fg = colors.fg },
-        c = { bg = colors.bg, fg = colors.fg },
-      },
-      visual = {
-        a = { bg = colors.violet, fg = colors.black, gui = "bold" },
-        b = { bg = colors.bg, fg = colors.fg },
-        c = { bg = colors.bg, fg = colors.fg },
-      },
-      command = {
-        a = { bg = colors.yellow, fg = colors.black, gui = "bold" },
-        b = { bg = colors.bg, fg = colors.fg },
-        c = { bg = colors.bg, fg = colors.fg },
-      },
-      replace = {
-        a = { bg = colors.red, fg = colors.black, gui = "bold" },
-        b = { bg = colors.bg, fg = colors.fg },
-        c = { bg = colors.bg, fg = colors.fg },
-      },
-      inactive = {
-        a = { bg = colors.inactive_bg, fg = colors.fg, gui = "bold" },
-        b = { bg = colors.inactive_bg, fg = colors.fg },
-        c = { bg = colors.inactive_bg, fg = colors.fg },
-      },
-    }
-
-    -- configure lualine with modified theme
-    lualine.setup({
+  event = "VeryLazy",
+  opts = function()
+    return {
       options = {
-        theme = my_lualine_theme,
+        theme = "auto",
+        globalstatus = true,
+        disabled_filetypes = { statusline = { "dashboard", "alpha" } },
       },
       sections = {
-        lualine_x = {
+        lualine_a = { "mode" },
+        lualine_b = { "branch" },
+        lualine_c = {
           {
-            lazy_status.updates,
-            cond = lazy_status.has_updates,
-            color = { fg = "#ff9e64" },
+            "diagnostics",
+            symbols = {
+              error = " ",
+              warn = " ",
+              info = " ",
+              hint = " ",
+            },
           },
-          { "encoding" },
-          { "fileformat" },
-          { "filetype" },
+          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+          { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
+            -- stylua: ignore
+            {
+              function() return require("nvim-navic").get_location() end,
+              cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
+            },
+        },
+        lualine_x = {
+          { require("lazy.status").updates, cond = require("lazy.status").has_updates },
+          {
+            "diff",
+            symbols = {
+              added = " ",
+              modified = " ",
+              removed = " ",
+            },
+          },
+        },
+        lualine_y = {
+          { "progress", separator = " ", padding = { left = 1, right = 0 } },
+          { "location", padding = { left = 0, right = 1 } },
+        },
+        lualine_z = {
+          function()
+            return " " .. os.date("%R")
+          end,
         },
       },
-    })
+      extensions = { "neo-tree", "lazy" },
+    }
   end,
 }

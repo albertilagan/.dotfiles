@@ -79,7 +79,6 @@ map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 -- buffers
 map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-map("n", "<leader>bd", ":bd<cr>", { desc = "Switch to Other Buffer" })
 
 -- better indenting
 map("v", "<", "<gv")
