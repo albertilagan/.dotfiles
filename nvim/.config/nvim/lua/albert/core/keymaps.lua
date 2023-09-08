@@ -56,6 +56,10 @@ keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
+map("n", "<leader>wc", "<C-w>c", { desc = "Close window" })
+map("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" })
+map("n", "<leader>wh", "<C-w>s", { desc = "Close window horizontally" })
+
 -- Move to window using the <ctrl> hjkl keys
 map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
@@ -83,8 +87,8 @@ map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 -- better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
--- save file
 
+-- save file
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
 --keywordprg

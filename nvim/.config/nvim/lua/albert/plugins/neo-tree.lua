@@ -35,7 +35,7 @@ return {
         },
         indent = {
           indent_size = 2,
-          padding = 1, -- extra padding on left hand side
+          padding = 0, -- extra padding on left hand side
           -- indent guides
           with_markers = true,
           indent_marker = "│",
@@ -117,16 +117,18 @@ return {
             "toggle_node",
             nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
           },
+          ["h"] = "close_node",
+          ["l"] = "open",
           ["<2-LeftMouse>"] = "open",
           ["<cr>"] = "open",
           ["<esc>"] = "cancel", -- close preview or floating neo-tree window
           ["P"] = { "toggle_preview", config = { use_float = true } },
-          ["l"] = "focus_preview",
+          -- ["l"] = "focus_preview",
           ["S"] = "open_split",
           ["s"] = "open_vsplit",
           -- ["S"] = "split_with_window_picker",
           -- ["s"] = "vsplit_with_window_picker",
-          ["t"] = "open_tabnew",
+          ["t"] = "open",
           -- ["<cr>"] = "open_drop",
           -- ["t"] = "open_tab_drop",
           ["w"] = "open_with_window_picker",
@@ -170,17 +172,17 @@ return {
         filtered_items = {
           visible = false, -- when true, they will just be displayed differently than normal items
           hide_dotfiles = false,
-          hide_gitignored = false,
+          hide_gitignored = true,
           hide_hidden = true, -- only works on Windows for hidden files/directories
           hide_by_name = {
-            --"node_modules"
+            "node_modules",
           },
           hide_by_pattern = { -- uses glob style patterns
             --"*.meta",
             --"*/src/*/tsconfig.json",
           },
           always_show = { -- remains visible even if other settings would normally hide it
-            --".gitignored",
+            ".gitignored",
           },
           never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
             ".DS_Store",
@@ -191,7 +193,7 @@ return {
           },
         },
         follow_current_file = {
-          enabled = false, -- This will find and focus the file in the active buffer every time
+          enabled = true, -- This will find and focus the file in the active buffer every time
           --               -- the current file is changed while the tree is open.
           leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
         },
@@ -283,6 +285,6 @@ return {
 
     vim.cmd([[nnoremap \ :Neotree toggle<cr>]])
     vim.cmd([[nnoremap <leader>ee :Neotree toggle<cr>]])
-    vim.cmd([[nnoremap <leader>gg :Neotree git_status<cr>]])
+    vim.cmd([[nnoremap <leader>eg :Neotree git_status<cr>]])
   end,
 }
