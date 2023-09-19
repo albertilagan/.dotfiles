@@ -1,0 +1,68 @@
+import:
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+
+live_config_reload: true
+
+window:
+  opacity: 0.90
+  padding:
+    x: 14
+    y: 10
+  dynamic_padding: false
+  decorations: buttonless
+
+font:
+  normal:
+    family: "SFMono Nerd Font"
+    style: Regular 
+  italic:
+    family: "SFMono Nerd Font"
+    style: Medium Italic
+  bold:
+    family: "SFMono Nerd Font"
+    style: Heavy
+  bold_italic:
+    family: "SFMono Nerd Font"
+    style: Heavy Italic
+  size: 14.0
+
+TERM: xterm-256color
+
+key_bindings:
+  - { key: E, mods: Command, chars: "\x01-" } # split tmux window vertically
+  - { key: E, mods: Command|Shift, chars: "\x01|" } # split tmux window horizontally
+  - { key: G, mods: Command, chars: "\x01g" }
+  - { key: H, mods: Command|Shift, chars: "\x01p" } # switch to next tmux window
+  - { key: J, mods: Command, chars: "\x01T" } # open t - tmux smart session manager
+  - { key: K, mods: Command, chars: "\x01s" } # open interactive tmux session client
+  - { key: L, mods: Command, chars: "\x01L" } # switch to the last tmux session
+  - { key: L, mods: Command|Shift, chars: "\x01n" } # switch to previous tmux window
+  - { key: O, mods: Command, chars: "\x01o" } # open URLs 'joshmedeski/tmux-fzf-url'
+  - { key: N, mods: Command, action: CreateNewWindow }
+  - {
+      key: P,
+      mods: Command,
+      chars: ":Telescope git_files show_untracked=true\n",
+    } # files
+  - { key: P, mods: Command|Shift, chars: ":GoToCommand\n" } # commands
+  - { key: F, mods: Command|Shift, chars: "\a" } # commands
+  - { key: F, mods: Command, chars: "fme\n" } # commands
+  - { key: Q, mods: Command, chars: ":q\n" } # quit vim
+  - { key: S, mods: Command, chars: "\e:w\n" } # save vim buffer
+  - { key: T, mods: Command, chars: "\x01c" } # create a new tmux window
+  - { key: W, mods: Command, chars: "\x01x" } # kill the current pane
+  - { key: Y, mods: Command, chars: ":'<,'>Silicon ~/screenshot/output.png\n" }
+  - { key: Z, mods: Command, chars: "\x01z" } # toggle zoom state of the current tmux pane
+  - { key: Comma, mods: Command, chars: "\x01," } # rename the current tmux window
+  - { key: LBracket, mods: Command, chars: "\x0f" } # navigate back in vim (ctrl+o)
+  - { key: RBracket, mods: Command, chars: "\t" } # navigate forward in vim (ctrl+i)
+  - { key: Semicolon, mods: Command, chars: "\x01:" } # enter the tmux command prompt
+  - { key: Key1, mods: Command, chars: "\x011" } # select tmux window 1
+  - { key: Key2, mods: Command, chars: "\x012" } #                ... 2
+  - { key: Key3, mods: Command, chars: "\x013" } #                ... 3
+  - { key: Key4, mods: Command, chars: "\x014" } #                ... 4
+  - { key: Key5, mods: Command, chars: "\x015" } #                ... 5
+  - { key: Key6, mods: Command, chars: "\x016" } #                ... 6
+  - { key: Key7, mods: Command, chars: "\x017" } #                ... 7
+  - { key: Key8, mods: Command, chars: "\x018" } #                ... 8
+  - { key: Key9, mods: Command, chars: "\x019" } #                ... 9
