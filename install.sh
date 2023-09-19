@@ -43,6 +43,7 @@ nix --experimental-features 'nix-command flakes' profile install --priority 4 \
 # stow
 stow nvim
 stow zsh
+stow fish
 
 # add fish to valid login shells
 command -v fish | sudo tee -a /etc/shells
