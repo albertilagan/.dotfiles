@@ -41,9 +41,15 @@ nix --experimental-features 'nix-command flakes' profile install --priority 4 \
 	nixpkgs#htop
 
 # stow
-stow nvim
-stow zsh
+stow alacritty
+stow bat
 stow fish
+stow nvim
+stow skhd
+stow starship
+stow tmux
+stow yabai
+stow zsh
 
 # add fish to valid login shells
 command -v fish | sudo tee -a /etc/shells
