@@ -1,0 +1,87 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$username\
+$hostname\
+$directory\
+$nodejs\
+$fill\
+cmd_duration $jobs $time\
+$line_break\
+$character"""
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+
+[fill]
+symbol = " "
+
+[directory]
+style = "blue bold"
+read_only = " 🔒"
+truncation_length = 4
+
+[character]
+success_symbol = "[\uf054](white)" # 
+vicmd_symbol = "[\ue62b](white)" # 
+error_symbol = "[\uf467](red)" # 
+
+[jobs]
+symbol = ""
+style = "bold red"
+number_threshold = 1
+format = "[$symbol]($style)"
+
+[cmd_duration]
+format = "[$duration]($style)"
+style = "yellow"
+
+[memory_usage]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[nix_shell]
+disabled = true
+impure_msg = '[impure shell](bold red)'
+pure_msg = '[pure shell](bold green)'
+unknown_msg = '[unknown shell](bold yellow)'
+format = 'via [☃️ $state( \($name\))](bold blue) '
+
+[gcloud]
+format = ' [$symbol$account(@$domain)(\($project\))]($style)'
+
+[package]
+disabled = true
+
+[username]
+disabled = true
+
+[hostname]
+disabled = true
+
+[aws]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[git_branch]
+disabled = true
+
+[git_commit]
+disabled = true
+
+[git_state]
+disabled = true
+
+[git_metrics]
+disabled = true
+
+[git_status]
+disabled = true
