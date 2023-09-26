@@ -30,12 +30,13 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
 -- generate codesnap on selected text (visual mode)
 keymap.set(
   "v",
-  "<leader>cc",
+  "<leader>ss",
+  -- ":'<,'>Silicon[!]",
   ":'<,'>Silicon ~/screenshot/output.png<CR>",
   { silent = true, desc = "Silicon (selected)" }
 )
 -- generate codesnap on the whole buffer (normal mode)
-keymap.set("n", "<leader>cc", ":Silicon ~/screenshot/output.png<CR>", { silent = true, desc = "Silicon (buffer)" })
+keymap.set("n", "<leader>ss", ":Silicon ~/screenshot/output.png<CR>", { silent = true, desc = "Silicon (buffer)" })
 
 keymap.set("n", "Y", "yg$", { silent = true })
 keymap.set("n", "J", "mzJ`z`", { silent = true })

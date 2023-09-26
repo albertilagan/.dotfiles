@@ -27,8 +27,8 @@ return {
             ["al"] = { query = "@loop.outer", desc = "Select outer part of a loop region" },
             ["il"] = { query = "@loop.inner", desc = "Select inner part of a loop region" },
 
-            ["ab"] = { query = "@block.outer", desc = "Select outer part of a block region" }, -- overrides default text object block of parenthesis to parenthesis
-            ["ib"] = { query = "@block.inner", desc = "Select inner part of a block region" }, -- overrides default text object block of parenthesis to parenthesis
+            -- ["ab"] = { query = "@block.outer", desc = "Select outer part of a block region" }, -- overrides default text object block of parenthesis to parenthesis
+            -- ["ib"] = { query = "@block.inner", desc = "Select inner part of a block region" }, -- overrides default text object block of parenthesis to parenthesis
 
             ["af"] = { query = "@function.outer", desc = "Select outer part of a function region" },
             ["if"] = { query = "@function.inner", desc = "Select inner part of a function region" },
