@@ -283,8 +283,8 @@ return {
       },
     })
 
-    vim.cmd([[nnoremap \ :Neotree toggle<cr>]])
-    vim.cmd([[nnoremap <leader>ee :Neotree toggle<cr>]])
-    vim.cmd([[nnoremap <leader>eg :Neotree git_status<cr>]])
+    vim.cmd([[nnoremap <silent> \ :Neotree toggle<cr>]])
+    vim.cmd([[nnoremap <silent> <leader>ee :Neotree toggle<cr>]])
+    vim.cmd([[nnoremap <silent> <leader>eg :Neotree git_status<cr>]])
   end,
 }
