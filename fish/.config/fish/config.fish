@@ -9,7 +9,7 @@ zoxide init fish | source
 source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
 source /Users/albertilagan/google-cloud-sdk/path.fish.inc
 
-fenv "[ -f ~/fubectl.source ] && source ~/fubectl.source"
+# fenv "[ -f ~/fubectl.source ] && source ~/fubectl.source"
 
 fish_add_path ~/.config/bin
 fish_add_path ~/.nix-profile/bin
