@@ -14,6 +14,7 @@ source /Users/albertilagan/google-cloud-sdk/path.fish.inc
 fish_add_path ~/.config/bin
 fish_add_path ~/.nix-profile/bin
 fish_add_path ~/.config/tmux/plugins/t-smart-tmux-session-manager/bin
+fish_add_path "$(pyenv root)/shims"
 
 set -U fish_greeting # disable fish greeting
 set -U fish_key_bindings fish_vi_key_bindings
@@ -24,6 +25,7 @@ set -Ux BAT_THEME Catppuccin-mocha
 set -Ux FZF_DEFAULT_COMMANDS "fd -H -E '.git'"
 set -Ux FZF_TMUX_OPTS "-p 55%,60%"
 set -Ux VISUAL nvim
+set -Ux SOPS_AGE_KEY_FILE "$HOME/.sops/medcheck-gatekeeper.txt"
 
 abbr fishrc "nvim ~/.config/fish/config.fish"
 abbr zshrc "nvim ~/.zshrc"
@@ -59,6 +61,17 @@ abbr gcb "git checkout -b"
 
 abbr core-proxy "cloud_sql_proxy -instances=analog-stage-198105:us-central1:core-replica=tcp:8912"
 
+abbr sops "sops --in-place"
 abbr k kubectl
+abbr kctx kubectx
+abbr kns kubens
+abbr fr "flux reconcile"
+abbr frk "flux reconcile kustomization"
+abbr frhr "flux reconcile hr"
+abbr kpf "kubectl port-forward"
+abbr kg "kubectl get"
+abbr kd "kubectl describe"
 
 abbr yabai-restart "sh ~/.dotfiles/restart-yabai.sh"
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PATH "$VOLTA_HOME/bin" $PATH

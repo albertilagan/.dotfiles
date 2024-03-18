@@ -53,3 +53,7 @@ alias tree="exa --tree"
 
 alias cat="bat"
 alias fme="~/.dotfiles/scripts/search.sh"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+PATH=~/.console-ninja/.bin:$PATH

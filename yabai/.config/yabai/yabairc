@@ -35,5 +35,9 @@ yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^Centered$" manage=off
 yabai -m rule --add app="^Flow$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^Logi$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^CleanShot$" manage=off
+yabai -m rule --add app="^Speedtest$" manage=off
 yabai -m rule --add app="Code" opacity=0.95
 
