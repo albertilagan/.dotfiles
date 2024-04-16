@@ -6,6 +6,11 @@ return {
       "gomod",
       "gowork",
       "gosum",
+      "lua",
+      "xml",
+      "http",
+      "json",
+      "graphql",
     })
   end,
 }

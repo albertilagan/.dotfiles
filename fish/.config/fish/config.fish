@@ -14,7 +14,7 @@ source /Users/albertilagan/google-cloud-sdk/path.fish.inc
 fish_add_path ~/.config/bin
 fish_add_path ~/.nix-profile/bin
 fish_add_path ~/.config/tmux/plugins/t-smart-tmux-session-manager/bin
-fish_add_path "$(pyenv root)/shims"
+fish_add_path ~/.locize-cli/bin
 
 set -U fish_greeting # disable fish greeting
 set -U fish_key_bindings fish_vi_key_bindings
@@ -39,7 +39,7 @@ abbr vim nvim
 abbr lg lazygit
 abbr v nvim
 abbr ip "ifconfig en0 | grep inet | awk '{ print \$2 }'"
-abbr nix "nix --extra-experimental-features 'nix-command flakes'"
+abbr nixf "nix --extra-experimental-features 'nix-command flakes'"
 
 abbr l "lsd --group-dirs first -A"
 abbr ls "lsd --group-dirs first -A"
@@ -71,6 +71,11 @@ abbr frhr "flux reconcile hr"
 abbr kpf "kubectl port-forward"
 abbr kg "kubectl get"
 abbr kd "kubectl describe"
+
+abbr ghcs "gh copilot suggest"
+abbr ghce "gh copilot explain"
+
+abbr da "direnv allow"
 
 abbr yabai-restart "sh ~/.dotfiles/restart-yabai.sh"
 set -gx VOLTA_HOME "$HOME/.volta"

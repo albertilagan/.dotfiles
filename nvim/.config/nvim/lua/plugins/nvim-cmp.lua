@@ -8,7 +8,12 @@ return {
     "hrsh7th/cmp-path",
     "saadparwaiz1/cmp_luasnip",
   },
-  opts = function()
+  opts = function(_, opts)
+    table.insert(opts.sources, 1, {
+      name = "copilot",
+      group_index = 1,
+      priority = 100,
+    })
     vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
     local cmp = require("cmp")
     local defaults = require("cmp.config.default")()

@@ -50,6 +50,8 @@ map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Go to left window", rem
 map("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Go to lower window", remap = true, silent = true })
 map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Go to upper window", remap = true, silent = true })
 map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Go to right window", remap = true, silent = true })
+map("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "Run request under the cursor", remap = true, silent = true })
+map("n", "<leader>zm", "<cmd>ZenMode<cr>", { desc = "Toggle ZenMode", remap = true, silent = true })
 
 -- better indenting
 map("v", "<", "<gv")
