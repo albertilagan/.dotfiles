@@ -2,7 +2,6 @@ set fish_function_path $fish_function_path ~/.config/fish/github/plugin-foreign-
 
 eval (/opt/homebrew/bin/brew shellenv)
 eval ($HOME/.nix-profile/bin/direnv hook fish)
-eval (fzf_configure_bindings --git_status=\cg --history=\cr --variables=\cv --directory=\cd)
 starship init fish | source
 zoxide init fish | source
 
@@ -15,6 +14,7 @@ fish_add_path ~/.config/bin
 fish_add_path ~/.nix-profile/bin
 fish_add_path ~/.config/tmux/plugins/t-smart-tmux-session-manager/bin
 fish_add_path ~/.locize-cli/bin
+fish_add_path /opt/homebrew/opt/fzf/bin
 
 set -U fish_greeting # disable fish greeting
 set -U fish_key_bindings fish_vi_key_bindings
@@ -22,8 +22,6 @@ set -U fish_key_bindings fish_vi_key_bindings
 
 set -Ux EDITOR nvim
 set -Ux BAT_THEME Catppuccin-mocha
-set -Ux FZF_DEFAULT_COMMANDS "fd -H -E '.git'"
-set -Ux FZF_TMUX_OPTS "-p 55%,60%"
 set -Ux VISUAL nvim
 set -Ux SOPS_AGE_KEY_FILE "$HOME/.sops/medcheck-gatekeeper.txt"
 
@@ -41,10 +39,14 @@ abbr v nvim
 abbr ip "ifconfig en0 | grep inet | awk '{ print \$2 }'"
 abbr nixf "nix --extra-experimental-features 'nix-command flakes'"
 
-abbr l "lsd --group-dirs first -A"
-abbr ls "lsd --group-dirs first -A"
-abbr ll "lsd --group-dirs first -Al"
-abbr lt "lsd --group-dirs last -A --tree"
+# abbr l "lsd --group-dirs first -A"
+# abbr ls "lsd --group-dirs first -A"
+# abbr ll "lsd --group-dirs first -Al"
+# abbr lt "lsd --group-dirs last -A --tree"
+alias l "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --group-directories-first"
+alias ls "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --group-directories-first"
+alias ll "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --group-directories-first"
+alias cd "z"
 
 abbr cat "bat --style=plain"
 abbr fme "~/.dotfiles/scripts/search.sh"
@@ -80,3 +82,31 @@ abbr da "direnv allow"
 abbr yabai-restart "sh ~/.dotfiles/restart-yabai.sh"
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
+
+# fzf
+
+# fzf --fish | source
+eval (fish_user_key_bindings)
+eval (fzf_configure_bindings --git_status=\cg --history=\cr --variables=\cv --directory=\cd)
+
+# fd
+# set -Ux FZF_DEFAULT_COMMANDS "fd -H -E '.git'"
+set -Ux FZF_TMUX_OPTS "-d 90%"
+set -Ux FZF_DEFAULT_COMMAND "fd -u --strip-cwd-prefix --exclude .git"
+set -Ux FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
+set -Ux FZF_ALT_C_COMMAND "fd --type d -u --strip-cwd-prefix --exclude .git"
+set -Ux FZF_CTRL_T_OPTS "--preview 'bat -n --color=always --line-range :500 {}'"
+set -Ux FZF_ALT_C_OPTS "--preview 'eza --tree --color=always {} | head -200'"
+
+function fzf_compgen_path
+  fd --hidden --follow --exclude .git . $argv
+end
+
+function fzf_compgen_dir
+  fd --type d --hidden --follow --exclude .git . $argv
+end
+
+
+thefuck --alias | source
+thefuck --alias fk | source
+thefuck --alias fck | source
