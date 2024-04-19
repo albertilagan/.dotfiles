@@ -56,6 +56,7 @@ stow tmux
 stow yabai
 stow zsh
 stow wezterm
+stow sesh
 
 # add fish to valid login shells
 command -v fish | sudo tee -a /etc/shells
