@@ -27,6 +27,7 @@ nix --experimental-features 'nix-command flakes' profile install --priority 4 \
 	nixpkgs#stow \
 	nixpkgs#tmux \
 	nixpkgs#fzf \
+	nixpkgs#zf \
 	nixpkgs#fd \
 	nixpkgs#direnv \
 	nixpkgs#zoxide \
@@ -44,6 +45,7 @@ nix --experimental-features 'nix-command flakes' profile install --priority 4 \
 	nixpkgs#delta \
 	nixpkgs#kubectl \
 	nixpkgs#kubectx \
+	nixpkgs#yazi \
 
 # stow
 stow alacritty
@@ -57,6 +59,7 @@ stow yabai
 stow zsh
 stow wezterm
 stow sesh
+stow yazi
 
 # add fish to valid login shells
 command -v fish | sudo tee -a /etc/shells
