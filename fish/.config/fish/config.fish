@@ -47,6 +47,7 @@ alias l "eza --color=always --long --git --no-filesize --icons=always --no-time 
 alias ls "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --group-directories-first"
 alias ll "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --group-directories-first"
 alias cd "z"
+alias gws "source ~/.dotfiles/sesh/.config/sesh/bin/nvim-w.sh"
 
 abbr cat "bat --style=plain"
 abbr fme "~/.dotfiles/scripts/search.sh"

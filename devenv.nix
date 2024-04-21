@@ -7,5 +7,7 @@
     pkgs.yarn
     pkgs.nodePackages.pnpm
   ];
+
+  languages.go.enable = true;
 }
 
