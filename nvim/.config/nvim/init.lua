@@ -75,6 +75,7 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 
 require 'albertilagan.config.autocmds'
+require 'albertilagan.config.functions'
 require 'albertilagan.config.keymaps'
 require 'albertilagan.config.lazy'
 

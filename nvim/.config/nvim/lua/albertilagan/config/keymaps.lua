@@ -30,8 +30,8 @@ vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
 vim.keymap.set('n', '<leader>ed', '<CMD>Oil<CR>', { desc = 'Open parent [d]irectory' })
 
 -- buffer
-vim.keymap.set('n', '<leader>bd', ':CloseBuffer<CR>', { desc = '[d]elete current buffer' })
-vim.keymap.set('n', '<leader>bD', ':ForceCloseBuffer<CR>', { desc = 'Force [D]elete current buffer' })
+vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = '[d]elete current buffer' })
+vim.keymap.set('n', '<leader>bD', ':bd!<CR>', { desc = 'Force [D]elete current buffer' })
 vim.keymap.set('n', '<leader>bb', '<c-^>', { desc = 'Go to previous [b] buffer' })
 vim.keymap.set('n', '<leader>bP', ':DeleteAllButCurrentBuffer<CR>', { desc = 'Delete all buffer' })
 
@@ -114,17 +114,3 @@ end)
 vim.keymap.set('n', 'gR', function()
   require('trouble').toggle 'lsp_references'
 end)
-
--- [[ Basic Autocommands ]]
---  See `:help lua-guide-autocommands`
-
--- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.highlight.on_yank()`
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
