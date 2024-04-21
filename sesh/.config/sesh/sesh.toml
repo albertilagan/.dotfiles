@@ -15,7 +15,7 @@ path = "~/.dotfiles"
 [[session]]
 name = "luxor-apps 💻"
 path = "~/development/luxor/luxor-apps"
-startup_command = "~/.dotfiles/sesh/.config/sesh/bin/devenv.sh"
+startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh"
 
 [[session]]
 name = "project-nimbus 💻"

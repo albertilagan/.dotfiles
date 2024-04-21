@@ -60,6 +60,8 @@ abbr gc "git commit -m"
 abbr gca "git commit -am"
 abbr gco "git checkout"
 abbr gcb "git checkout -b"
+abbr gw "git worktree"
+abbr gwa "git worktree add"
 
 abbr core-proxy "cloud_sql_proxy -instances=analog-stage-198105:us-central1:core-replica=tcp:8912"
 

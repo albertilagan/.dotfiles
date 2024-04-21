@@ -14,6 +14,8 @@ return {
       ['<leader>x'] = { name = 'Trouble', _ = 'which_key_ignore' },
       ['<leader>b'] = { name = '[B]uffer', _ = 'which_key_ignore' },
       ['<leader>e'] = { name = '[E]xplorer', _ = 'which_key_ignore' },
+      ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
+      ['<leader>gw'] = { name = '[G]it [W]orktree', _ = 'which_key_ignore' },
     }
   end,
 }

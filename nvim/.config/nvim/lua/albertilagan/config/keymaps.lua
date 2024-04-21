@@ -123,9 +123,11 @@ end)
 vim.keymap.set('n', '<leader>db', ':DBUIToggle<CR>', { desc = 'Toggle dadbod' })
 
 -- git
-vim.keymap.set('n', '<leader>gg', function()
+vim.keymap.set('n', '<leader>gg', ':Neogit<CR>', { desc = '[G]it' })
+vim.keymap.set('n', '<leader>gc', ':Neogit commit<CR>', { desc = '[Git [C]ommit' })
+vim.keymap.set('n', '<leader>gwl', function()
   require('telescope').extensions.git_worktree.git_worktrees()
 end, { desc = '[G]it Worktree' })
-vim.keymap.set('n', '<leader>ga', function()
+vim.keymap.set('n', '<leader>gwc', function()
   require('telescope').extensions.git_worktree.create_git_worktree()
 end, { desc = 'Create [G]it Worktree' })
