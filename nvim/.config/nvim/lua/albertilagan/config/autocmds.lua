@@ -12,10 +12,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.api.nvim_create_autocmd('BufDelete', {
-  desc = "Open Dashboard when there's no active buffer left",
-  group = vim.api.nvim_create_augroup('custom-buffer', { clear = true }),
-  callback = function()
-    require('albertilagan.config.functions').close_buffer()
-  end,
-})
+-- vim.api.nvim_create_autocmd('BufDelete', {
+--   desc = "Open Dashboard when there's no active buffer left",
+--   group = vim.api.nvim_create_augroup('custom-buffer', { clear = true }),
+--   callback = function()
+--     require('albertilagan.config.functions').close_buffer()
+--   end,
+-- })

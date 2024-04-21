@@ -20,6 +20,7 @@ return {
       'json',
       'css',
       'go',
+      'sql',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,

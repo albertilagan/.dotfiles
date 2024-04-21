@@ -30,8 +30,10 @@ vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
 vim.keymap.set('n', '<leader>ed', '<CMD>Oil<CR>', { desc = 'Open parent [d]irectory' })
 
 -- buffer
-vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = '[d]elete current buffer' })
-vim.keymap.set('n', '<leader>bD', ':bd!<CR>', { desc = 'Force [D]elete current buffer' })
+-- vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = '[d]elete current buffer' })
+-- vim.keymap.set('n', '<leader>bD', ':bd!<CR>', { desc = 'Force [D]elete current buffer' })
+vim.keymap.set('n', '<leader>bd', ':CloseBuffer<CR>', { desc = '[d]elete current buffer' })
+vim.keymap.set('n', '<leader>bD', ':ForceCloseBuffer!<CR>', { desc = 'Force [D]elete current buffer' })
 vim.keymap.set('n', '<leader>bb', '<c-^>', { desc = 'Go to previous [b] buffer' })
 vim.keymap.set('n', '<leader>bP', ':DeleteAllButCurrentBuffer<CR>', { desc = 'Delete all buffer' })
 
@@ -73,6 +75,8 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<C-[>', '<C-w><', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<C-]>', '<C-w>>', { desc = 'Move focus to the upper window' })
 
 -- better indenting
 vim.keymap.set('v', '<', '<gv')
@@ -114,3 +118,14 @@ end)
 vim.keymap.set('n', 'gR', function()
   require('trouble').toggle 'lsp_references'
 end)
+
+-- DB dadbod
+vim.keymap.set('n', '<leader>db', ':DBUIToggle<CR>', { desc = 'Toggle dadbod' })
+
+-- git
+vim.keymap.set('n', '<leader>gg', function()
+  require('telescope').extensions.git_worktree.git_worktrees()
+end, { desc = '[G]it Worktree' })
+vim.keymap.set('n', '<leader>ga', function()
+  require('telescope').extensions.git_worktree.create_git_worktree()
+end, { desc = 'Create [G]it Worktree' })
