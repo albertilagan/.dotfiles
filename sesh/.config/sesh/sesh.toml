@@ -15,12 +15,17 @@ path = "~/.dotfiles"
 [[session]]
 name = "luxor-apps 💻"
 path = "~/development/luxor/luxor-apps"
-startup_command = "source ~/.dotfiles/sesh/.config/sesh/bin/nvim-w.sh"
+startup_command = "~/.dotfiles/sesh/.config/sesh/bin/devenv.sh"
 
 [[session]]
 name = "project-nimbus 💻"
 path = "~/development/luxor/project-nimbus"
 startup_command = "~/.dotfiles/sesh/.config/sesh/bin/devenv.sh"
+
+[[session]]
+name = "docs 📄"
+path = "~/development/luxor/docs"
+startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh"
 
 [[session]]
 name = "schema 💻"
@@ -31,6 +36,11 @@ startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh"
 name = "tmux config"
 path = "~/.dotfiles/tmux/.config/tmux"
 startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh tmux.conf"
+
+[[session]]
+name = "sketchybar config"
+path = "~/.dotfiles/sketchybar/.config/sketchybar"
+startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh sketchybarrc"
 
 # [[session]]
 # name = "gitmux config"

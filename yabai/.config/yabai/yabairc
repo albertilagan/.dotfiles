@@ -7,11 +7,11 @@ yabai -m config layout bsp
 yabai -m config window_placement second_child
 
 # padding
-yabai -m config top_padding 6
-yabai -m config bottom_padding 6
-yabai -m config left_padding 6
-yabai -m config right_padding 6
-yabai -m config window_gap 6
+yabai -m config top_padding 8
+yabai -m config bottom_padding 8
+yabai -m config left_padding 10
+yabai -m config right_padding 10
+yabai -m config window_gap 8
 
 # center mouse on window with focus
 # yabai -m config mouse_follows_focus on
@@ -42,3 +42,8 @@ yabai -m rule --add app="^Speedtest$" manage=off
 yabai -m rule --add app="Code" opacity=0.95
 yabai -m rule --add app="Zed" opacity=0.95
 
+yabai -m config external_bar all:48:0
+
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
+yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
