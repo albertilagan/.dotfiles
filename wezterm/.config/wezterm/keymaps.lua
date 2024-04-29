@@ -15,7 +15,7 @@ return {
 	k.cmd_key("f", act.SendKey({ mods = "CTRL", key = "g" })),
 	k.cmd_key("F", k.multiple_actions(":SearchFolder ", false)),
 	k.cmd_key("p", act.SendKey({ mods = "CTRL", key = "p" })),
-	k.cmd_key("q", k.multiple_actions(":qa!")),
+	-- k.cmd_key("q", k.multiple_actions(":qa!")),
 	k.cmd_to_tmux_prefix("1", "1"),
 	k.cmd_to_tmux_prefix("2", "2"),
 	k.cmd_to_tmux_prefix("3", "3"),
