@@ -57,6 +57,13 @@ return {
       -- },
       -- pickers = {}
       defaults = {
+        file_ignore_patterns = {
+          'node_modules',
+          '.turbo',
+          '.next',
+          '.git',
+          '.devenv',
+        },
         mappings = {
           i = {
             ['<C-k>'] = actions.move_selection_previous, -- move to prev result
@@ -65,6 +72,11 @@ return {
             ['<c-t>'] = trouble.open_with_trouble,
           },
           n = { ['<c-t>'] = trouble.open_with_trouble },
+        },
+        layout_strategy = 'vertical',
+        layout_config = {
+          prompt_position = 'top',
+          mirror = true,
         },
       },
       extensions = {
@@ -83,8 +95,10 @@ return {
     local builtin = require 'telescope.builtin'
     vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
     vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-    vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [K]eymaps' })
-    vim.keymap.set('n', '<leader>sp', '<cmd>Telescope git_files show_untracked=true<cr>', { desc = '[S]earch [F]iles' })
+    vim.keymap.set('n', '<leader>sp', function()
+      require('telescope.builtin').find_files { hidden = true, no_ignore = true }
+    end, { desc = '[S]earch [K]eymaps' })
+    vim.keymap.set('n', '<leader>sf', '<cmd>Telescope git_files show_untracked=true<cr>', { desc = '[S]earch [F]iles' })
     vim.keymap.set('n', '<C-p>', '<cmd>Telescope git_files show_untracked=true<cr>', { desc = '[S]earch [F]iles' })
     vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
     vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
