@@ -42,6 +42,11 @@ name = "sketchybar config"
 path = "~/.dotfiles/sketchybar/.config/sketchybar"
 startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh sketchybarrc"
 
+[[session]]
+name = "deez notes"
+path = "/Users/albertilagan/Library/Mobile Documents/iCloud~md~obsidian/Documents/deez-notes"
+startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh"
+
 # [[session]]
 # name = "gitmux config"
 # path = "~/.dotfiles/tmux/.config/tmux"

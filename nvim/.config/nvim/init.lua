@@ -74,6 +74,7 @@ vim.opt.scrolloff = 10
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
+vim.opt.conceallevel = 2
 
 require 'albertilagan.config.autocmds'
 require 'albertilagan.config.functions'

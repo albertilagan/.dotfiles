@@ -133,11 +133,60 @@ vim.keymap.set('n', '<leader>gwc', function()
 end, { desc = 'Create [G]it Worktree' })
 
 -- Obsidian
-vim.keymap.set('n', '<leader>oc', "<cmd>lua require('obsidian').util.toggle_checkbox()<CR>", { desc = 'Obsidian Check Checkbox' })
-vim.keymap.set('n', '<leader>ot', '<cmd>ObsidianTemplate<CR>', { desc = 'Insert Obsidian Template' })
-vim.keymap.set('n', '<leader>oo', '<cmd>ObsidianOpen<CR>', { desc = 'Open in Obsidian App' })
-vim.keymap.set('n', '<leader>ob', '<cmd>ObsidianBacklinks<CR>', { desc = 'Show ObsidianBacklinks' })
-vim.keymap.set('n', '<leader>ol', '<cmd>ObsidianLinks<CR>', { desc = 'Show ObsidianLinks' })
-vim.keymap.set('n', '<leader>on', '<cmd>ObsidianNew<CR>', { desc = 'Create New Note' })
-vim.keymap.set('n', '<leader>os', '<cmd>ObsidianSearch<CR>', { desc = 'Search Obsidian' })
-vim.keymap.set('n', '<leader>oq', '<cmd>ObsidianQuickSwitch<CR>', { desc = 'Quick Switch' })
+-- vim.keymap.set('n', '<leader>oc', "<cmd>lua require('obsidian').util.toggle_checkbox()<CR>", { desc = 'Obsidian Check Checkbox' })
+-- vim.keymap.set('n', '<leader>ot', '<cmd>ObsidianTemplate<CR>', { desc = 'Insert Obsidian Template' })
+-- vim.keymap.set('n', '<leader>oo', '<cmd>ObsidianOpen<CR>', { desc = 'Open in Obsidian App' })
+-- vim.keymap.set('n', '<leader>ob', '<cmd>ObsidianBacklinks<CR>', { desc = 'Show ObsidianBacklinks' })
+-- vim.keymap.set('n', '<leader>ol', '<cmd>ObsidianLinks<CR>', { desc = 'Show ObsidianLinks' })
+-- vim.keymap.set('n', '<leader>on', '<cmd>ObsidianNew<CR>', { desc = 'Create New Note' })
+-- vim.keymap.set('n', '<leader>os', '<cmd>ObsidianSearch<CR>', { desc = 'Search Obsidian' })
+-- vim.keymap.set('n', '<leader>oq', '<cmd>ObsidianQuickSwitch<CR>', { desc = 'Quick Switch' })
+--------------
+-- obsidian --
+--------------
+--
+-- >>> oo # from shell, navigate to vault (optional)
+--
+-- # NEW NOTE
+-- >>> on "Note Name" # call my "obsidian new note" shell script (~/bin/on)
+-- >>>
+-- >>> ))) <leader>on # inside vim now, format note as template
+-- >>> ))) # add tag, e.g. fact / blog / video / etc..
+-- >>> ))) # add hubs, e.g. [[python]], [[machine-learning]], etc...
+-- >>> ))) <leader>of # format title
+--
+-- # END OF DAY/WEEK REVIEW
+-- >>> or # review notes in inbox
+-- >>>
+-- >>> ))) <leader>ok # inside vim now, move to zettelkasten
+-- >>> ))) <leader>odd # or delete
+-- >>>
+-- >>> og # organize saved notes from zettelkasten into notes/[tag] folders
+-- >>> ou # sync local with Notion
+--
+-- navigate to vault
+vim.keymap.set('n', '<leader>oo', ':cd /Users/albertilagan/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/deez-notes<cr>')
+--
+-- convert note to template and remove leading white space
+vim.keymap.set('n', '<leader>on', ':ObsidianTemplate note<cr> :lua vim.cmd([[1,/^\\S/s/^\\n\\{1,}//]])<cr>')
+-- strip date from note title and replace dashes with spaces
+-- must have cursor on title
+vim.keymap.set('n', '<leader>of', ':s/\\(# \\)[^_]*_/\\1/ | s/-/ /g<cr>')
+
+-- search for files in full vault
+vim.keymap.set(
+  'n',
+  '<leader>os',
+  ':Telescope find_files search_dirs={"/Users/albertilagan/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/deez-notes"}<cr>'
+)
+vim.keymap.set(
+  'n',
+  '<leader>og',
+  ':Telescope live_grep search_dirs={"/Users/albertilagan/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/deez-notes"}<cr>'
+)
+
+-- for review workflow
+-- move file in current buffer to zettelkasten folder
+-- vim.keymap.set('n', '<leader>ok', ":!mv '%:p' /Users/albertilagan/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/deez-notes<cr>:bd<cr>")
+-- delete file in current buffer
+-- vim.keymap.set('n', '<leader>odd', ":!rm '%:p'<cr>:bd<cr>")
