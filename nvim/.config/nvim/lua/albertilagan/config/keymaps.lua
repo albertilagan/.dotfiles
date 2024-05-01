@@ -25,9 +25,14 @@ vim.keymap.set(
 -- generate codesnap on the whole buffer (normal mode)
 vim.keymap.set('n', '<leader>ss', ':Silicon ~/screenshot/output.png<CR>', { silent = true, desc = 'Silicon (buffer)' })
 
+-- netrw
+-- vim.keymap.set('n', '<leader>ed', ':Ex<CR>')
+
 -- Oil
 vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
-vim.keymap.set('n', '<leader>ed', '<CMD>Oil<CR>', { desc = 'Open parent [d]irectory' })
+vim.keymap.set('n', '<leader>ed', function()
+  require('oil').open()
+end, { desc = 'Open parent [d]irectory' })
 
 -- buffer
 -- vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = '[d]elete current buffer' })
@@ -39,9 +44,6 @@ vim.keymap.set('n', '<leader>bP', ':DeleteAllButCurrentBuffer<CR>', { desc = 'De
 
 -- search
 vim.keymap.set('n', '<leader>si', ':SearchFolder ')
-
--- netrw
--- vim.keymap.set('n', '<leader>ed', ':Ex<CR>')
 
 -- better up/down
 vim.keymap.set({ 'n', 'x' }, 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
