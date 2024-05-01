@@ -55,7 +55,17 @@ return {
       --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
       --   },
       -- },
-      -- pickers = {}
+      pickers = {
+        find_files = {
+          theme = 'ivy',
+        },
+        git_files = {
+          theme = 'ivy',
+        },
+        live_grep = {
+          theme = 'ivy',
+        },
+      },
       defaults = {
         file_ignore_patterns = {
           'node_modules',
@@ -73,15 +83,17 @@ return {
           },
           n = { ['<c-t>'] = trouble.open_with_trouble },
         },
-        layout_strategy = 'vertical',
-        layout_config = {
-          prompt_position = 'top',
-          mirror = true,
-        },
+        -- layout_strategy = 'vertical',
+        -- layout_config = {
+        --   prompt_position = 'top',
+        --   mirror = true,
+        -- },
       },
       extensions = {
         ['ui-select'] = {
-          require('telescope.themes').get_dropdown(),
+          -- require('telescope.themes').get_dropdown(),
+          -- require('telescope.themes').get_ivy(),
+          require('telescope.themes').get_cursor(),
         },
       },
     }
