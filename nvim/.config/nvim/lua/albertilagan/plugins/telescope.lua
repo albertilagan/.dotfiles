@@ -59,10 +59,10 @@ return {
       defaults = {
         file_ignore_patterns = {
           'node_modules',
-          '.turbo',
-          '.next',
-          '.git',
-          '.devenv',
+          '.turbo/',
+          '.next/',
+          '.git/',
+          '.devenv/',
         },
         mappings = {
           i = {
