@@ -192,3 +192,15 @@ vim.keymap.set(
 -- vim.keymap.set('n', '<leader>ok', ":!mv '%:p' /Users/albertilagan/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/deez-notes<cr>:bd<cr>")
 -- delete file in current buffer
 -- vim.keymap.set('n', '<leader>odd', ":!rm '%:p'<cr>:bd<cr>")
+
+-- emoji
+vim.keymap.set('n', '<leader>se', ':Telescope emoji<CR>', { desc = 'Search [E]moji' })
+
+-- octo
+vim.keymap.set('n', '<leader>opr', ':Octo pr list<CR>', { desc = '[O]cto [P]ull [R]equest' })
+vim.keymap.set('n', '<leader>ora', ':Octo review start<CR>', { desc = '[O]cto [R]eview St[a]rt' })
+vim.keymap.set('n', '<leader>orr', ':Octo review resume<CR>', { desc = '[O]cto [R]eview [R]esume' })
+vim.keymap.set('n', '<leader>orc', ':Octo review comments<CR>', { desc = '[O]cto [R]eview [C]omments' })
+vim.keymap.set('n', '<leader>ors', ':Octo review submit<CR>', { desc = '[O]cto [R]eview [S]ubmit' })
+vim.keymap.set('n', '<leader>ord', ':Octo review discard<CR>', { desc = '[O]cto [R]eview [D]iscard' })
+vim.keymap.set('n', '<leader>orq', ':Octo review close<CR>', { desc = '[O]cto [R]eview Close' })
