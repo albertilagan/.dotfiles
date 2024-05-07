@@ -103,6 +103,7 @@ return {
     pcall(require('telescope').load_extension, 'ui-select')
     pcall(require('telescope').load_extension, 'git_worktree')
     pcall(require('telescope').load_extension 'emoji')
+    pcall(require('telescope').load_extension 'noice')
 
     -- See `:help telescope.builtin`
     local builtin = require 'telescope.builtin'
