@@ -63,6 +63,9 @@ abbr gco "git checkout"
 abbr gcb "git checkout -b"
 abbr gw "git worktree"
 abbr gwa "git worktree add"
+alias gs "git status"
+alias gb "~/gsb.sh"
+alias gshow "~/gshow.sh"
 
 abbr core-proxy "cloud_sql_proxy -instances=analog-stage-198105:us-central1:core-replica=tcp:8912"
 
@@ -113,7 +116,6 @@ set -Ux FZF_CTRL_R_OPTS "--border-label=' history ' \
 --prompt='  '"
 
 
-
 function fzf_compgen_path
   fd --hidden --follow --exclude .git . $argv
 end
@@ -122,7 +124,7 @@ function fzf_compgen_dir
   fd --type d --hidden --follow --exclude .git . $argv
 end
 
-
 thefuck --alias | source
 thefuck --alias fk | source
 thefuck --alias fck | source
+
