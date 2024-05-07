@@ -39,6 +39,7 @@ yabai -m rule --add app="^Logi$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^CleanShot$" manage=off
 yabai -m rule --add app="^Speedtest$" manage=off
+yabai -m rule --add app="^NordVPN$" manage=off
 yabai -m rule --add app="Code" opacity=0.95
 yabai -m rule --add app="Zed" opacity=0.95
 

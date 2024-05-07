@@ -53,7 +53,7 @@ startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh"
 # startup_command = "nvim gitmux.conf"
 
 # [[session]]
-# TODO: update the name fo the session to "update done ✅" when the u script ends
+# TODO: update the name of the session to "update done ✅" when the u script ends
 # name = "update" 
 # path = "~/c/dotfiles"
 # startup_command = "u"
@@ -70,10 +70,20 @@ name = "fish config"
 path = "~/.dotfiles/fish/.config/fish"
 startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh config.fish"
 
-# [[session]]
-# name = "yazi config"
-# path = "~/.dotfiles/yazi/.config/yazi"
-# startup_command = "nvim yazi.toml"
+[[session]]
+name = "yabai config"
+path = "~/.dotfiles/yabai/.config/yabai"
+startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh yabairc"
+
+[[session]]
+name = "skhd config"
+path = "~/.dotfiles/skhd/.config/skhd"
+startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh skhdrc"
+
+[[session]]
+name = "yazi config"
+path = "~/.dotfiles/yazi/.config/yazi"
+startup_command = "nvim yazi.toml"
 
 [[session]]
 name = "wezterm config"
@@ -87,21 +97,14 @@ startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh wezterm.lua"
 # # TODO: append [[session]] ./nu/{name}/package/* to this config for dev mode bonus
 # startup_commad = "nu_new_worktree"
 #
-# [[session]]
-# name = "second brain 🧠"
-# path = "~/c/second-brain"
-# startup_command = "nvim +ObsidianToday"
-
 [[session]]
 name = "sesh config"
 path = "~/.dotfiles/sesh/.config/sesh"
 startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh sesh.toml"
 
-
 # [[session]]
 # session_path = "~/c/nu/main/packages/*"
 # script_path = "~/.config/sesh/scripts/node_dev"
-
 
 [[session]]
 name = "Downloads 📥"
