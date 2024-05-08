@@ -226,6 +226,8 @@ return {
       'lua_ls',
       'graphql',
       'emmet_ls',
+      'buf',
+      'buf-language-server',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
