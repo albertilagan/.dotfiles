@@ -1,18 +1,16 @@
-# Get editor completions based on the config schema
-"$schema" = 'https://starship.rs/config-schema.json'
-
 format = """
 $username\
 $hostname\
 $directory\
-$nodejs\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
 $fill\
-cmd_duration $jobs $time\
+$nodejs\
+$cmd_duration $jobs\
 $line_break\
 $character"""
-
-# Inserts a blank line between shell prompts
-add_newline = true
 
 [nodejs]
 format = "[$symbol($version )]($style)"
@@ -21,20 +19,37 @@ format = "[$symbol($version )]($style)"
 symbol = " "
 
 [directory]
-style = "blue bold"
-read_only = " 🔒"
+style = "blue"
+read_only = " "
 truncation_length = 4
+truncate_to_repo = true
 
 [character]
-success_symbol = "[\uf054](white)" # 
-vicmd_symbol = "[\ue62b](white)" # 
-error_symbol = "[\uf467](red)" # 
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vicmd_symbol = "[❮](green)"
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+style = "white"
 
 [jobs]
 symbol = ""
 style = "bold red"
 number_threshold = 1
 format = "[$symbol]($style)"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "cyan"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[git_metrics]
+disabled = false
 
 [cmd_duration]
 format = "[$duration]($style)"
@@ -46,42 +61,13 @@ symbol = " "
 [rust]
 symbol = " "
 
-[nix_shell]
-disabled = true
-impure_msg = '[impure shell](bold red)'
-pure_msg = '[pure shell](bold green)'
-unknown_msg = '[unknown shell](bold yellow)'
-format = 'via [☃️ $state( \($name\))](bold blue) '
+[time]
+disabled = false
+style = "bold white"
+format = "[$time]($style)"
 
-[gcloud]
-format = ' [$symbol$account(@$domain)(\($project\))]($style)'
-
-[package]
-disabled = true
-
-[username]
-disabled = true
-
-[hostname]
-disabled = true
-
-[aws]
-disabled = true
-
-[docker_context]
-disabled = true
-
-[git_branch]
-disabled = true
-
-[git_commit]
-disabled = true
-
-[git_state]
-disabled = true
-
-[git_metrics]
-disabled = true
-
-[git_status]
-disabled = true
+[custom.stunnel]
+when = "ps aux | grep stunnel | grep -v grep"
+command = "ps -o etime= -p $(ps aux | grep stunnel | grep -v grep | awk '{print $2}')"
+style = "red"
+format = "[TUNNEL OPEN for $output]($style)"
