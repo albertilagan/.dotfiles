@@ -125,8 +125,15 @@ end)
 vim.keymap.set('n', '<leader>db', ':DBUIToggle<CR>', { desc = 'Toggle dadbod' })
 
 -- git
-vim.keymap.set('n', '<leader>gg', ':Neogit<CR>', { desc = '[G]it' })
-vim.keymap.set('n', '<leader>gc', ':Neogit commit<CR>', { desc = '[Git [C]ommit' })
+vim.keymap.set('n', '<leader>gg', function()
+  require('neogit').open {}
+  -- require('neogit').open { kind = 'split' }
+end, { desc = '[G]it' })
+
+vim.keymap.set('n', '<leader>gc', function()
+  require('neogit').open { 'commit' }
+end, { desc = '[G]it [C]ommit' })
+
 vim.keymap.set('n', '<leader>gwl', function()
   require('telescope').extensions.git_worktree.git_worktrees()
 end, { desc = '[G]it Worktree' })
