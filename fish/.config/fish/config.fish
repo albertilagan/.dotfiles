@@ -49,6 +49,7 @@ alias ll "eza --color=always --long --git --no-filesize --icons=always --no-time
 alias cd "z"
 alias gws "source ~/.dotfiles/sesh/.config/sesh/bin/nvim-w.sh"
 
+alias ccat "cat"
 abbr cat "bat --style=plain"
 abbr fme "~/.dotfiles/scripts/search.sh"
 
@@ -128,3 +129,9 @@ thefuck --alias | source
 thefuck --alias fk | source
 thefuck --alias fck | source
 
+
+# set -xU KUBECONFIG "/Users/albertilagan/.kube/shoots/kubeconfig-admin-mj57vqlzxh"
+# set -xU KUBECONFIG "$KUBECONFIG:/Users/albertilagan/.kube/shoots/kubeconfig-admin-sparta.yaml"
+# eval (kubectl config view --merge --flatten > ~/.kube/config)
+# set -xU KUBECONFIG "/Users/albertilagan/.kube/config"
+#

@@ -46,8 +46,10 @@ nix --experimental-features 'nix-command flakes' profile install --priority 4 \
 	nixpkgs#kubectl \
 	nixpkgs#kubectx \
 	nixpkgs#yazi \
+	nixpkgs#wezterm
 
 # stow
+stow aerospace
 stow alacritty
 stow bat
 stow fish

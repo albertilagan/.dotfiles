@@ -45,7 +45,7 @@ yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="Code" opacity=0.95
 yabai -m rule --add app="Zed" opacity=0.95
 
-yabai -m config external_bar all:48:0
+# yabai -m config external_bar all:48:0
 
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
