@@ -25,7 +25,7 @@ return {
           -- ['<C-t>'] = 'actions.select_tab',
           ['<C-space>'] = 'actions.preview',
           ['q'] = 'actions.close',
-          ['<C-l>'] = 'actions.refresh',
+          ['<C-r>'] = 'actions.refresh',
           ['-'] = 'actions.parent',
           ['_'] = 'actions.open_cwd',
           ['`'] = 'actions.cd',
