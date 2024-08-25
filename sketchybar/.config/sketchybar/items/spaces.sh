@@ -1,16 +1,15 @@
 #!/bin/bash
 
-SPACE_ICONS=("1 " "2 " "3 " "4 " "5 " "6 " "7 " "8 " "9 " "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20")
+declare -A SPACE_ICONS
 
 sketchybar --add event aerospace_workspace_change
 
 WORKSPACES=$(aerospace list-workspaces --all)
 for sid in $WORKSPACES; do
-  icon=$((sid-1))
 
   space=(
     associated_space=$sid
-    icon="${SPACE_ICONS[icon]}"
+    icon="${sid} "
     icon.font="$FONT:Semibold:12.0"
     icon.padding_left=5
     icon.padding_right=5
