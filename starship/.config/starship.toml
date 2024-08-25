@@ -71,3 +71,6 @@ when = "ps aux | grep stunnel | grep -v grep"
 command = "ps -o etime= -p $(ps aux | grep stunnel | grep -v grep | awk '{print $2}')"
 style = "red"
 format = "[TUNNEL OPEN for $output]($style)"
+
+[direnv]
+disabled = false
