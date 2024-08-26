@@ -2,16 +2,16 @@
 
 clock=(
   icon=$CLOCK
-  icon.color=$BLACK
+  icon.color=$WHITE
   icon.padding_left=5
   icon.padding_right=0
   label.width=55
   label.align=left
   label.padding_left=-5
   label.padding_right=5
-  label.color=$BLACK
-  background.color=$YELLOW
-  background.border_color=$YELLOW
+  label.color=$WHITE
+  background.color=$CAT
+  background.border_color=$CAT
   background.height=23
   background.drawing=on
   padding_left=2

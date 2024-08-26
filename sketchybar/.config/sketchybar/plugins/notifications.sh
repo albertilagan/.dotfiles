@@ -4,11 +4,11 @@ source "$HOME/.config/sketchybar/colors.sh"
 source "$HOME/.config/sketchybar/icons.sh"
 
 clear() {
-  sketchybar --set $NAME icon=$BELL icon.color=$BLACK
+  sketchybar --set $NAME icon=$BELL icon.color=$WHITE
 }
 
 alert() {
-  sketchybar --set $NAME icon=$BELL_DOT icon.color=$WHITE
+  sketchybar --set $NAME icon=$BELL_DOT icon.color=$BLACK background.color=$RED
 }
 
 update() {

@@ -2,15 +2,15 @@
 
 calendar=(
   icon=$CALENDAR
-  icon.color=$BLACK
+  icon.color=$WHITE
   icon.padding_left=5
   icon.padding_right=5
   label.align=right
   label.padding_left=0
   label.padding_right=5
-  label.color=$BLACK
-  background.color=$GREEN
-  background.border_color=$GREEN
+  label.color=$WHITE
+  background.color=$CAT
+  background.border_color=$CAT
   background.height=23
   background.drawing=on
   padding_left=2
