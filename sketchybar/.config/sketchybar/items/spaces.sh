@@ -6,7 +6,6 @@ sketchybar --add event aerospace_workspace_change
 
 WORKSPACES=$(aerospace list-workspaces --all)
 for sid in $WORKSPACES; do
-
   space=(
     associated_space=$sid
     icon="${sid} "
