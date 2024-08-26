@@ -19,3 +19,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 --     require('albertilagan.config.functions').close_buffer()
 --   end,
 -- })
+
+vim.api.nvim_create_autocmd('BufWritePost', {
+  pattern = { 'aerospace.toml' },
+  command = '!aerospace reload-config',
+})
