@@ -24,3 +24,13 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = { 'aerospace.toml' },
   command = '!aerospace reload-config',
 })
+
+vim.api.nvim_create_autocmd('BufWritePost', {
+  pattern = { 'config.fish' },
+  command = '!source ~/.config/fish/config.fish',
+})
+
+vim.api.nvim_create_autocmd('BufWritePost', {
+  pattern = { 'tmux.conf' },
+  command = '!tmux source ~/.config/tmux/tmux.conf',
+})

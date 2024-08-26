@@ -38,6 +38,7 @@ abbr lg lazygit
 abbr v nvim
 abbr ip "ifconfig en0 | grep inet | awk '{ print \$2 }'"
 abbr nixf "nix --extra-experimental-features 'nix-command flakes'"
+abbr nix-install "nix profile install --accept-flake-config nixpkgs#"
 
 # abbr l "lsd --group-dirs first -A"
 # abbr ls "lsd --group-dirs first -A"
@@ -49,9 +50,9 @@ alias ll "eza --color=always --long --git --no-filesize --icons=always --no-time
 alias cd "z"
 alias gws "source ~/.dotfiles/sesh/.config/sesh/bin/nvim-w.sh"
 
-alias ccat "cat"
-abbr cat "bat --style=plain"
-abbr fme "~/.dotfiles/scripts/search.sh"
+# alias ccat "cat"
+alias cat "bat --style=plain"
+alias search "~/.dotfiles/scripts/search.sh"
 
 abbr p "pnpm run (jq -r '.scripts|to_entries[]|((.key))' package.json | fzf-tmux -p --border-label='pnpm run')"
 
@@ -86,7 +87,6 @@ abbr ghce "gh copilot explain"
 
 abbr da "direnv allow"
 
-abbr yabai-restart "sh ~/.dotfiles/restart-yabai.sh"
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
 
