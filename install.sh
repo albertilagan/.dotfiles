@@ -54,10 +54,8 @@ stow alacritty
 stow bat
 stow fish
 stow nvim
-stow skhd
 stow starship
 stow tmux
-stow yabai
 stow zsh
 stow wezterm
 stow sesh
