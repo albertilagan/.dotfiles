@@ -32,7 +32,7 @@ bar=(
   padding_right=10
   padding_left=10
   corner_radius=3
-  y_offset=16
+  y_offset=10
   margin=5
   blur_radius=20
   display=main
@@ -81,7 +81,8 @@ source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/notifications.sh"
-source "$ITEM_DIR/spotify.sh"
+# source "$ITEM_DIR/spotify.sh"
+# source "$ITEM_DIR/cpu.sh"
 
 right_bracket=(
   background.color=$BACKGROUND_SPACES #$BACKGROUND_1
