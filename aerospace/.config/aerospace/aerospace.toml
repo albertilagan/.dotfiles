@@ -110,8 +110,11 @@ alt-enter = 'exec-and-forget open -a Wezterm'
 cmd-h = [] # Disable "hide application"
 cmd-alt-h = [] # Disable "hide others"
 
-cmd-ctrl-h = 'exec-and-forget aerospace workspace "$(aerospace list-workspaces --monitor mouse --visible)" && aerospace workspace prev'
-cmd-ctrl-l = 'exec-and-forget aerospace workspace "$(aerospace list-workspaces --monitor mouse --visible)" && aerospace workspace next'
+# cmd-ctrl-h = 'exec-and-forget aerospace workspace "$(aerospace list-workspaces --monitor mouse --visible)" && aerospace workspace prev'
+# cmd-ctrl-l = 'exec-and-forget aerospace workspace "$(aerospace list-workspaces --monitor mouse --visible)" && aerospace workspace next'
+cmd-ctrl-h = 'workspace prev'
+cmd-ctrl-l = 'workspace next'
+
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
