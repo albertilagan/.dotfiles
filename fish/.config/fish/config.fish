@@ -129,6 +129,9 @@ thefuck --alias | source
 thefuck --alias fk | source
 thefuck --alias fck | source
 
+function set_openai_key
+    set OPENAI_API_KEY (op read "op://Private/OpenRouterOpenAI/password" --account=my)
+end
 
 # set -xU KUBECONFIG "/Users/albertilagan/.kube/shoots/kubeconfig-admin-mj57vqlzxh"
 # set -xU KUBECONFIG "$KUBECONFIG:/Users/albertilagan/.kube/shoots/kubeconfig-admin-sparta.yaml"
