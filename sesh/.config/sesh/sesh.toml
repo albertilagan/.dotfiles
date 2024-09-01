@@ -1,13 +1,5 @@
 # import = ["~/c/sesh/sesh.toml"]
 
-# [default_session]
-# startup_command = "nvim +GoToFile"
-
-# [[session]]
-# name = "spotify"
-# path = "~/git_repos/dotfiles/spotify-player"
-# startup_script = "~/git_repos/dotfiles/sesh/bin/spotify.sh"
-
 [[session]]
 name = "dotfiles 🏡"
 path = "~/.dotfiles"
@@ -47,19 +39,6 @@ name = "deez notes"
 path = "/Users/albertilagan/Library/Mobile Documents/iCloud~md~obsidian/Documents/deez-notes"
 startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh"
 
-# [[session]]
-# name = "gitmux config"
-# path = "~/.dotfiles/tmux/.config/tmux"
-# startup_command = "nvim gitmux.conf"
-
-# [[session]]
-# TODO: update the name of the session to "update done ✅" when the u script ends
-# name = "update" 
-# path = "~/c/dotfiles"
-# startup_command = "u"
-# TODO: implement "detatched feature"
-# detached = true # never attach to this session, just create it in the background
-
 [[session]]
 name = "neovim config"
 path = "~/.dotfiles/nvim/.config/nvim"
@@ -90,21 +69,10 @@ name = "wezterm config"
 path = "~/.dotfiles/wezterm/.config/wezterm"
 startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh wezterm.lua"
 
-# [[session]]
-# name = "nutiliti new worktree"
-# path = "~/c/nu"
-# # TODO: auto-close this session when the worktree has been created successfully?  
-# # TODO: append [[session]] ./nu/{name}/package/* to this config for dev mode bonus
-# startup_commad = "nu_new_worktree"
-#
 [[session]]
 name = "sesh config"
 path = "~/.dotfiles/sesh/.config/sesh"
 startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh sesh.toml"
-
-# [[session]]
-# session_path = "~/c/nu/main/packages/*"
-# script_path = "~/.config/sesh/scripts/node_dev"
 
 [[session]]
 name = "Downloads 📥"

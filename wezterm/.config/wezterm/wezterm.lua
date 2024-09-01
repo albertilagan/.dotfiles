@@ -18,13 +18,13 @@ local config = {
 	window_decorations = "RESIZE",
 	keys = keys,
 	window_background_opacity = 0.97,
-	-- macos_window_background_blur = 30,
-	-- window_background_image = "/Users/albertilagan/.config/wezterm/blob_blue.gif",
-	-- window_background_image_hsb = {
-	-- 	brightness = 0.1,
-	-- 	hue = 1,
-	-- 	saturation = 1,
-	-- },
+	macos_window_background_blur = 30,
+	window_background_image = "/Users/albertilagan/.config/wezterm/blob_blue.gif",
+	window_background_image_hsb = {
+		brightness = 0.1,
+		hue = 1,
+		saturation = 1,
+	},
 	set_environment_variables = {
 		TERM = "xterm-256color",
 		LC_ALL = "en_US.UTF-8",

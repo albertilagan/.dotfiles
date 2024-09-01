@@ -131,6 +131,7 @@ thefuck --alias fck | source
 
 function set_openai_key
     set OPENAI_API_KEY (op read "op://Private/OpenRouterOpenAI/password" --account=my)
+    set -Ux OPENAI_API_HOST "https://openrouter.ai/api/v1/chat/completions"
 end
 
 # set -xU KUBECONFIG "/Users/albertilagan/.kube/shoots/kubeconfig-admin-mj57vqlzxh"
