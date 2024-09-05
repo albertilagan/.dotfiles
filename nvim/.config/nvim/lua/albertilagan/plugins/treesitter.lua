@@ -21,6 +21,8 @@ return {
       'css',
       'go',
       'sql',
+      'gotmpl',
+      'helm',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,

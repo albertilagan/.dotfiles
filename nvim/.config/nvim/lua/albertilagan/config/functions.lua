@@ -1,3 +1,14 @@
+vim.filetype.add {
+  extension = {
+    gotmpl = 'gotmpl',
+  },
+  pattern = {
+    ['.*/templates/.*%.tpl'] = 'helm',
+    ['.*/templates/.*%.tmpl'] = 'helm',
+    ['.*/templates/.*%.ya?ml'] = 'helm',
+  },
+}
+
 vim.cmd [[
   command! -nargs=1 SearchFolder lua require('albertilagan.config.functions').search_folder(<f-args>)
   command! DeleteAllButCurrentBuffer lua require('albertilagan.config.functions').delete_all_but_current_buffer()
