@@ -211,3 +211,5 @@ vim.keymap.set('n', '<leader>orc', ':Octo review comments<CR>', { desc = '[O]cto
 vim.keymap.set('n', '<leader>ors', ':Octo review submit<CR>', { desc = '[O]cto [R]eview [S]ubmit' })
 vim.keymap.set('n', '<leader>ord', ':Octo review discard<CR>', { desc = '[O]cto [R]eview [D]iscard' })
 vim.keymap.set('n', '<leader>orq', ':Octo review close<CR>', { desc = '[O]cto [R]eview Close' })
+
+vim.keymap.set('n', '<leader>fn', '<cmd>AerialToggle!<CR>')
