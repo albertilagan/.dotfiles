@@ -13,7 +13,7 @@ alert() {
 
 update() {
 
-  RES=$(lsappinfo -all list | grep slack)
+  RES=$(lsappinfo -all list | grep discord)
 
   if [[ "$RES" == *"label\"=\"\""* ]] || [[ "$RES" == "" ]]; then
     clear
