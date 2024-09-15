@@ -4,8 +4,9 @@
 
 1. Install [nix](https://nixos.org/download/)
 2. Clone [.dotfiles](https://github.com/albertilagan/.dotfiles) to `~/.dotfiles`
-3. Install and activate (skip `step 1`) [nix-darwin (flake)](https://github.com/LnL7/nix-darwin?tab=readme-ov-file#flakes)
+3. Install nix-darwin `nix run nix-darwin -- switch --flake ~/.dotfiles/nix-darwin`
 4. activate nix-darwin `darwin-rebuild switch --flake ~/.dotfiles/nix-darwin`
+5. stow apps, `./install.sh`
 
 ## Additional Setup
 
