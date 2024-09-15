@@ -9,6 +9,6 @@ devenv.local.nix
 # pre-commit
 .pre-commit-config.yaml
 
-tmux/plugins/
+tmux/.config/tmux/plugins
 raycast
 fzf

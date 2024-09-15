@@ -4,6 +4,7 @@ eval (/opt/homebrew/bin/brew shellenv)
 eval (/run/current-system/sw/bin/direnv hook fish)
 starship init fish | source
 zoxide init fish | source
+source "$HOME/.cargo/env.fish"
 
 # source /Users/albertilagan/google-cloud-sdk/path.fish.inc
 
