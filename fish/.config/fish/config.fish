@@ -1,17 +1,16 @@
 set fish_function_path $fish_function_path ~/.config/fish/github/plugin-foreign-env/functions
 
 eval (/opt/homebrew/bin/brew shellenv)
-eval ($HOME/.nix-profile/bin/direnv hook fish)
+eval (/run/current-system/sw/bin/direnv hook fish)
 starship init fish | source
 zoxide init fish | source
 
-source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
-source /Users/albertilagan/google-cloud-sdk/path.fish.inc
+# source /Users/albertilagan/google-cloud-sdk/path.fish.inc
 
 # fenv "[ -f ~/fubectl.source ] && source ~/fubectl.source"
 
 fish_add_path ~/.config/bin
-fish_add_path ~/.nix-profile/bin
+# fish_add_path ~/.nix-profile/bin
 fish_add_path ~/.config/tmux/plugins/t-smart-tmux-session-manager/bin
 fish_add_path ~/.locize-cli/bin
 fish_add_path /opt/homebrew/opt/fzf/bin
@@ -53,6 +52,8 @@ alias gws "source ~/.dotfiles/sesh/.config/sesh/bin/nvim-w.sh"
 # alias ccat "cat"
 alias cat "bat --style=plain"
 alias search "~/.dotfiles/scripts/search.sh"
+alias nixd-reload "darwin-rebuild switch --flake ~/.config/nix-darwin"
+alias nixd-config "nvim ~/.config/nix-darwin/flake.nix"
 
 abbr p "pnpm run (jq -r '.scripts|to_entries[]|((.key))' package.json | fzf-tmux -p --border-label='pnpm run')"
 
@@ -125,12 +126,12 @@ function fzf_compgen_dir
   fd --type d --hidden --follow --exclude .git . $argv
 end
 
-thefuck --alias | source
-thefuck --alias fk | source
-thefuck --alias fck | source
+# thefuck --alias | source
+# thefuck --alias fk | source
+# thefuck --alias fck | source
 
 function set_openai_key
-    set OPENAI_API_KEY (op read "op://Private/OpenRouterOpenAI/password" --account=my)
+    set OPENAI_API_KEY (op read "op://Private/OpenRouterOpenAI/luxor" --account=my)
     set -Ux OPENAI_API_HOST "https://openrouter.ai/api/v1/chat/completions"
 end
 
