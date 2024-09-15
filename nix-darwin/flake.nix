@@ -46,6 +46,7 @@
 	pkgs.yazi
 	pkgs.devenv
 	pkgs.wget
+	pkgs.docker
       ];
       services.nix-daemon.enable = true;
       nix.settings.experimental-features = "nix-command flakes";
@@ -105,6 +106,7 @@
 	"google-cloud-sdk"
 	"raycast"
 	"amie"
+	"postico"
       ];
       homebrew.brews = [
 	"imagemagick"

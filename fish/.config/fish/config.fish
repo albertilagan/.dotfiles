@@ -6,19 +6,14 @@ starship init fish | source
 zoxide init fish | source
 source "$HOME/.cargo/env.fish"
 
-# source /Users/albertilagan/google-cloud-sdk/path.fish.inc
-
-# fenv "[ -f ~/fubectl.source ] && source ~/fubectl.source"
-
-fish_add_path ~/.config/bin
 # fish_add_path ~/.nix-profile/bin
+fish_add_path ~/.config/bin
 fish_add_path ~/.config/tmux/plugins/t-smart-tmux-session-manager/bin
 fish_add_path ~/.locize-cli/bin
 fish_add_path /opt/homebrew/opt/fzf/bin
 
 set -U fish_greeting # disable fish greeting
-set -U fish_key_bindings fish_vi_key_bindings
-# set -U fish_key_bindings fish_default_key_bindings
+set -U fish_key_bindings fish_vi_key_bindings # fish_default_key_bindings
 
 set -Ux EDITOR nvim
 set -Ux BAT_THEME Catppuccin-mocha
@@ -36,6 +31,7 @@ abbr lf lfcd
 abbr vim nvim
 abbr lg lazygit
 abbr v nvim
+alias v nvim
 abbr ip "ifconfig en0 | grep inet | awk '{ print \$2 }'"
 abbr nixf "nix --extra-experimental-features 'nix-command flakes'"
 abbr nix-install "nix profile install --accept-flake-config nixpkgs#"
@@ -71,7 +67,7 @@ alias gs "git status"
 alias gb "~/gsb.sh"
 alias gshow "~/gshow.sh"
 
-abbr core-proxy "cloud_sql_proxy -instances=analog-stage-198105:us-central1:core-replica=tcp:8912"
+abbr core-proxy "cloud-sql-proxy analog-stage-198105:us-central1:core-db-replica -p 8912"
 
 abbr sops "sops --in-place"
 abbr k kubectl
@@ -136,8 +132,8 @@ function set_openai_key
     set -Ux OPENAI_API_HOST "https://openrouter.ai/api/v1/chat/completions"
 end
 
-# set -xU KUBECONFIG "/Users/albertilagan/.kube/shoots/kubeconfig-admin-mj57vqlzxh"
+set -Ux DOCKER_HOST "tcp://10.10.0.12:2375"
+set -Ux KUBECONFIG "/Users/albertilagan/.kube/shoots/demo-cluster-mj57vqlzxh"
 # set -xU KUBECONFIG "$KUBECONFIG:/Users/albertilagan/.kube/shoots/kubeconfig-admin-sparta.yaml"
 # eval (kubectl config view --merge --flatten > ~/.kube/config)
 # set -xU KUBECONFIG "/Users/albertilagan/.kube/config"
-#
