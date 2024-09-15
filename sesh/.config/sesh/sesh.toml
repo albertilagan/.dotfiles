@@ -30,11 +30,6 @@ path = "~/.dotfiles/tmux/.config/tmux"
 startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh tmux.conf"
 
 [[session]]
-name = "sketchybar config"
-path = "~/.dotfiles/sketchybar/.config/sketchybar"
-startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh sketchybarrc"
-
-[[session]]
 name = "deez notes"
 path = "/Users/albertilagan/Library/Mobile Documents/iCloud~md~obsidian/Documents/deez-notes"
 startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh"
@@ -48,16 +43,6 @@ startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh"
 name = "fish config"
 path = "~/.dotfiles/fish/.config/fish"
 startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh config.fish"
-
-[[session]]
-name = "yabai config"
-path = "~/.dotfiles/yabai/.config/yabai"
-startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh yabairc"
-
-[[session]]
-name = "skhd config"
-path = "~/.dotfiles/skhd/.config/skhd"
-startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh skhdrc"
 
 [[session]]
 name = "yazi config"
