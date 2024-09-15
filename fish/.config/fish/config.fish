@@ -52,8 +52,8 @@ alias gws "source ~/.dotfiles/sesh/.config/sesh/bin/nvim-w.sh"
 # alias ccat "cat"
 alias cat "bat --style=plain"
 alias search "~/.dotfiles/scripts/search.sh"
-alias nixd-reload "darwin-rebuild switch --flake ~/.config/nix-darwin"
-alias nixd-config "nvim ~/.config/nix-darwin/flake.nix"
+alias nixd-reload "darwin-rebuild switch --flake ~/.dotfiles/nix-darwin"
+alias nixd-config "nvim ~/.dotfiles/nix-darwin/flake.nix"
 
 abbr p "pnpm run (jq -r '.scripts|to_entries[]|((.key))' package.json | fzf-tmux -p --border-label='pnpm run')"
 
