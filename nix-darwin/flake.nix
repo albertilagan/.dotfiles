@@ -104,6 +104,7 @@
 	"discord"
 	"google-cloud-sdk"
 	"raycast"
+	"amie"
       ];
       homebrew.brews = [
 	"imagemagick"
