@@ -112,6 +112,7 @@
 	"fzf"
 	"cloud-sql-proxy"
 	"bash"
+	"pam-reattach"
       ];
     };
   in
