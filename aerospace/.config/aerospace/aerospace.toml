@@ -75,8 +75,8 @@ inner.horizontal = 10
 inner.vertical =   10
 outer.left =       12
 outer.right =      12
-outer.top = [{ monitor."U28P2G6B"= 48 }, 10]
-outer.bottom =     0
+outer.top = [{ monitor."U28P2G6B"= 10 }, 10]
+outer.bottom = [{ monitor."U28P2G6B"= 10 }, 10]
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes

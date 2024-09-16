@@ -107,6 +107,8 @@
 	"raycast"
 	"amie"
 	"postico"
+	"tableplus"
+	"cleanshot"
       ];
       homebrew.brews = [
 	"imagemagick"
