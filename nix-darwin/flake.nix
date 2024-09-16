@@ -109,6 +109,10 @@
 	"postico"
 	"tableplus"
 	"cleanshot"
+	"qmk-toolbox"
+	"chatgpt"
+	"bartender"
+	"zed"
       ];
       homebrew.brews = [
 	"imagemagick"
@@ -117,6 +121,7 @@
 	"cloud-sql-proxy"
 	"bash"
 	"pam-reattach"
+	"silicon"
       ];
     };
   in
