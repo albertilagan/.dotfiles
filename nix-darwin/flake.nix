@@ -122,6 +122,7 @@
 	"bash"
 	"pam-reattach"
 	"silicon"
+	"watch"
       ];
     };
   in
