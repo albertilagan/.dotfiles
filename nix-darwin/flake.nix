@@ -113,6 +113,7 @@
 	"chatgpt"
 	"bartender"
 	"zed"
+	"key-codes"
       ];
       homebrew.brews = [
 	"imagemagick"
@@ -123,6 +124,7 @@
 	"pam-reattach"
 	"silicon"
 	"watch"
+	"showkey"
       ];
     };
   in

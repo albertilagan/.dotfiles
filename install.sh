@@ -12,6 +12,7 @@ stow tmux
 stow wezterm
 stow yazi
 stow zsh
+stow ghostty
 
 # add fish to valid login shells
 command -v fish | sudo tee -a /etc/shells

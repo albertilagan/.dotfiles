@@ -1,0 +1,49 @@
+theme = catppuccin-mocha
+
+# background = #000000
+background-opacity = 0.90
+background-blur-radius = 20
+
+font-family = VictorMono Nerd Font
+font-size = 16
+
+window-decoration = false
+window-padding-x = 16
+window-padding-y = 10
+
+# nvim bindings
+keybind = cmd+s=text:\x13
+keybind = cmd+p=text:\x10
+keybind = cmd+shift+f=text::SearchFolder\x20
+keybind = cmd+f=text:\x07
+
+# sesh
+keybind = cmd+j=text:\x01T
+keybind = cmd+l=text:\x01L
+
+# tmux 
+keybind = cmd+k=text:\x01s
+keybind = cmd+o=text:\x01o
+keybind = cmd+g=text:\x01g
+keybind = cmd+shift+c=text:\x01C
+keybind = ctrl+tab=text:\x01n
+
+# tmux
+keybind = cmd+e=text:\x01-
+keybind = cmd+shift+e=text:\x01\x7c
+
+# create/close tmux tab/window
+keybind = cmd+t=text:\x01c
+keybind = cmd+w=text:\x01x
+
+# tmux window navigation
+keybind = cmd+one=text:\x01\x31
+keybind = cmd+two=text:\x01\x32
+keybind = cmd+three=text:\x01\x33
+keybind = cmd+four=text:\x01\x34
+keybind = cmd+five=text:\x01\x35
+keybind = cmd+six=text:\x01\x36
+keybind = cmd+seven=text:\x01\x37
+keybind = cmd+eight=text:\x01\x38
+keybind = cmd+nine=text:\x01\x39
+keybind = cmd+zero=text:\x01\x30

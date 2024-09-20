@@ -5,12 +5,15 @@ eval (/run/current-system/sw/bin/direnv hook fish)
 starship init fish | source
 zoxide init fish | source
 source "$HOME/.cargo/env.fish"
+# source "$GHOSTTY_RESOURCES_DIR/shell-integration/fish/vendor_conf.d/ghostty-shell-integration.fish"
+# source "/Applications/Ghostty.app/Contents/Resources/fish/vendor_completions.d/ghostty.fish"
 
 # fish_add_path ~/.nix-profile/bin
 fish_add_path ~/.config/bin
 fish_add_path ~/.config/tmux/plugins/t-smart-tmux-session-manager/bin
 fish_add_path ~/.locize-cli/bin
 fish_add_path /opt/homebrew/opt/fzf/bin
+fish_add_path /Applications/Ghostty.app/Contents/MacOS
 
 set -U fish_greeting # disable fish greeting
 set -U fish_key_bindings fish_vi_key_bindings # fish_default_key_bindings
@@ -132,8 +135,8 @@ function set_openai_key
     set -Ux OPENAI_API_HOST "https://openrouter.ai/api/v1/chat/completions"
 end
 
-set -Ux DOCKER_HOST "tcp://10.10.0.12:2375"
-set -Ux KUBECONFIG "/Users/albertilagan/.kube/shoots/demo-cluster-mj57vqlzxh"
+# set -Ux DOCKER_HOST "tcp://10.10.0.12:2375"
+# set -Ux KUBECONFIG "/Users/albertilagan/.kube/shoots/demo-cluster-mj57vqlzxh"
 # set -xU KUBECONFIG "$KUBECONFIG:/Users/albertilagan/.kube/shoots/kubeconfig-admin-sparta.yaml"
 # eval (kubectl config view --merge --flatten > ~/.kube/config)
-# set -xU KUBECONFIG "/Users/albertilagan/.kube/config"
+set -xU KUBECONFIG "/Users/albertilagan/.kube/config"
