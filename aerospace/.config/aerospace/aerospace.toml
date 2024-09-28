@@ -112,6 +112,8 @@ cmd-ctrl-l = 'exec-and-forget aerospace list-workspaces --monitor all --empty no
 alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 
+alt-w = 'close --quit-if-last-window'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-h = 'focus left'
 alt-j = 'focus down'
