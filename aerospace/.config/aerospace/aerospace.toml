@@ -75,7 +75,7 @@ inner.horizontal = 0
 inner.vertical =   0
 outer.left =       0
 outer.right =      0
-outer.top = [{ monitor."U28P2G6B"= 5 }, 0]
+outer.top = [{ monitor."U28P2G6B"= 0 }, 0]
 outer.bottom = [{ monitor."U28P2G6B"= 0 }, 0]
 
 # 'main' binding mode declaration
@@ -181,6 +181,10 @@ alt-shift-l = ['join-with right', 'mode main']
 
 [[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'
+run = "move-node-to-workspace 1"
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
 run = "move-node-to-workspace 1"
 
 [[on-window-detected]]

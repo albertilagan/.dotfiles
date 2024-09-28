@@ -34,3 +34,9 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = { 'tmux.conf' },
   command = '!tmux source ~/.config/tmux/tmux.conf',
 })
+
+vim.api.nvim_create_autocmd('bufwritepost', {
+  pattern = { '*/ghostty/config' },
+  command = '!osascript -e \'tell application "System Events" to keystroke "<" using {command down, shift down}\'',
+  -- command = '!ghostty +reload-config ~/.config/ghostty/config',
+})

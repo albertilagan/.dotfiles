@@ -1,3 +1,4 @@
-return {
-  'ggandor/leap.nvim',
-}
+return {}
+-- return {
+--   'ggandor/leap.nvim',
+-- }

@@ -114,6 +114,7 @@
 	"bartender"
 	"zed"
 	"key-codes"
+	"topnotch"
       ];
       homebrew.brews = [
 	"imagemagick"
@@ -125,6 +126,7 @@
 	"silicon"
 	"watch"
 	"showkey"
+	"xdotool"
       ];
     };
   in

@@ -17,6 +17,12 @@ keybind = cmd+p=text:\x10
 keybind = cmd+shift+f=text::SearchFolder\x20
 keybind = cmd+f=text:\x07
 
+# vim-like bindings
+keybind = opt+h=goto_split:previous
+keybind = opt+l=goto_split:next
+keybind = opt+j=goto_split:bottom
+keybind = opt+k=goto_split:top
+
 # sesh
 keybind = cmd+j=text:\x01T
 keybind = cmd+l=text:\x01L
@@ -46,4 +52,3 @@ keybind = cmd+six=text:\x01\x36
 keybind = cmd+seven=text:\x01\x37
 keybind = cmd+eight=text:\x01\x38
 keybind = cmd+nine=text:\x01\x39
-keybind = cmd+zero=text:\x01\x30

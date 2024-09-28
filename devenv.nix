@@ -10,4 +10,3 @@
 
   languages.go.enable = true;
 }
-

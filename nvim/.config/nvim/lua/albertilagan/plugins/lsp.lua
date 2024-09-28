@@ -171,7 +171,7 @@ return {
       },
       pyright = {},
       rust_analyzer = {},
-      tsserver = {},
+      ts_ls = {},
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       --
       -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -222,9 +222,9 @@ return {
       'emmet_ls',
       'buf',
       'buf-language-server',
+      'ts_ls',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
     require('mason-lspconfig').setup {
       handlers = {
         function(server_name)
@@ -284,8 +284,8 @@ return {
         -- Scroll the documentation window [b]ack / [f]orward
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(), -- show completion suggestions
-        ['<C-e>'] = cmp.mapping.abort(), -- close completion window
+        ['<C-Space>'] = cmp.mapping.complete(),            -- show completion suggestions
+        ['<C-e>'] = cmp.mapping.abort(),                   -- close completion window
         ['<CR>'] = cmp.mapping.confirm { select = false }, -- confirm completion
 
         -- Select the [n]ext item
@@ -318,7 +318,7 @@ return {
       sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip', keyword_length = 2 },
-        { name = 'buffer', keyword_length = 3 },
+        { name = 'buffer',  keyword_length = 3 },
         { name = 'path' },
       },
     }
