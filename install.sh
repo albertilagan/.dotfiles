@@ -21,3 +21,6 @@ command -v fish | sudo tee -a /etc/shells
 sudo chsh -s "$(command -v fish)" "${USER}"
 
 bat cache --build
+
+# protols lsp
+nix-shell -p cargo -p libiconv --command "cargo install protols"
