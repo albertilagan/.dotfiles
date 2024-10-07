@@ -108,6 +108,7 @@ return {
     pcall(require('telescope').load_extension, 'git_worktree')
     pcall(require('telescope').load_extension 'emoji')
     pcall(require('telescope').load_extension 'noice')
+    pcall(require('telescope').load_extension 'rest')
 
     -- See `:help telescope.builtin`
     local builtin = require 'telescope.builtin'
@@ -126,6 +127,9 @@ return {
     vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
     vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
     vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+    vim.keymap.set('n', '<leader>rv', function()
+      require('telescope').extensions.rest.select_env()
+    end, { desc = 'Rest [E]nvironment' })
 
     -- Slightly advanced example of overriding default behavior and theme
     vim.keymap.set('n', '<leader>/', function()

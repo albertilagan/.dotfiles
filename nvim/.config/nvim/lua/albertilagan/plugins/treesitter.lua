@@ -23,6 +23,7 @@ return {
       'sql',
       'gotmpl',
       'helm',
+      'http',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,

@@ -4,7 +4,6 @@ eval (/opt/homebrew/bin/brew shellenv)
 eval (/run/current-system/sw/bin/direnv hook fish)
 starship init fish | source
 zoxide init fish | source
-source "$HOME/.cargo/env.fish"
 # source "$GHOSTTY_RESOURCES_DIR/shell-integration/fish/vendor_conf.d/ghostty-shell-integration.fish"
 # source "/Applications/Ghostty.app/Contents/Resources/fish/vendor_completions.d/ghostty.fish"
 

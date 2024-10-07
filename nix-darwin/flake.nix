@@ -47,6 +47,9 @@
 	pkgs.devenv
 	pkgs.wget
 	pkgs.docker
+	pkgs.gh
+	pkgs.lua51Packages.lua
+	pkgs.luajitPackages.luarocks_bootstrap
       ];
       services.nix-daemon.enable = true;
       nix.settings.experimental-features = "nix-command flakes";
@@ -115,6 +118,7 @@
 	"zed"
 	"key-codes"
 	"topnotch"
+	"visual-studio-code"
       ];
       homebrew.brews = [
 	"imagemagick"
@@ -127,6 +131,7 @@
 	"watch"
 	"showkey"
 	"xdotool"
+	"luarocks"
       ];
     };
   in
