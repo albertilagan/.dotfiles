@@ -50,6 +50,8 @@
 	pkgs.gh
 	pkgs.lua51Packages.lua
 	pkgs.luajitPackages.luarocks_bootstrap
+	pkgs.nixd
+	pkgs.nixfmt-rfc-style
       ];
       services.nix-daemon.enable = true;
       nix.settings.experimental-features = "nix-command flakes";

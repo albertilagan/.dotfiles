@@ -224,7 +224,17 @@ return {
       'buf-language-server',
       'ts_ls',
     })
-    require('lspconfig').protols.setup {}
+    local nvim_lsp = require 'lspconfig'
+    nvim_lsp.protols.setup {}
+    nvim_lsp.nixd.setup {
+      settings = {
+        nixd = {
+          formatting = {
+            command = { 'nixfmt' },
+          },
+        },
+      },
+    }
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
     require('mason-lspconfig').setup {
       handlers = {
