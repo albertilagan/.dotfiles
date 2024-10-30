@@ -225,7 +225,7 @@ return {
       'ts_ls',
     })
     local nvim_lsp = require 'lspconfig'
-    nvim_lsp.protols.setup {}
+    -- nvim_lsp.protols.setup {}
     nvim_lsp.nixd.setup {
       settings = {
         nixd = {
@@ -236,6 +236,25 @@ return {
       },
     }
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
+    -- Specify how the border looks like
+    local border = {
+      { '╭', 'FloatBorder' },
+      { '─', 'FloatBorder' },
+      { '╮', 'FloatBorder' },
+      { '│', 'FloatBorder' },
+      { '╯', 'FloatBorder' },
+      { '─', 'FloatBorder' },
+      { '╰', 'FloatBorder' },
+      { '│', 'FloatBorder' },
+    }
+
+    -- Add the border on hover and on signature help popup window
+    local handlers = {
+      ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+      ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+    }
+
     require('mason-lspconfig').setup {
       handlers = {
         function(server_name)
@@ -244,6 +263,7 @@ return {
           -- by the server configuration above. Useful when disabling
           -- certain features of an LSP (for example, turning off formatting for tsserver)
           server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+          server.handlers = handlers
           require('lspconfig')[server_name].setup(server)
         end,
       },
@@ -284,6 +304,11 @@ return {
         end,
       },
       completion = { completeopt = 'menu,menuone,noinsert' },
+
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      },
 
       -- For an understanding of why these mappings were
       -- chosen, you will need to read `:help ins-completion`
