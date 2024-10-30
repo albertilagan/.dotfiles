@@ -35,8 +35,6 @@ abbr lg lazygit
 abbr v nvim
 alias v nvim
 abbr ip "ifconfig en0 | grep inet | awk '{ print \$2 }'"
-abbr nixf "nix --extra-experimental-features 'nix-command flakes'"
-abbr nix-install "nix profile install --accept-flake-config nixpkgs#"
 
 # abbr l "lsd --group-dirs first -A"
 # abbr ls "lsd --group-dirs first -A"
@@ -45,7 +43,7 @@ abbr nix-install "nix profile install --accept-flake-config nixpkgs#"
 alias l "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --group-directories-first"
 alias ls "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --group-directories-first"
 alias ll "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --group-directories-first"
-alias cd "z"
+# alias cd "z"
 alias gws "source ~/.dotfiles/sesh/.config/sesh/bin/nvim-w.sh"
 
 # alias ccat "cat"
@@ -65,6 +63,7 @@ abbr gco "git checkout"
 abbr gcb "git checkout -b"
 abbr gw "git worktree"
 abbr gwa "git worktree add"
+alias gcopy "git log -1 --pretty=format:\"%H\" | pbcopy ."
 alias gs "git status"
 alias gb "~/gsb.sh"
 alias gshow "~/gshow.sh"
