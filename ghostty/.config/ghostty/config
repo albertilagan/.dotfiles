@@ -1,8 +1,7 @@
 theme = catppuccin-mocha
 
-
 # background = #000000
-# background-opacity = 0.90
+background-opacity = 0.95
 # background-blur-radius = 20
 
 font-family = VictorMono Nerd Font
@@ -18,7 +17,7 @@ keybind = global:cmd+s=toggle_quick_terminal
 # keybind = cmd+s=text:\x13
 keybind = cmd+p=text:\x10
 keybind = cmd+shift+f=text::SearchFolder\x20
-keybind = cmd+f=text:\x07
+# keybind = cmd+f=text:\x07
 
 # vim-like bindings
 keybind = opt+h=goto_split:previous
