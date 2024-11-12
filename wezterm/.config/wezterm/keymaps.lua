@@ -12,7 +12,7 @@ return {
 	-- k.cmd_key("K", act.SendKey({ mods = "CTRL", key = "k" })),
 	-- k.cmd_key("K", act.SendKey({ mods = "CTRL", key = "k" })),
 	-- k.cmd_key("L", act.SendKey({ mods = "CTRL", key = "l" })),
-	k.cmd_key("f", act.SendKey({ mods = "CTRL", key = "g" })),
+	-- k.cmd_key("f", act.SendKey({ mods = "CTRL", key = "g" })),
 	k.cmd_key("F", k.multiple_actions(":SearchFolder ", false)),
 	k.cmd_key("p", act.SendKey({ mods = "CTRL", key = "p" })),
 	-- k.cmd_key("q", k.multiple_actions(":qa!")),
