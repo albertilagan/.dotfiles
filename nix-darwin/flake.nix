@@ -60,7 +60,13 @@
             pkgs.nixfmt-rfc-style
             pkgs.ffmpeg
             pkgs.minikube
+            pkgs.ngrok
           ];
+          nixpkgs.config = {
+            allowUnfree = true;
+            allowBroken = false;
+            allowUnsupportedSystem = false;
+          };
           services.nix-daemon.enable = true;
           nix.settings.experimental-features = "nix-command flakes";
           nix.settings.trusted-users = [
@@ -132,6 +138,7 @@
             "topnotch"
             "visual-studio-code"
             "whatsapp"
+            "orbstack"
           ];
           homebrew.brews = [
             "imagemagick"
