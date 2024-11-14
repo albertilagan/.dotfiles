@@ -1,0 +1,6 @@
+session_name: default
+windows:
+  - window_name: nvim
+    focus: true
+    panes:
+      - nvim

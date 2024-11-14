@@ -1,0 +1,9 @@
+session_name: project-nimbus
+windows:
+  - window_name: nvim
+    focus: true
+    panes:
+      - nvim
+  - window_name: devenv
+    panes:
+      - dev up --simple

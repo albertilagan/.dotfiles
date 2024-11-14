@@ -61,6 +61,7 @@
             pkgs.ffmpeg
             pkgs.minikube
             pkgs.ngrok
+            pkgs.tmuxp
           ];
           nixpkgs.config = {
             allowUnfree = true;

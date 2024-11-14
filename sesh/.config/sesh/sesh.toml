@@ -1,28 +1,29 @@
 # import = ["~/c/sesh/sesh.toml"]
 
 [[session]]
-name = "dotfiles 🏡"
+name = "dotfiles"
 path = "~/.dotfiles"
+startup_command = "~/.config/sesh/bin/tmuxp.sh dotfiles"
 
 [[session]]
-name = "luxor-apps 💻"
+name = "luxor-apps"
 path = "~/development/luxor/luxor-apps"
-startup_command = "~/.dotfiles/sesh/.config/sesh/bin/devenv.sh"
+startup_command = "~/.config/sesh/bin/tmuxp.sh luxor-apps"
 
 [[session]]
-name = "project-nimbus 💻"
+name = "project-nimbus"
 path = "~/development/luxor/project-nimbus"
-startup_command = "~/.dotfiles/sesh/.config/sesh/bin/devenv.sh"
+startup_command = "~/.config/sesh/bin/tmuxp.sh project-nimbus"
 
 [[session]]
-name = "docs 📄"
+name = "docs"
 path = "~/development/luxor/docs"
-startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh"
+startup_command = "~/.config/sesh/bin/tmuxp.sh docs"
 
 [[session]]
-name = "schema 💻"
+name = "schema"
 path = "~/development/luxor/schema"
-startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh"
+startup_command = "~/.config/sesh/bin/tmuxp.sh schema"
 
 [[session]]
 name = "tmux config"
@@ -63,3 +64,6 @@ startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh sesh.toml"
 name = "Downloads 📥"
 path = "~/Downloads"
 startup_command = "yazi"
+
+[default_session]
+startup_command = "nvim"
