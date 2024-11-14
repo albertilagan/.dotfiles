@@ -17,6 +17,7 @@ SETUVAR --export OPENAI_API_HOST:https\x3a//openrouter\x2eai/api/v1/chat/complet
 SETUVAR --export OPENAI_API_KEY:sk\x2dor\x2dv1\x2d5f5c99370b735699806b3d50eab881f4f5045d12dc6cebedfd5cd9e78a9eb6c5
 SETUVAR --export SHOOTS:/Users/albertilagan/\x2ekube/shoots/kubeconfig\x2dadmin\x2dmj57vqlzxh\x3a/Users/albertilagan/\x2ekube/shoots/kubeconfig\x2dadmin\x2dsparta\x2eyaml\x20kubectl\x20config\x20view\x20\x2d\x2dmerge\x20\x2d\x2dflatten\x20\x3e\x20\x7e/\x2ekube/config
 SETUVAR --export SOPS_AGE_KEY_FILE:/Users/albertilagan/\x2esops/medcheck\x2dgatekeeper\x2etxt
+SETUVAR --export --path TMUXIFIER_LAYOUT_PATH:/Users/albertilagan/\x2econfig/tmux/layouts
 SETUVAR --export T_SESSION_NAME_INCLUDE_PARENT:true
 SETUVAR --export VISUAL:nvim
 SETUVAR __fish_initialized:3400
@@ -55,7 +56,7 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/Applications/Ghostty\x2eapp/Contents/MacOS\x1e/usr/local/go/bin\x1e/Users/albertilagan/\x2elocize\x2dcli/bin\x1e/Users/albertilagan/\x2econfig/tmux/plugins/t\x2dsmart\x2dtmux\x2dsession\x2dmanager/bin\x1e/nix/var/nix/profiles/default/bin\x1e/Users/albertilagan/\x2enix\x2dprofile/bin\x1e/opt/homebrew/opt/fzf/bin
+SETUVAR fish_user_paths:/Users/albertilagan/\x2econfig/tmux/plugins/tmuxifier/bin\x1e/Applications/Ghostty\x2eapp/Contents/MacOS\x1e/usr/local/go/bin\x1e/Users/albertilagan/\x2elocize\x2dcli/bin\x1e/Users/albertilagan/\x2econfig/tmux/plugins/t\x2dsmart\x2dtmux\x2dsession\x2dmanager/bin\x1e/nix/var/nix/profiles/default/bin\x1e/Users/albertilagan/\x2enix\x2dprofile/bin\x1e/opt/homebrew/opt/fzf/bin
 SETUVAR sponge_allow_previously_successful:true
 SETUVAR sponge_delay:2
 SETUVAR sponge_filters:sponge_filter_failed\x1esponge_filter_matched
