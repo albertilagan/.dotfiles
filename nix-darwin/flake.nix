@@ -62,6 +62,8 @@
             pkgs.minikube
             pkgs.ngrok
             pkgs.tmuxp
+            pkgs.k3d
+            pkgs.postgresql
           ];
           nixpkgs.config = {
             allowUnfree = true;

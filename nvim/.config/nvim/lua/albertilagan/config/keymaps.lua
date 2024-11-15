@@ -15,6 +15,9 @@ vim.keymap.set('v', 'd', '"_d', { silent = true })
 vim.keymap.set('n', 'x', '"_x')
 
 -- generate codesnap on selected text (visual mode)
+vim.keymap.set('v', '<leader>cc', ":'<,'>CodeSnap<CR>", { silent = true, desc = 'CodeSnap to clipboard' })
+vim.keymap.set('v', '<leader>cs', ":'<,'>CodeSnapSave<CR>", { silent = true, desc = 'CodeSnap to screenshot folder' })
+
 vim.keymap.set(
   'v',
   '<leader>ss',
