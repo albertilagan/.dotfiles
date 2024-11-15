@@ -9,6 +9,7 @@ devenv.local.nix
 # pre-commit
 .pre-commit-config.yaml
 
+fish/.config/fish/keys.fish
 tmux/.config/tmux/plugins
 raycast
 fzf

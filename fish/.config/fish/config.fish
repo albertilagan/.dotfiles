@@ -132,8 +132,8 @@ end
 # thefuck --alias fck | source
 
 function set_openai_key
-    set OPENAI_API_KEY (op read "op://Private/OpenRouterOpenAI/luxor" --account=my)
-    set -Ux OPENAI_API_HOST "https://openrouter.ai/api/v1/chat/completions"
+    set OPENAI_API_KEY (op read "op://Private/OpenRouterOpenAI/password" --account=my)
+    set OPENROUTER_API_KEY (op read "op://Private/OpenRouterOpenAI/luxor" --account=my)
 end
 
 # set -Ux DOCKER_HOST "tcp://10.10.0.12:2375"
@@ -143,3 +143,5 @@ end
 set -xU KUBECONFIG "/Users/albertilagan/.kube/config"
 
 set -x EDITOR nvim
+
+source ~/.config/fish/keys.fish
