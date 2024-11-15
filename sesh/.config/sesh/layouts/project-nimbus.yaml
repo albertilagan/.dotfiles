@@ -6,4 +6,4 @@ windows:
       - nvim
   - window_name: devenv
     panes:
-      - dev up --simple
+      - dev up -D && dev start engine

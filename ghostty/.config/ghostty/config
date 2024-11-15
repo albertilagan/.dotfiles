@@ -31,6 +31,7 @@ keybind = cmd+l=text:\x01L
 
 # tmux 
 keybind = cmd+k=text:\x01s
+keybind = cmd+b=text:\x01B
 keybind = cmd+o=text:\x01o
 keybind = cmd+g=text:\x01g
 keybind = cmd+shift+c=text:\x01C
