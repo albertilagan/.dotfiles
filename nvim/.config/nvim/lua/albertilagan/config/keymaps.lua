@@ -40,7 +40,7 @@ end, { desc = 'Open parent [d]irectory' })
 -- buffer
 -- vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = '[d]elete current buffer' })
 -- vim.keymap.set('n', '<leader>bD', ':bd!<CR>', { desc = 'Force [D]elete current buffer' })
-vim.keymap.set('n', '<leader>bd', ':CloseBuffer<CR>', { desc = '[d]elete current buffer' })
+vim.keymap.set('n', '<leader>bd', ':bnext | bd#<CR>', { desc = '[d]elete current buffer' })
 vim.keymap.set('n', '<leader>bD', ':ForceCloseBuffer!<CR>', { desc = 'Force [D]elete current buffer' })
 vim.keymap.set('n', '<leader>bb', '<c-^>', { desc = 'Go to previous [b] buffer' })
 vim.keymap.set('n', '<leader>bP', ':DeleteAllButCurrentBuffer<CR>', { desc = 'Delete all buffer' })
