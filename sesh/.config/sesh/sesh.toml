@@ -65,5 +65,5 @@ name = "Downloads 📥"
 path = "~/Downloads"
 startup_command = "yazi"
 
-[default_session]
-startup_command = "nvim"
+# [default_session]
+# startup_command = "nvim"
