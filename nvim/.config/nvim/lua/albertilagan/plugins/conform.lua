@@ -21,6 +21,7 @@ return {
         lua = { 'stylua' },
         python = { 'isort', 'black' },
         nix = { 'nixpkgs_fmt' },
+        proto = { 'buf' },
       },
       format_on_save = {
         lsp_fallback = true,
