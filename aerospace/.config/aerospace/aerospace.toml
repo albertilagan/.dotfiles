@@ -103,7 +103,7 @@ outer.bottom = [{ monitor."U28P2G6B"= 0 }, 0]
 
 # You can uncomment this line to open up terminal with alt + enter shortcut
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-# alt-enter = 'exec-and-forget open -a Ghostty'
+alt-g = 'exec-and-forget open -a Ghostty'
 
 cmd-h = [] # Disable "hide application"
 cmd-alt-h = [] # Disable "hide others"
@@ -208,6 +208,14 @@ run = "move-node-to-workspace 3"
 [[on-window-detected]]
 if.app-id = 'so.amie.electron-app'
 run = "move-node-to-workspace 4"
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'telegram'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'finder'
+run = 'layout floating'
 
 # [[on-window-detected]]
 # if.app-id = 'com.1password.1password'
