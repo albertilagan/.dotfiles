@@ -8,6 +8,7 @@ font-family = ZedMono Nerd Font
 font-size = 16
 
 window-decoration = false
+macos-titlebar-style = hidden
 window-padding-x = 16
 window-padding-y = 10
 
