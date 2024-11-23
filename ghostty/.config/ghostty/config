@@ -8,6 +8,7 @@ font-family = ZedMono Nerd Font
 font-size = 16
 
 window-decoration = false
+mouse-hide-while-typing = true
 macos-titlebar-style = hidden
 window-padding-x = 16
 window-padding-y = 10
@@ -20,7 +21,8 @@ keybind = cmd+p=text:\x10
 keybind = cmd+shift+f=text::SearchFolder\x20
 # keybind = cmd+f=text:\x07
 
-# vim-like bindings
+# vim-like bindings, not working, conflict with aerospace atm,
+# not using anyway right now coz I use tmux split
 keybind = opt+h=goto_split:previous
 keybind = opt+l=goto_split:next
 keybind = opt+j=goto_split:bottom
@@ -38,7 +40,7 @@ keybind = cmd+g=text:\x01g
 keybind = cmd+shift+c=text:\x01C
 keybind = ctrl+tab=text:\x01n
 
-# tmux
+# tmux split
 keybind = cmd+e=text:\x01-
 keybind = cmd+shift+e=text:\x01\x7c
 
@@ -46,7 +48,7 @@ keybind = cmd+shift+e=text:\x01\x7c
 keybind = cmd+t=text:\x01c
 keybind = cmd+w=text:\x01x
 
-# tmux window navigation
+# tmux window navigation, <prefix> + <number>
 keybind = cmd+one=text:\x01\x31
 keybind = cmd+two=text:\x01\x32
 keybind = cmd+three=text:\x01\x33
