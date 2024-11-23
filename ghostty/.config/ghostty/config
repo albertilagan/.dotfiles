@@ -12,10 +12,10 @@ macos-titlebar-style = hidden
 window-padding-x = 16
 window-padding-y = 10
 
-keybind = global:cmd+s=toggle_quick_terminal
+keybind = global:cmd+/=toggle_quick_terminal
 
 # nvim bindings
-# keybind = cmd+s=text:\x13
+keybind = cmd+s=text:\x13
 keybind = cmd+p=text:\x10
 keybind = cmd+shift+f=text::SearchFolder\x20
 # keybind = cmd+f=text:\x07
