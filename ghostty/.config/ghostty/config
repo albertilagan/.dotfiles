@@ -3,6 +3,7 @@ theme = catppuccin-mocha
 # background = #000000
 background-opacity = 0.95
 # background-blur-radius = 20
+macos-window-shadow = false
 
 font-family = ZedMono Nerd Font
 font-size = 16
@@ -13,7 +14,7 @@ macos-titlebar-style = hidden
 window-padding-x = 16
 window-padding-y = 10
 
-keybind = global:cmd+/=toggle_quick_terminal
+keybind = global:cmd+slash=toggle_quick_terminal
 
 # nvim bindings
 keybind = cmd+s=text:\x13
