@@ -223,6 +223,7 @@ return {
       'buf',
       'buf-language-server',
       'ts_ls',
+      'eslint-lsp',
     })
     local nvim_lsp = require 'lspconfig'
     -- nvim_lsp.protols.setup {}
