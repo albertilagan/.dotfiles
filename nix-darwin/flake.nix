@@ -142,6 +142,7 @@
             "visual-studio-code"
             "whatsapp"
             "orbstack"
+            "linear-linear"
           ];
           homebrew.brews = [
             "imagemagick"
