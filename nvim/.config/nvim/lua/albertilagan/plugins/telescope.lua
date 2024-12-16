@@ -119,19 +119,19 @@ return {
     end, { desc = '[S]earch [K]eymaps' })
     vim.keymap.set('n', '<leader>sf', '<cmd>Telescope git_files show_untracked=true<cr>', { desc = '[S]earch [F]iles' })
     -- vim.keymap.set('n', '<C-p>', '<cmd>Telescope git_files show_untracked=true<cr>', { desc = '[S]earch [F]iles' })
-    -- vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+    vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
     vim.keymap.set('n', '<C-p>', function()
       require('telescope').extensions.smart_open.smart_open {
         cwd_only = true,
         -- filename_first = false,
       }
     end, { noremap = true, silent = true })
-    vim.keymap.set('n', '<leader><leader>', function()
-      require('telescope').extensions.smart_open.smart_open {
-        cwd_only = true,
-        -- filename_first = false,
-      }
-    end, { noremap = true, silent = true })
+    -- vim.keymap.set('n', '<leader><leader>', function()
+    --   require('telescope').extensions.smart_open.smart_open {
+    --     cwd_only = true,
+    --     -- filename_first = false,
+    --   }
+    -- end, { noremap = true, silent = true })
     vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
     vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
     vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })

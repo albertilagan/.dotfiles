@@ -5,5 +5,3 @@ windows:
     panes:
       - nvim
   - window_name: devenv
-    panes:
-      - dev up -D && dev start engine
