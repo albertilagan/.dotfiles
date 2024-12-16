@@ -17,6 +17,7 @@ set -U fish_key_bindings fish_vi_key_bindings # fish_default_key_bindings
 set -x BAT_THEME Catppuccin-mocha
 set -x VISUAL nvim
 set -x EDITOR nvim
+set -x CONFIG_DIR "$HOME/.config/lazygit"
 
 source ~/.config/fish/keys.fish
 source ~/.config/fish/fzf.fish
