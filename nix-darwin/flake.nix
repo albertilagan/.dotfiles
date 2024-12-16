@@ -48,7 +48,6 @@
             pkgs.eza
             pkgs.delta
             pkgs.kubectl
-            pkgs.kubectx
             pkgs.yazi
             pkgs.devenv
             pkgs.wget
@@ -64,6 +63,8 @@
             pkgs.tmuxp
             pkgs.k3d
             pkgs.postgresql
+            pkgs.ansible
+            pkgs.kubeone
           ];
           nixpkgs.config = {
             allowUnfree = true;
@@ -156,6 +157,8 @@
             "showkey"
             "xdotool"
             "luarocks"
+            "kubectx"
+            "hashicorp/tap/terraform"
           ];
         };
     in
