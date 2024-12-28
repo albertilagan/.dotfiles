@@ -1,11 +1,11 @@
 theme = catppuccin-mocha
 
-font-family = ZedMono Nerd Font
+font-family = VictorMono Nerd Font
 font-size = 16
-# background = #000000
+background = #181926
 # background-opacity = 0.95
 # background-blur-radius = 20
-# macos-window-shadow = false
+macos-window-shadow = false
 window-decoration = false
 mouse-hide-while-typing = true
 macos-titlebar-style = hidden
