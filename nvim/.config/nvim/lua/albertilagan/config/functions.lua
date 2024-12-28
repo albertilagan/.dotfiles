@@ -15,6 +15,7 @@ vim.cmd [[
   command! CloseBuffer lua require('albertilagan.config.functions').close_buffer()
   command! ForceCloseBuffer lua require('albertilagan.config.functions').force_close_buffer()
   command! ChangeWorktree lua require('albertilagan.config.functions').change_worktree()
+  command! CopyBuffer let @+ = expand('%')
 ]]
 
 local M = {}
