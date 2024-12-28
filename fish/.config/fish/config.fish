@@ -5,6 +5,7 @@ eval (/run/current-system/sw/bin/direnv hook fish)
 
 starship init fish | source
 zoxide init fish | source
+tug completion fish | source
 
 # fish_add_path ~/.nix-profile/bin
 fish_add_path ~/.config/bin
@@ -24,3 +25,4 @@ source ~/.config/fish/fzf.fish
 source ~/.config/fish/git.fish
 source ~/.config/fish/misc.fish
 source ~/.config/fish/kubernetes.fish
+# source ~/.config/fish/carapace.fish

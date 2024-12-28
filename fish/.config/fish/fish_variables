@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export CARAPACE_BRIDGES:zsh\x2cfish\x2cbash\x2cinshellisense
 SETUVAR --export FZF_ALT_C_COMMAND:fd\x20\x2d\x2dtype\x20d\x20\x2du\x20\x2d\x2dstrip\x2dcwd\x2dprefix\x20\x2d\x2dexclude\x20\x2egit
 SETUVAR --export FZF_ALT_C_OPTS:\x2d\x2dpreview\x20\x27eza\x20\x2d\x2dtree\x20\x2d\x2dcolor\x3dalways\x20\x7b\x7d\x20\x7c\x20head\x20\x2d200\x27
 SETUVAR --export FZF_CTRL_R_OPTS:\x2d\x2dborder\x2dlabel\x3d\x27\x20history\x20\x27\x20\x2d\x2dprompt\x3d\x27\uea82\x20\x20\x27
