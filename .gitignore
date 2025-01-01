@@ -13,3 +13,4 @@ fish/.config/fish/keys.fish
 tmux/.config/tmux/plugins
 raycast
 fzf
+lazygit/.config/lazygit/state.yml
