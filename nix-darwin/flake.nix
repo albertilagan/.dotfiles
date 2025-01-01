@@ -144,6 +144,7 @@
             "whatsapp"
             "orbstack"
             "linear-linear"
+            "jordanbaird-ice"
           ];
           homebrew.brews = [
             "imagemagick"
