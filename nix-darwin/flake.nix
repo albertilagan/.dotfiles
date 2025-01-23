@@ -145,6 +145,10 @@
             "orbstack"
             "linear-linear"
             "jordanbaird-ice"
+            "hammerspoon"
+            "nordvpn"
+            "firefox"
+            "figma"
           ];
           homebrew.brews = [
             "imagemagick"
