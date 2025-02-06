@@ -64,7 +64,7 @@
             pkgs.k3d
             pkgs.postgresql
             pkgs.ansible
-            pkgs.kubeone
+            pkgs.gcrane
           ];
           nixpkgs.config = {
             allowUnfree = true;
@@ -149,6 +149,8 @@
             "nordvpn"
             "firefox"
             "figma"
+            "lens"
+            "ghostty"
           ];
           homebrew.brews = [
             "imagemagick"
@@ -164,6 +166,8 @@
             "luarocks"
             "kubectx"
             "hashicorp/tap/terraform"
+            "kubeone"
+            "kubie"
           ];
         };
     in
