@@ -10,6 +10,7 @@ return {
         endpoint = 'https://openrouter.ai/api/v1/chat/completions', -- The full endpoint of the provider
         -- model = 'anthropic/claude-3.5-sonnet', -- The model name to use with this provider
         model = 'openai/chatgpt-4o-latest', -- The model name to use with this provider
+        -- model = 'openai/o3-mini', -- The model name to use with this provider
         api_key_name = 'OPENROUTER_API_KEY', -- The name of the environment variable that contains the API key
         -- --- This function below will be used to parse in cURL arguments.
         -- --- It takes in the provider options as the first argument, followed by code_opts retrieved from given buffer.
