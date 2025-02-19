@@ -154,7 +154,7 @@
           ];
           homebrew.brews = [
             "imagemagick"
-            "joshmedeski/sesh/sesh"
+            "sesh"
             "fzf"
             "cloud-sql-proxy"
             "bash"
