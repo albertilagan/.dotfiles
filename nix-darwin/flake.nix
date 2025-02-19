@@ -76,6 +76,9 @@
             "root"
             "albert"
           ];
+          nix.settings.trusted-substituters = [
+            "https://devenv.cachix.org"
+          ];
           # programs.zsh.enable = true;  # default shell on catalina
           programs.fish.enable = true;
           nixpkgs.hostPlatform = "aarch64-darwin";
