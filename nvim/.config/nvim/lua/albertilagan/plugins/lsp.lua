@@ -221,7 +221,6 @@ return {
       'graphql',
       'emmet_ls',
       'buf',
-      'buf-language-server',
       'ts_ls',
       'eslint-lsp',
     })

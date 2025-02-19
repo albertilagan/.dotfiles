@@ -1,8 +1,10 @@
+# theme = catppuccin-latte
+# background = #EFF1F5
 theme = catppuccin-mocha
+background = #1E1E2E
 
 font-family = VictorMono Nerd Font
 font-size = 16
-background = #090B1D
 # background-opacity = 0.95
 # background-blur-radius = 20
 macos-window-shadow = false
