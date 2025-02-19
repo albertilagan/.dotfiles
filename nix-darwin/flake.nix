@@ -72,6 +72,7 @@
             allowUnsupportedSystem = false;
           };
           services.nix-daemon.enable = true;
+          nix.enable = false
           nix.settings.experimental-features = "nix-command flakes";
           nix.settings.trusted-users = [
             "root"
