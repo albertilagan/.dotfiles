@@ -11,7 +11,7 @@ stow starship
 stow tmux
 stow wezterm
 stow yazi
-stow zsh
+# stow zsh
 stow ghostty
 
 # add fish to valid login shells

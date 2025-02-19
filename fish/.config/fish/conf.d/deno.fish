@@ -1,1 +1,1 @@
-source "/Users/albertilagan/.deno/env.fish"
+# source "/Users/albert/.deno/env.fish"

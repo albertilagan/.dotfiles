@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.url = "github:LnL7/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -71,19 +71,17 @@
             allowBroken = false;
             allowUnsupportedSystem = false;
           };
-          services.nix-daemon.enable = true;
-          nix.enable = false
           nix.settings.experimental-features = "nix-command flakes";
           nix.settings.trusted-users = [
             "root"
-            "albertilagan"
+            "albert"
           ];
           # programs.zsh.enable = true;  # default shell on catalina
           programs.fish.enable = true;
           nixpkgs.hostPlatform = "aarch64-darwin";
           security.pam.enableSudoTouchIdAuth = true;
 
-          users.users.albertilagan.home = "/Users/albertilagan";
+          users.users.albert.home = "/Users/albert";
 
           system.configurationRevision = self.rev or self.dirtyRev or null;
           system.stateVersion = 5;

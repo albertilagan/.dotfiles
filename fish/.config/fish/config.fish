@@ -5,7 +5,7 @@ eval (/run/current-system/sw/bin/direnv hook fish)
 
 starship init fish | source
 zoxide init fish | source
-tug completion fish | source
+# tug completion fish | source
 
 # fish_add_path ~/.nix-profile/bin
 fish_add_path ~/.config/bin
@@ -20,7 +20,7 @@ set -x VISUAL nvim
 set -x EDITOR nvim
 set -x CONFIG_DIR "$HOME/.config/lazygit"
 
-source ~/.config/fish/keys.fish
+# source ~/.config/fish/keys.fish
 source ~/.config/fish/fzf.fish
 source ~/.config/fish/git.fish
 source ~/.config/fish/misc.fish
