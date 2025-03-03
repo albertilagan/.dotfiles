@@ -3,7 +3,7 @@
 {
   packages = [
     pkgs.git
-    pkgs.nodejs_20
+    pkgs.nodejs_22
     pkgs.yarn
     pkgs.nodePackages.pnpm
   ];
