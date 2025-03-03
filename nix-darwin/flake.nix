@@ -65,6 +65,8 @@
             pkgs.postgresql
             pkgs.ansible
             pkgs.gcrane
+            pkgs.nodejs_22
+            pkgs.pnpm
           ];
           nixpkgs.config = {
             allowUnfree = true;
@@ -153,6 +155,7 @@
             "figma"
             "lens"
             "ghostty"
+            "spotify"
           ];
           homebrew.brews = [
             "imagemagick"
