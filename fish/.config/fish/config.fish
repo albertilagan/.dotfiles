@@ -9,6 +9,7 @@ zoxide init fish | source
 
 # fish_add_path ~/.nix-profile/bin
 fish_add_path ~/.config/bin
+fish_add_path /usr/local/go/bin
 fish_add_path ~/.locize-cli/bin
 fish_add_path /opt/homebrew/opt/fzf/bin
 fish_add_path /Applications/Ghostty.app/Contents/MacOS
@@ -20,7 +21,7 @@ set -x VISUAL nvim
 set -x EDITOR nvim
 set -x CONFIG_DIR "$HOME/.config/lazygit"
 
-# source ~/.config/fish/keys.fish
+source ~/.config/fish/keys.fish
 source ~/.config/fish/fzf.fish
 source ~/.config/fish/git.fish
 source ~/.config/fish/misc.fish
