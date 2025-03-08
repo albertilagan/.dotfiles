@@ -20,6 +20,7 @@
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
           environment.systemPackages = [
+            pkgs.git
             pkgs.vim
             pkgs.direnv
             pkgs.age
@@ -67,6 +68,7 @@
             pkgs.gcrane
             pkgs.nodejs_22
             pkgs.pnpm
+            pkgs.superfile
           ];
           nixpkgs.config = {
             allowUnfree = true;
@@ -84,7 +86,7 @@
           # programs.zsh.enable = true;  # default shell on catalina
           programs.fish.enable = true;
           nixpkgs.hostPlatform = "aarch64-darwin";
-          security.pam.enableSudoTouchIdAuth = true;
+          security.pam.services.sudo_local.touchIdAuth = true;
 
           users.users.albert.home = "/Users/albert";
 
@@ -173,6 +175,7 @@
             "hashicorp/tap/terraform"
             "kubeone"
             "kubie"
+            "redpanda-data/tap/redpanda"
           ];
         };
     in

@@ -7,6 +7,7 @@ abbr ip "ifconfig en0 | grep inet | awk '{ print \$2 }'"
 abbr sops "sops --in-place"
 abbr da "direnv allow"
 abbr v nvim
+alias sf superfile
 alias v nvim
 
 alias l "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --group-directories-first"
