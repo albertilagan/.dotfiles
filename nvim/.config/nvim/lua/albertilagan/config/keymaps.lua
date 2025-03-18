@@ -127,6 +127,7 @@ end)
 
 -- DB dadbod
 vim.keymap.set('n', '<leader>db', ':DBUIToggle<CR>', { desc = 'Toggle dadbod' })
+-- vim.keymap.set('n', '<leader>db', ':SQLua<CR>', { desc = 'Toggle dadbod' })
 
 -- git
 vim.keymap.set('n', '<leader>gg', function()
