@@ -158,6 +158,7 @@
             "lens"
             "ghostty"
             "spotify"
+            "git-credential-manager"
           ];
           homebrew.brews = [
             "imagemagick"
@@ -176,6 +177,7 @@
             "kubeone"
             "kubie"
             "redpanda-data/tap/redpanda"
+            "wireguard-tools"
           ];
         };
     in
