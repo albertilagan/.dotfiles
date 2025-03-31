@@ -175,7 +175,7 @@ end, { desc = 'Create [G]it Worktree' })
 -- >>> ou # sync local with Notion
 --
 -- navigate to vault
-vim.keymap.set('n', '<leader>oo', ':cd /Users/albertilagan/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/deez-notes<cr>')
+vim.keymap.set('n', '<leader>oo', ':cd /Users/albert/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/deez-notes<cr>')
 --
 -- convert note to template and remove leading white space
 vim.keymap.set('n', '<leader>on', ':ObsidianTemplate note<cr> :lua vim.cmd([[1,/^\\S/s/^\\n\\{1,}//]])<cr>')
@@ -184,20 +184,12 @@ vim.keymap.set('n', '<leader>on', ':ObsidianTemplate note<cr> :lua vim.cmd([[1,/
 vim.keymap.set('n', '<leader>of', ':s/\\(# \\)[^_]*_/\\1/ | s/-/ /g<cr>')
 
 -- search for files in full vault
-vim.keymap.set(
-  'n',
-  '<leader>os',
-  ':Telescope find_files search_dirs={"/Users/albertilagan/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/deez-notes"}<cr>'
-)
-vim.keymap.set(
-  'n',
-  '<leader>og',
-  ':Telescope live_grep search_dirs={"/Users/albertilagan/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/deez-notes"}<cr>'
-)
+vim.keymap.set('n', '<leader>os', ':Telescope find_files search_dirs={"/Users/albert/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/deez-notes"}<cr>')
+vim.keymap.set('n', '<leader>og', ':Telescope live_grep search_dirs={"/Users/albert/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/deez-notes"}<cr>')
 
 -- for review workflow
 -- move file in current buffer to zettelkasten folder
--- vim.keymap.set('n', '<leader>ok', ":!mv '%:p' /Users/albertilagan/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/deez-notes<cr>:bd<cr>")
+-- vim.keymap.set('n', '<leader>ok', ":!mv '%:p' /Users/albert/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/deez-notes<cr>:bd<cr>")
 -- delete file in current buffer
 -- vim.keymap.set('n', '<leader>odd', ":!rm '%:p'<cr>:bd<cr>")
 

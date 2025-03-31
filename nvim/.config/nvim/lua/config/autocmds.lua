@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 --   desc = "Open Dashboard when there's no active buffer left",
 --   group = vim.api.nvim_create_augroup('custom-buffer', { clear = true }),
 --   callback = function()
---     require('albertilagan.config.functions').close_buffer()
+--     require('config.functions').close_buffer()
 --   end,
 -- })
 
@@ -40,4 +40,3 @@ vim.api.nvim_create_autocmd('bufwritepost', {
   command = '!osascript -e \'tell application "System Events" to keystroke "<" using {command down, shift down}\'',
   -- command = '!ghostty +reload-config ~/.config/ghostty/config',
 })
-

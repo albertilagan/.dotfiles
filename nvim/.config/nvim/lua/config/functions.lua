@@ -10,11 +10,11 @@ vim.filetype.add {
 }
 
 vim.cmd [[
-  command! -nargs=1 SearchFolder lua require('albertilagan.config.functions').search_folder(<f-args>)
-  command! DeleteAllButCurrentBuffer lua require('albertilagan.config.functions').delete_all_but_current_buffer()
-  command! CloseBuffer lua require('albertilagan.config.functions').close_buffer()
-  command! ForceCloseBuffer lua require('albertilagan.config.functions').force_close_buffer()
-  command! ChangeWorktree lua require('albertilagan.config.functions').change_worktree()
+  command! -nargs=1 SearchFolder lua require('config.functions').search_folder(<f-args>)
+  command! DeleteAllButCurrentBuffer lua require('config.functions').delete_all_but_current_buffer()
+  command! CloseBuffer lua require('config.functions').close_buffer()
+  command! ForceCloseBuffer lua require('config.functions').force_close_buffer()
+  command! ChangeWorktree lua require('config.functions').change_worktree()
   command! CopyBuffer let @+ = expand('%')
 ]]
 
