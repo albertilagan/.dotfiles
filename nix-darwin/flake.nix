@@ -178,6 +178,7 @@
             "kubie"
             "redpanda-data/tap/redpanda"
             "wireguard-tools"
+						"tree-sitter"
           ];
         };
     in
