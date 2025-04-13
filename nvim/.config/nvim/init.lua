@@ -2,7 +2,7 @@ vim.g.mapleader = ','
 vim.g.maplocalleader = ','
 
 vim.g.have_nerd_font = true
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
@@ -89,9 +89,9 @@ require 'config.lazy'
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 
-vim.cmd [[
-  highlight Normal guibg=NONE ctermbg=NONE
-  highlight TelescopeNormal guibg=NONE ctermbg=NONE
-  highlight TelescopeBorder guibg=NONE ctermbg=NONE
-  highlight Cmdline guibg=NONE ctermbg=NONE
-]]
+-- vim.cmd [[
+--   highlight Normal guibg=NONE ctermbg=NONE
+--   highlight TelescopeNormal guibg=NONE ctermbg=NONE
+--   highlight TelescopeBorder guibg=NONE ctermbg=NONE
+--   highlight Cmdline guibg=NONE ctermbg=NONE
+-- ]]

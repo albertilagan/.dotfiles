@@ -26,11 +26,11 @@ return {
       },
     }
 
-    -- Set transparency for Noice UI elements
-    vim.api.nvim_set_hl(0, 'NoiceCmdlinePopup', { bg = 'NONE' })
-    vim.api.nvim_set_hl(0, 'NoiceCmdlinePopupBorder', { bg = 'NONE' })
-    vim.api.nvim_set_hl(0, 'NoiceCmdline', { bg = 'NONE' })
-    vim.api.nvim_set_hl(0, 'NoiceCmdlineIcon', { bg = 'NONE' })
-    vim.api.nvim_set_hl(0, 'NoiceCmdlinePrompt', { bg = 'NONE' })
+    -- -- Set transparency for Noice UI elements
+    -- vim.api.nvim_set_hl(0, 'NoiceCmdlinePopup', { bg = 'NONE' })
+    -- vim.api.nvim_set_hl(0, 'NoiceCmdlinePopupBorder', { bg = 'NONE' })
+    -- vim.api.nvim_set_hl(0, 'NoiceCmdline', { bg = 'NONE' })
+    -- vim.api.nvim_set_hl(0, 'NoiceCmdlineIcon', { bg = 'NONE' })
+    -- vim.api.nvim_set_hl(0, 'NoiceCmdlinePrompt', { bg = 'NONE' })
   end,
 }
