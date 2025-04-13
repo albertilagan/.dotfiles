@@ -1,12 +1,13 @@
 # theme = catppuccin-latte
+theme = catppuccin-mocha
 # background = #EFF1F5
-theme = Kanagawa Wave
-# background = #1E1E2E
+# theme = Kanagawa Wave
+# background = #121212
 
 font-family = VictorMono Nerd Font
 font-size = 16
-background-opacity = 0.90
-# background-blur-radius = 10
+background-opacity = 0.95
+background-blur-radius = 10
 macos-window-shadow = false
 # window-decoration = false
 mouse-hide-while-typing = true
