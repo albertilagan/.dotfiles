@@ -26,6 +26,8 @@ source ~/.config/fish/fzf.fish
 source ~/.config/fish/git.fish
 source ~/.config/fish/misc.fish
 source ~/.config/fish/kubernetes.fish
+test -f ~/.config/fish/kubernetes.fish && source \
+     (cat ~/.config/fish/kubernetes.fish | sed -r 's/(kubectl.*) --watch/watch \1/g' | psub)
 # source ~/.config/fish/carapace.fish
 
 # Added by OrbStack: command-line tools and integration
