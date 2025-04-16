@@ -6,14 +6,15 @@ theme = catppuccin-mocha
 
 font-family = VictorMono Nerd Font
 font-size = 16
-background-opacity = 0.95
+# background-opacity = 0.95
 background-blur-radius = 10
 macos-window-shadow = false
 # window-decoration = false
 mouse-hide-while-typing = true
 macos-titlebar-style = hidden
+window-padding-color = extend
 window-padding-x = 16
-window-padding-y = 10
+window-padding-y = 0
 
 keybind = global:cmd+slash=toggle_quick_terminal
 

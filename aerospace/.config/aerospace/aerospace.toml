@@ -76,10 +76,10 @@ D = 'secondary'
 [gaps]
 inner.horizontal = 10
 inner.vertical =   10
-outer.left =       7
-outer.right =      7
-outer.top = [{ monitor."U28P2G6B"= 5 }, 5]
-outer.bottom = [{ monitor."U28P2G6B"= 10 }, 7]
+outer.left =       10
+outer.right =      10
+outer.top = [{ monitor."U28P2G6B"= 5 }, 10]
+outer.bottom = [{ monitor."U28P2G6B"= 10 }, 10]
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
