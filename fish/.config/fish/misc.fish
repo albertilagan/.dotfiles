@@ -7,6 +7,8 @@ abbr ip "ifconfig en0 | grep inet | awk '{ print \$2 }'"
 abbr sops "sops --in-place"
 abbr da "direnv allow"
 abbr v nvim
+abbr docker "podman"
+alias docker "podman"
 alias sf superfile
 alias v nvim
 
