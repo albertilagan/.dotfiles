@@ -69,6 +69,7 @@
             pkgs.nodejs_22
             pkgs.pnpm
             pkgs.superfile
+            pkgs.podman
           ];
           nixpkgs.config = {
             allowUnfree = true;
@@ -178,7 +179,8 @@
             "kubie"
             "redpanda-data/tap/redpanda"
             "wireguard-tools"
-						"tree-sitter"
+            "tree-sitter"
+            "goreleaser/tap/goreleaser"
           ];
         };
     in
