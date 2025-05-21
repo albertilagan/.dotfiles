@@ -34,6 +34,7 @@ vim.keymap.set('n', '<leader>ed', function()
 end, { desc = 'Open parent [d]irectory' })
 
 -- buffer
+vim.keymap.set('n', '<C-q>', ':bd<CR>', { desc = '[d]elete current buffer' })
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = '[d]elete current buffer' })
 -- vim.keymap.set('n', '<leader>bD', ':bd!<CR>', { desc = 'Force [D]elete current buffer' })
 -- vim.keymap.set('n', '<leader>bd', ':b# | bd#<CR>', { desc = '[d]elete current buffer' })
