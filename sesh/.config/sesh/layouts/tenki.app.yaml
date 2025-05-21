@@ -1,7 +1,7 @@
-session_name: project-nimbus
+session_name: tenki-app
 windows:
+  - window_name: console
   - window_name: nvim
     focus: true
     panes:
       - nvim
-  - window_name: devenv

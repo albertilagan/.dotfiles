@@ -11,9 +11,14 @@ path = "~/development/luxor/luxor-apps"
 startup_command = "~/.config/sesh/bin/tmuxp.sh luxor-apps"
 
 [[session]]
+name = "tenki-app"
+path = "~/development/luxor/tenki.app"
+startup_command = "~/.config/sesh/bin/tmuxp.sh tenki.app"
+
+[[session]]
 name = "tenki-cloud"
-path = "~/development/luxor/tenki-cloud"
-startup_command = "~/.config/sesh/bin/tmuxp.sh tenki-cloud"
+path = "~/development/luxor/tenki.cloud"
+startup_command = "~/.config/sesh/bin/tmuxp.sh tenki.cloud"
 
 [[session]]
 name = "docs"
