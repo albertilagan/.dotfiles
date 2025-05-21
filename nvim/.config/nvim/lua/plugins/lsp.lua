@@ -151,6 +151,34 @@ return {
           },
         },
       },
+      harper_ls = {
+        filetypes = { 'lua', 'typescriptreact', 'typescript', 'javascript', 'javascriptreact', 'markdown', 'nix', 'shellscript' },
+        settings = {
+          ['harper-ls'] = {
+            userDictPath = '~/.dotfiles/nvim/.config/nvim/spell/en.utf-8.add',
+            linters = {
+              SpellCheck = true,
+              SentenceCapitalization = true,
+              UnclosedQuotes = true,
+              WrongQuotes = false,
+              LongSentences = true,
+              RepeatedWords = true,
+              SpelledNumbers = false,
+              AnA = true,
+              Spaces = true,
+              Matcher = true,
+              CorrectNumberSuffix = true,
+            },
+            isolateEnglish = true,
+            codeActions = {
+              ForceStable = true,
+            },
+            markdown = {
+              IgnoreLinkTitle = true,
+            },
+          },
+        },
+      },
     }
 
     -- Ensure the servers and tools above are installed
@@ -185,18 +213,6 @@ return {
       'eslint-lsp',
     })
 
-    local nvim_lsp = require 'lspconfig'
-    -- nvim_lsp.protols.setup {}
-    nvim_lsp.nixd.setup {
-      settings = {
-        nixd = {
-          formatting = {
-            command = { 'nixfmt' },
-          },
-        },
-      },
-    }
-
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
     -- Specify how the border looks like
@@ -215,6 +231,16 @@ return {
     local handlers = {
       ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
       ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+    }
+
+    require('lspconfig').nixd.setup {
+      settings = {
+        nixd = {
+          formatting = {
+            command = { 'nixfmt' },
+          },
+        },
+      },
     }
 
     require('mason-lspconfig').setup {
