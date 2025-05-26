@@ -34,8 +34,12 @@ vim.keymap.set('n', '<leader>ed', function()
 end, { desc = 'Open parent [d]irectory' })
 
 -- buffer
-vim.keymap.set('n', '<C-q>', ':bd<CR>', { desc = '[d]elete current buffer' })
-vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = '[d]elete current buffer' })
+vim.keymap.set('n', '<C-q>', function()
+  Snacks.bufdelete.delete()
+end, { desc = '[d]elete current buffer' })
+vim.keymap.set('n', '<leader>bd', function()
+  Snacks.bufdelete.delete()
+end, { desc = '[d]elete current buffer' })
 -- vim.keymap.set('n', '<leader>bD', ':bd!<CR>', { desc = 'Force [D]elete current buffer' })
 -- vim.keymap.set('n', '<leader>bd', ':b# | bd#<CR>', { desc = '[d]elete current buffer' })
 -- vim.keymap.set('n', '<leader>bd', ':b# | bp | bd#<CR>', { desc = '[d]elete current buffer' })
@@ -68,7 +72,10 @@ vim.keymap.set('n', '<C-j>', '<cmd>TmuxNavigateDown<cr>', { desc = 'Go to lower 
 vim.keymap.set('n', '<C-k>', '<cmd>TmuxNavigateUp<cr>', { desc = 'Go to upper window', remap = true, silent = true })
 vim.keymap.set('n', '<C-l>', '<cmd>TmuxNavigateRight<cr>', { desc = 'Go to right window', remap = true, silent = true })
 vim.keymap.set('n', '<leader>rr', '<cmd>Rest run<cr>', { desc = 'Run request under the cursor', remap = true, silent = true })
-vim.keymap.set('n', '<leader>zm', '<cmd>ZenMode<cr>', { desc = 'Toggle ZenMode', remap = true, silent = true })
+-- vim.keymap.set('n', '<leader>zm', '<cmd>ZenMode<cr>', { desc = 'Toggle ZenMode', remap = true, silent = true })
+vim.keymap.set('n', '<leader>zm', function()
+  Snacks.zen()
+end, { desc = 'Toggle ZenMode', remap = true, silent = true })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -142,6 +149,20 @@ end, { desc = '[G]it Worktree' })
 vim.keymap.set('n', '<leader>gwc', function()
   require('telescope').extensions.git_worktree.create_git_worktree()
 end, { desc = 'Create [G]it Worktree' })
+
+vim.keymap.set('n', '<leader>go', function()
+  Snacks.gitbrowse()
+end, { desc = '[G]it [O]pen in browser' })
+
+vim.keymap.set('n', '<leader>lg', function()
+  Snacks.lazygit()
+end, { desc = '[L]azy[G]it' })
+vim.keymap.set('n', '<C-i>', function()
+  Snacks.lazygit()
+end, { desc = '[L]azy[G]it' })
+vim.api.nvim_create_user_command('Lg', function()
+  Snacks.lazygit()
+end, { desc = 'Open LazyGit' })
 
 -- Obsidian
 -- vim.keymap.set('n', '<leader>oc', "<cmd>lua require('obsidian').util.toggle_checkbox()<CR>", { desc = 'Obsidian Check Checkbox' })

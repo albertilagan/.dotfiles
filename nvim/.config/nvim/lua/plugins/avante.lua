@@ -1,8 +1,7 @@
 return {
   'yetone/avante.nvim',
   event = 'VeryLazy',
-  lazy = false,
-  version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
+  version = false, -- Never set this value to "*"! Never!
   opts = {
     provider = 'openrouter',
     vendors = {
@@ -11,7 +10,7 @@ return {
         endpoint = 'https://openrouter.ai/api/v1',
         api_key_name = 'OPENROUTER_API_KEY',
         -- model = 'anthropic/claude-3.5-sonnet',
-        model = 'anthropic/claude-3.7-sonnet',
+        model = 'anthropic/claude-sonnet-4',
       },
     },
   },

@@ -91,6 +91,7 @@
 
           users.users.albert.home = "/Users/albert";
 
+          system.primaryUser = "albert";
           system.configurationRevision = self.rev or self.dirtyRev or null;
           system.stateVersion = 5;
           system.keyboard = {

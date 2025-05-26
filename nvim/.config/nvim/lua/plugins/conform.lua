@@ -18,6 +18,7 @@ return {
         markdown = { 'prettierd', 'prettier', stop_after_first = true },
         graphql = { 'prettierd', 'prettier', stop_after_first = true },
         liquid = { 'prettierd', 'prettier', stop_after_first = true },
+        go = { 'goimports', 'gofumpt' },
         lua = { 'stylua' },
         python = { 'isort', 'black' },
         nix = { 'nixpkgs_fmt' },
