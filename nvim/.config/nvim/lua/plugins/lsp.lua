@@ -136,7 +136,16 @@ return {
       --    https://github.com/pmizio/typescript-tools.nvim
       --
       -- But for many setups, the LSP (`ts_ls`) will work just fine
-      ts_ls = {},
+      ts_ls = {
+        settings = {
+          typescript = {
+            preferences = {
+              importModuleSpecifier = 'relative',
+              includePackageJsonAutoImports = 'auto',
+            },
+          },
+        },
+      },
       lua_ls = {
         -- cmd = { ... },
         -- filetypes = { ... },
@@ -151,34 +160,34 @@ return {
           },
         },
       },
-      harper_ls = {
-        filetypes = { 'lua', 'typescriptreact', 'typescript', 'javascript', 'javascriptreact', 'markdown', 'nix', 'shellscript' },
-        settings = {
-          ['harper-ls'] = {
-            userDictPath = '~/.dotfiles/nvim/.config/nvim/spell/en.utf-8.add',
-            linters = {
-              SpellCheck = true,
-              SentenceCapitalization = true,
-              UnclosedQuotes = true,
-              WrongQuotes = false,
-              LongSentences = true,
-              RepeatedWords = true,
-              SpelledNumbers = false,
-              AnA = true,
-              Spaces = true,
-              Matcher = true,
-              CorrectNumberSuffix = true,
-            },
-            isolateEnglish = true,
-            codeActions = {
-              ForceStable = true,
-            },
-            markdown = {
-              IgnoreLinkTitle = true,
-            },
-          },
-        },
-      },
+      -- harper_ls = {
+      --   filetypes = { 'lua', 'typescriptreact', 'typescript', 'javascript', 'javascriptreact', 'markdown', 'nix', 'shellscript' },
+      --   settings = {
+      --     ['harper-ls'] = {
+      --       userDictPath = '~/.dotfiles/nvim/.config/nvim/spell/en.utf-8.add',
+      --       linters = {
+      --         SpellCheck = true,
+      --         SentenceCapitalization = true,
+      --         UnclosedQuotes = true,
+      --         WrongQuotes = false,
+      --         LongSentences = true,
+      --         RepeatedWords = true,
+      --         SpelledNumbers = false,
+      --         AnA = true,
+      --         Spaces = true,
+      --         Matcher = true,
+      --         CorrectNumberSuffix = true,
+      --       },
+      --       isolateEnglish = true,
+      --       codeActions = {
+      --         ForceStable = true,
+      --       },
+      --       markdown = {
+      --         IgnoreLinkTitle = true,
+      --       },
+      --     },
+      --   },
+      -- },
     }
 
     -- Ensure the servers and tools above are installed

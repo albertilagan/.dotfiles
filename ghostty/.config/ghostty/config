@@ -1,13 +1,15 @@
-# theme = catppuccin-latte
+shell-integration = fish
+
+# theme = tokyonight
 theme = catppuccin-mocha
 # background = #EFF1F5
 # theme = Kanagawa Wave
-# background = #121212
+background = #121212
 
 font-family = VictorMono Nerd Font
 font-size = 16
-# background-opacity = 0.95
-background-blur-radius = 10
+background-opacity = 0.85
+# background-blur-radius = 10
 macos-window-shadow = false
 # window-decoration = false
 mouse-hide-while-typing = true
@@ -39,7 +41,7 @@ keybind = cmd+l=text:\x01L
 keybind = cmd+k=text:\x01s
 keybind = cmd+b=text:\x01B
 keybind = cmd+o=text:\x01o
-# keybind = cmd+g=text:\x01g
+keybind = cmd+shift+g=text:\x01g
 keybind = cmd+g=text:\x09
 keybind = cmd+shift+c=text:\x01C
 keybind = ctrl+tab=text:\x01n

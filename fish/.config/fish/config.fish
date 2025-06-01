@@ -22,6 +22,7 @@ set -x VISUAL nvim
 set -x EDITOR nvim
 set -x CONFIG_DIR "$HOME/.config/lazygit"
 
+source "$GHOSTTY_RESOURCES_DIR"/shell-integration/fish/vendor_conf.d/ghostty-shell-integration.fish
 source ~/.config/fish/keys.fish
 source ~/.config/fish/fzf.fish
 source ~/.config/fish/git.fish

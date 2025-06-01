@@ -1,6 +1,12 @@
 session_name: tenki-app
 windows:
   - window_name: console
+    layout: tiled
+    panes:
+      - dev logs engine
+      - dev logs sqlc-watch
+      - dev logs app
+      - dev logs github-proxy
   - window_name: nvim
     focus: true
     panes:
