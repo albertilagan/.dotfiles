@@ -228,3 +228,6 @@ vim.keymap.set('n', '<leader>ord', ':Octo review discard<CR>', { desc = '[O]cto 
 vim.keymap.set('n', '<leader>orq', ':Octo review close<CR>', { desc = '[O]cto [R]eview Close' })
 
 vim.keymap.set('n', '<leader>fn', '<cmd>AerialToggle!<CR>')
+
+-- cursor
+vim.keymap.set('n', '<leader>ch', ':!cursor %<CR>')
