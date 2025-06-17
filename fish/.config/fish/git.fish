@@ -17,3 +17,8 @@ alias gs "git st"
 abbr ghcs "gh copilot suggest"
 abbr ghce "gh copilot explain"
 alias lola "git log --graph --decorate --pretty=oneline --abbrev-commit --all"
+
+function gfu                                              
+    git fetch upstream
+    git merge upstream/$argv
+end

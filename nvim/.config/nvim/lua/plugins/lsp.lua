@@ -160,34 +160,6 @@ return {
           },
         },
       },
-      -- harper_ls = {
-      --   filetypes = { 'lua', 'typescriptreact', 'typescript', 'javascript', 'javascriptreact', 'markdown', 'nix', 'shellscript' },
-      --   settings = {
-      --     ['harper-ls'] = {
-      --       userDictPath = '~/.dotfiles/nvim/.config/nvim/spell/en.utf-8.add',
-      --       linters = {
-      --         SpellCheck = true,
-      --         SentenceCapitalization = true,
-      --         UnclosedQuotes = true,
-      --         WrongQuotes = false,
-      --         LongSentences = true,
-      --         RepeatedWords = true,
-      --         SpelledNumbers = false,
-      --         AnA = true,
-      --         Spaces = true,
-      --         Matcher = true,
-      --         CorrectNumberSuffix = true,
-      --       },
-      --       isolateEnglish = true,
-      --       codeActions = {
-      --         ForceStable = true,
-      --       },
-      --       markdown = {
-      --         IgnoreLinkTitle = true,
-      --       },
-      --     },
-      --   },
-      -- },
     }
 
     -- Ensure the servers and tools above are installed

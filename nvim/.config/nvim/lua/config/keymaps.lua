@@ -230,4 +230,9 @@ vim.keymap.set('n', '<leader>orq', ':Octo review close<CR>', { desc = '[O]cto [R
 vim.keymap.set('n', '<leader>fn', '<cmd>AerialToggle!<CR>')
 
 -- cursor
-vim.keymap.set('n', '<leader>ch', ':!cursor %<CR>')
+-- vim.keymap.set('n', '<leader>ch', ':!cursor %<CR>')
+vim.keymap.set('n', '<leader>ch', function()
+  local cwd = vim.fn.getcwd()
+  local cmd = string.format("tmux new-window -c '%s' 'opencode'", cwd)
+  os.execute(cmd)
+end, { desc = 'Open tmux tab with opencode' })

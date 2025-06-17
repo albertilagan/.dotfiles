@@ -17,7 +17,7 @@ alias ls "eza --color=always --long --git --no-filesize --icons=always --no-time
 alias ll "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --group-directories-first"
 
 alias cat "bat --style=plain"
-alias nixd-reload "darwin-rebuild switch --flake ~/.dotfiles/nix-darwin"
+alias nixd-reload "sudo darwin-rebuild switch --flake ~/.dotfiles/nix-darwin"
 alias nixd-config "nvim ~/.dotfiles/nix-darwin/flake.nix"
 
 abbr p "pnpm run (jq -r '.scripts|to_entries[]|((.key))' package.json | fzf-tmux -p --border-label='pnpm run')"

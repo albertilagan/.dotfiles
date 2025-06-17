@@ -3,20 +3,28 @@ return {
   event = 'VeryLazy',
   version = false, -- Never set this value to "*"! Never!
   opts = {
-    provider = 'openrouter',
+    provider = 'openai',
     providers = {
+      openai = {
+        endpoint = 'https://api.openai.com/v1',
+        model = 'gpt-4.1',
+        extra_request_body = {
+          temperature = 0.75,
+          max_completion_tokens = 32000,
+        },
+      },
       openrouter = {
         __inherited_from = 'openai',
         endpoint = 'https://openrouter.ai/api/v1',
         api_key_name = 'OPENROUTER_API_KEY',
         -- model = 'anthropic/claude-3.5-sonnet',
-        model = 'anthropic/claude-sonnet-4',
-        -- model = 'openai/gpt-4.1',
+        -- model = 'anthropic/claude-sonnet-4',
+        model = 'openai/gpt-4.1',
       },
     },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-  build = 'make',
+  build = 'make BUILD_FROM_SOURCE=true',
   -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
