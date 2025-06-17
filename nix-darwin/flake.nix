@@ -70,6 +70,7 @@
             pkgs.pnpm
             pkgs.superfile
             pkgs.podman
+            pkgs.claude-code
           ];
           nixpkgs.config = {
             allowUnfree = true;
