@@ -3,52 +3,57 @@
 [[session]]
 name = "dotfiles"
 path = "~/.dotfiles"
-startup_command = "~/.config/sesh/bin/tmuxp.sh dotfiles"
+startup_command = "nvim"
 
 [[session]]
 name = "luxor-apps"
 path = "~/development/luxor/luxor-apps"
-startup_command = "~/.config/sesh/bin/tmuxp.sh luxor-apps"
+startup_command = "nvim"
 
 [[session]]
 name = "tenki-app"
 path = "~/development/luxor/tenki.app"
-startup_command = "~/.config/sesh/bin/tmuxp.sh tenki.app"
+startup_command = "nvim"
+windows = [ "devenv" ]
+
+[[window]]
+name = "devenv"
+startup_script = "~/.config/sesh/bin/tenki.app.sh 2"
 
 [[session]]
 name = "tenki-cloud"
 path = "~/development/luxor/tenki.cloud"
-startup_command = "~/.config/sesh/bin/tmuxp.sh tenki.cloud"
+startup_command = "nvim"
 
 [[session]]
 name = "docs"
 path = "~/development/luxor/docs"
-startup_command = "~/.config/sesh/bin/tmuxp.sh docs"
+startup_command = "nvim"
 
 [[session]]
 name = "schema"
 path = "~/development/luxor/schema"
-startup_command = "~/.config/sesh/bin/tmuxp.sh schema"
+startup_command = "nvim"
 
 [[session]]
 name = "tmux config"
 path = "~/.dotfiles/tmux/.config/tmux"
-startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh tmux.conf"
+startup_command = "nvim tmux.conf"
 
 [[session]]
 name = "deez notes"
 path = "/Users/albertilagan/Library/Mobile Documents/iCloud~md~obsidian/Documents/deez-notes"
-startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh"
+startup_command = "nvim"
 
 [[session]]
 name = "neovim config"
 path = "~/.dotfiles/nvim/.config/nvim"
-startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh"
+startup_command = "nvim"
 
 [[session]]
 name = "fish config"
 path = "~/.dotfiles/fish/.config/fish"
-startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh config.fish"
+startup_command = "nvim config.fish"
 
 [[session]]
 name = "yazi config"
@@ -58,12 +63,12 @@ startup_command = "nvim yazi.toml"
 [[session]]
 name = "wezterm config"
 path = "~/.dotfiles/wezterm/.config/wezterm"
-startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh wezterm.lua"
+startup_command = "nvim wezterm.lua"
 
 [[session]]
 name = "sesh config"
 path = "~/.dotfiles/sesh/.config/sesh"
-startup_command = "~/.dotfiles/sesh/.config/sesh/bin/nvim.sh sesh.toml"
+startup_command = "nvim sesh.toml"
 
 [[session]]
 name = "Downloads 📥"
