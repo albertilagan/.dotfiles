@@ -23,7 +23,7 @@ return {
         python = { 'isort', 'black' },
         nix = { 'nixpkgs_fmt' },
         proto = { 'buf' },
-        sql = { 'sqlfmt' },
+        -- sql = { 'sleek' },
       },
       format_on_save = {
         lsp_fallback = true,

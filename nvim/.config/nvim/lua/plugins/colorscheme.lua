@@ -7,7 +7,41 @@ return {
       require('catppuccin').setup {
         transparent_background = true,
       }
-      vim.cmd 'colorscheme catppuccin-mocha'
+      -- vim.cmd 'colorscheme catppuccin-latte'
+    end,
+  },
+  {
+    'folke/tokyonight.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      -- vim.cmd 'colorscheme tokyonight-day'
+    end,
+  },
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    config = function()
+      require('rose-pine').setup {
+        styles = {
+          bold = true,
+          italic = true,
+          transparency = false,
+        },
+      }
+      vim.cmd 'colorscheme rose-pine-main'
+    end,
+  },
+  {
+    'Shatur/neovim-ayu',
+    version = false,
+    lazy = false,
+    priority = 1000, -- make sure to load this before all the other start plugins
+    -- Optional; default configuration will be used if setup isn't called.
+    config = function()
+      require('ayu').setup {}
+      -- vim.cmd 'colorscheme ayu'
     end,
   },
   {

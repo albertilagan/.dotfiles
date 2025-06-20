@@ -55,3 +55,6 @@ end
 
 # Added by LM Studio CLI (lms)
 set -gx PATH $PATH /Users/albert/.lmstudio/bin
+
+# opencode
+fish_add_path /Users/albert/.opencode/bin

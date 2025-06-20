@@ -71,6 +71,7 @@
             pkgs.superfile
             pkgs.podman
             pkgs.claude-code
+            pkgs.jujutsu
           ];
           nixpkgs.config = {
             allowUnfree = true;
