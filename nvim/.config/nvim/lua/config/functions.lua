@@ -15,7 +15,7 @@ vim.cmd [[
   command! CloseBuffer lua require('config.functions').close_buffer()
   command! ForceCloseBuffer lua require('config.functions').force_close_buffer()
   command! ChangeWorktree lua require('config.functions').change_worktree()
-  command! CopyBuffer let @+ = expand('%')
+  command! CopyBuffer let @+ = fnamemodify(expand('%'), ':~:.')
 ]]
 
 local M = {}

@@ -3,7 +3,7 @@ return {
   event = 'VeryLazy',
   version = false, -- Never set this value to "*"! Never!
   opts = {
-    provider = 'openai',
+    provider = 'openrouter',
     providers = {
       openai = {
         endpoint = 'https://api.openai.com/v1',
@@ -18,8 +18,8 @@ return {
         endpoint = 'https://openrouter.ai/api/v1',
         api_key_name = 'OPENROUTER_API_KEY',
         -- model = 'anthropic/claude-3.5-sonnet',
-        -- model = 'anthropic/claude-sonnet-4',
-        model = 'openai/gpt-4.1',
+        model = 'anthropic/claude-sonnet-4',
+        -- model = 'openai/gpt-4.1',
       },
     },
   },
