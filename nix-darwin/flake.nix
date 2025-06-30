@@ -70,7 +70,6 @@
             pkgs.pnpm
             pkgs.superfile
             pkgs.podman
-            pkgs.claude-code
             pkgs.jujutsu
           ];
           nixpkgs.config = {
