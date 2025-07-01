@@ -236,3 +236,13 @@ vim.keymap.set('n', '<leader>ch', function()
   local cmd = string.format("tmux new-window -c '%s' -n 'opencode' 'opencode'", cwd)
   os.execute(cmd)
 end, { desc = 'Open tmux tab with opencode' })
+vim.keymap.set('n', '<leader>cd', function()
+  local cwd = vim.fn.getcwd()
+  local cmd = string.format("tmux split-window -h -p 25 -c '%s' 'opencode'", cwd)
+  os.execute(cmd)
+end, { desc = 'Open tmux split with opencode' })
+
+-- cloak
+vim.keymap.set('n', '<leader>ct', function()
+  require('cloak').toggle()
+end, { desc = 'Toggle Cloak' })
