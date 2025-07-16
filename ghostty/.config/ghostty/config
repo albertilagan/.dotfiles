@@ -1,7 +1,7 @@
 shell-integration = fish
 
 # theme = tokyonight
-# theme = catppuccin-latte
+# theme = catppuccin-mocha
 # theme = dark:rose-pine,light:rose-pine-dawn
 theme = dark:catppuccin-mocha,light:catppuccin-latte
 # background = #EFF1F5

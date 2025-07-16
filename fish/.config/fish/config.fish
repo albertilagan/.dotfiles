@@ -26,7 +26,7 @@ set -x VISUAL nvim
 set -x EDITOR nvim
 set -x CONFIG_DIR "$HOME/.config/lazygit"
 
-source ~/.config/fish/keys.fish
+# source ~/.config/fish/keys.fish
 source ~/.config/fish/fzf.fish
 source ~/.config/fish/git.fish
 source ~/.config/fish/misc.fish
