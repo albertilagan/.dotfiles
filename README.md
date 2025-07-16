@@ -11,9 +11,6 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 2. Install [brew](https://docs.brew.sh/Installation)
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# tmp brew activation
-echo >> /Users/albert/.zprofile
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/albert/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 post-brew installation
