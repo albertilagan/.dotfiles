@@ -7,6 +7,7 @@
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | \
   sh -s -- install
 ```
+> if asked if you wanna `Install Determinate Nix`, type `no`.
 2. Clone [.dotfiles](https://github.com/albertilagan/.dotfiles) to `~/.dotfiles`
 3. Install nix-darwin `nix --extra-experimental-features 'flakes nix-command' run nix-darwin -- switch --flake ~/.dotfiles/nix-darwin`
 4. activate nix-darwin `darwin-rebuild switch --flake ~/.dotfiles/nix-darwin`
