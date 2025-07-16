@@ -25,7 +25,7 @@ sudo nix --extra-experimental-features 'flakes nix-command' run nix-darwin -- sw
 ```
 5. activate nix-darwin
 ```bash
-darwin-rebuild switch --flake ~/.dotfiles/nix-darwin
+sudo darwin-rebuild switch --flake ~/.dotfiles/nix-darwin
 ```
 6. stow apps, `./install.sh`
 
