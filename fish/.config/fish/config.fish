@@ -17,7 +17,7 @@ fish_add_path ~/miniforge3/bin
 fish_add_path /usr/local/go/bin
 fish_add_path /opt/homebrew/opt/fzf/bin
 fish_add_path /Applications/Ghostty.app/Contents/MacOS
-fish_add_path ~/.npm-global/bin
+fish_add_path ~/.npm-packages/bin
 
 set -U fish_greeting # disable fish greeting
 set -U fish_key_bindings fish_vi_key_bindings # fish_default_key_bindings
