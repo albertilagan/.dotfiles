@@ -24,3 +24,6 @@ bat cache --build
 
 # protols lsp
 nix-shell -p cargo -p libiconv --command "cargo install protols"
+
+# change npm location to solve the permission issue on nix
+echo "prefix = ${HOME}/.npm-packages" >> ~/.npmrc
