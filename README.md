@@ -17,8 +17,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 post-brew installation
 ```
 brew tap hashicorp/tap \
-  && brew tap redpanda-data/tap \
-  && brew tap goreleaser/tap
+  && brew tap redpanda-data/tap
 ```
 4. Install nix-darwin
 ```bash
