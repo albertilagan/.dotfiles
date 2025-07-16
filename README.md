@@ -22,7 +22,7 @@ brew tap hashicorp/tap \
 ```
 4. Install nix-darwin
 ```bash
-nix --extra-experimental-features 'flakes nix-command' run nix-darwin -- switch --flake ~/.dotfiles/nix-darwin
+sudo nix --extra-experimental-features 'flakes nix-command' run nix-darwin -- switch --flake ~/.dotfiles/nix-darwin
 ```
 5. activate nix-darwin
 ```bash
