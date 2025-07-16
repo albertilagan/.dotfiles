@@ -2,24 +2,32 @@
 
 ## Setup
 
-1. Install nix
-```
+1. Clone [.dotfiles](https://github.com/albertilagan/.dotfiles) to `~/.dotfiles`
+2. Install nix
+```bash
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | \
   sh -s -- install
 ```
 > if asked if you wanna `Install Determinate Nix`, type `no`.
-2. Install [brew](https://docs.brew.sh/Installation)
-```
+3. Install [brew](https://docs.brew.sh/Installation)
+```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 post-brew installation
-  - `brew tap hashicorp/tap`
-  - `brew tap redpanda-data/tap`
-  - `brew tap goreleaser/tap`
-3. Clone [.dotfiles](https://github.com/albertilagan/.dotfiles) to `~/.dotfiles`
-4. Install nix-darwin `nix --extra-experimental-features 'flakes nix-command' run nix-darwin -- switch --flake ~/.dotfiles/nix-darwin`
-5. activate nix-darwin `darwin-rebuild switch --flake ~/.dotfiles/nix-darwin`
+```
+brew tap hashicorp/tap \
+  && brew tap redpanda-data/tap \
+  && brew tap goreleaser/tap
+```
+4. Install nix-darwin
+```bash
+nix --extra-experimental-features 'flakes nix-command' run nix-darwin -- switch --flake ~/.dotfiles/nix-darwin
+```
+5. activate nix-darwin
+```bash
+darwin-rebuild switch --flake ~/.dotfiles/nix-darwin
+```
 6. stow apps, `./install.sh`
 
 ## Additional Setup
