@@ -162,6 +162,7 @@
             "ghostty"
             "spotify"
             "git-credential-manager"
+            "goreleaser"
           ];
           homebrew.brews = [
             "imagemagick"
@@ -182,7 +183,6 @@
             "redpanda-data/tap/redpanda"
             "wireguard-tools"
             "tree-sitter"
-            "goreleaser/tap/goreleaser"
           ];
         };
     in
