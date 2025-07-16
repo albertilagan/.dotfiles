@@ -6,7 +6,7 @@ stow direnv
 stow fish
 stow nvim
 stow sesh
-stow sketchybar
+# stow sketchybar
 stow starship
 stow tmux
 stow wezterm
