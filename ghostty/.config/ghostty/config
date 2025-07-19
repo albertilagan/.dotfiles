@@ -1,15 +1,15 @@
 shell-integration = fish
 
 # theme = tokyonight
-# theme = catppuccin-mocha
+theme = catppuccin-mocha
 # theme = dark:rose-pine,light:rose-pine-dawn
-theme = dark:catppuccin-mocha,light:catppuccin-latte
+# theme = dark:catppuccin-mocha,light:catppuccin-latte
 # background = #EFF1F5
 # theme = Kanagawa Wave
 
 font-family = VictorMono Nerd Font
 font-size = 16
-background-opacity = 0.80
+background-opacity = 0.90
 background-blur-radius = 10
 macos-window-shadow = false
 # window-decoration = false

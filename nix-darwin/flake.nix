@@ -163,6 +163,8 @@
             "spotify"
             "git-credential-manager"
             "goreleaser"
+            "font-victor-mono"
+            "font-victor-mono-nerd-font"
           ];
           homebrew.brews = [
             "imagemagick"
