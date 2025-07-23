@@ -1,0 +1,19 @@
+{
+  "Snippets for creating connectrpc query hooks": {
+    "prefix": "useRpcQuery",
+    "body": [
+      "export function use${1:GetFoo}Query<Q extends QueryType<typeof ${2:getFoo}, ${1:GetFoo}Response>>(input: Q[\"input\"] = {}, options?: Q[\"output\"]) {",
+      "  const { initialData, ...opts } = options ?? {};",
+      "  return useQuery(${2:getFoo}, input, opts, initialData);",
+      "}"
+    ]
+  },
+  "Snippets for creating connectrpc mutation hooks": {
+    "prefix": "useRpcMutation",
+    "body": [
+      "export function use${1:CreateFoo}Mutation<Q extends MutationType<typeof ${2:createFoo}>>(options?: Q[\"output\"]) {",
+      "  return useMutation(createWorkspace, options);",
+      "}"
+    ]
+  }
+}

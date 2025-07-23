@@ -46,13 +46,13 @@ return {
     sources = {
       default = {
         'lsp',
-        'avante',
         'path',
+        'snippets',
+        'avante',
         'buffer',
         'css_vars',
         'conventional_commits',
         'emoji',
-        'snippets',
       },
       per_filetype = {
         sql = { 'dadbod', 'lsp', 'snippets', 'buffer' },
