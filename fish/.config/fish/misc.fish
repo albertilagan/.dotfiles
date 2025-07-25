@@ -4,7 +4,6 @@ abbr lf lfcd
 abbr vim nvim
 abbr lg lazygit
 abbr ip "ifconfig en0 | grep inet | awk '{ print \$2 }'"
-abbr sops "sops --in-place"
 abbr da "direnv allow"
 abbr v nvim
 
