@@ -39,5 +39,17 @@ return {
         timeout_ms = 1000,
       }
     end, { desc = 'Format file or range (in visual mode)' })
+
+    -- Stop prettierd daemon when Neovim exits
+    vim.api.nvim_create_autocmd('VimLeavePre', {
+      callback = function()
+        vim.fn.system 'prettierd stop'
+      end,
+    })
+    -- Add keymap to manually stop all prettierd processes if needed
+    vim.keymap.set('n', '<leader>ps', function()
+      vim.fn.system 'prettierd stop'
+      print 'Stopped all prettierd processes'
+    end, { desc = 'Stop all prettierd processes' })
   end,
 }
