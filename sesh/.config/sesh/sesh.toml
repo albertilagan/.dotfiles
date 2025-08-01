@@ -7,12 +7,12 @@ startup_command = "nvim"
 
 [[session]]
 name = "luxor-apps"
-path = "~/github/luxor/luxor-apps"
+path = "~/d/l/luxor-apps"
 startup_command = "nvim"
 
 [[session]]
 name = "tenki-app"
-path = "~/github/luxor/tenki.app"
+path = "~/d/l/tenki.app"
 startup_command = "nvim"
 windows = [ "devenv" ]
 
@@ -22,17 +22,17 @@ startup_script = "~/.config/sesh/bin/tenki.app.sh 2"
 
 [[session]]
 name = "tenki-cloud"
-path = "~/github/luxor/tenki.cloud"
+path = "~/d/l/tenki.cloud"
 startup_command = "nvim"
 
 [[session]]
 name = "docs"
-path = "~/github/luxor/docs"
+path = "~/d/l/docs"
 startup_command = "nvim"
 
 [[session]]
 name = "schema"
-path = "~/github/luxor/schema"
+path = "~/d/l/schema"
 startup_command = "nvim"
 
 [[session]]
