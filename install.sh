@@ -32,3 +32,5 @@ echo "prefix = ${HOME}/.npm-packages" >>~/.npmrc
 git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.dotfiles/tmux/.config/tmux/plugins/catppuccin/tmux
 git clone https://github.com/tmux-plugins/tpm ~/.dotfiles/tmux/.config/tmux/plugins/tpm
 git clone https://github.com/fcsonline/tmux-thumbs ~/.dotfiles/tmux/.config/tmux/plugins/tmux-thumbs
+
+mkdir -p ~/.kube/shoots
