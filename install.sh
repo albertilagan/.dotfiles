@@ -34,3 +34,5 @@ git clone https://github.com/tmux-plugins/tpm ~/.dotfiles/tmux/.config/tmux/plug
 git clone https://github.com/fcsonline/tmux-thumbs ~/.dotfiles/tmux/.config/tmux/plugins/tmux-thumbs
 
 mkdir -p ~/.kube/shoots
+
+defaults write com.apple.dock expose-group-apps -bool true && killall Dock
