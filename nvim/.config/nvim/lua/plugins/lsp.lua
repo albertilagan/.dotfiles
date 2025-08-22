@@ -124,7 +124,8 @@ return {
             analyses = {
               unusedparams = true,
             },
-            staticcheck = true,
+            staticcheck = false,
+            buildFlags = { '-tags=integration' },
           },
         },
       },
@@ -227,9 +228,36 @@ return {
       },
     }
 
+    -- Setup gopls separately with explicit configuration
+    require('lspconfig').gopls.setup {
+      cmd = { 'gopls' },
+      filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
+      root_dir = require('lspconfig.util').root_pattern('go.mod', '.git', 'go.work'),
+      capabilities = capabilities,
+      handlers = handlers,
+      settings = {
+        gopls = {
+          completeUnimported = true,
+          usePlaceholders = true,
+          analyses = {
+            unusedparams = true,
+            ST1003 = false, -- disable "should be workflowID" warnings
+            ST1000 = false, -- disable "at least one file in a package should have a package comment"
+          },
+          staticcheck = true,
+          buildFlags = { '-tags', 'integration' },
+          env = {
+            GOFLAGS = '-tags=integration',
+          },
+        },
+      },
+    }
+
     require('mason-lspconfig').setup {
       automatic_enable = true,
       handlers = {
+        -- Skip gopls since we configured it manually above
+        gopls = function() end,
         function(server_name)
           local server = servers[server_name] or {}
           -- This handles overriding only values explicitly passed

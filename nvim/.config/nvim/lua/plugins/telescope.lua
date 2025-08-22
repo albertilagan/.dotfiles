@@ -70,13 +70,13 @@ return {
     local builtin = require 'telescope.builtin'
     vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
     vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-    vim.keymap.set('n', '<leader>sp', function()
-      require('telescope.builtin').find_files { hidden = true, no_ignore = true }
-    end, { desc = '[S]earch [K]eymaps' })
+    -- vim.keymap.set('n', '<leader>sp', function()
+    --   require('telescope.builtin').find_files { hidden = true, no_ignore = true }
+    -- end, { desc = '[S]earch [K]eymaps' })
     vim.keymap.set('n', '<leader>sf', '<cmd>Telescope git_files show_untracked=true<cr>', { desc = '[S]earch [F]iles' })
     -- vim.keymap.set('n', '<C-p>', '<cmd>Telescope git_files show_untracked=true<cr>', { desc = '[S]earch [F]iles' })
     vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-    vim.keymap.set('n', '<C-p>', function()
+    vim.keymap.set('n', '<leader>sp', function()
       require('telescope').extensions.smart_open.smart_open {
         cwd_only = true,
         -- filename_first = false,

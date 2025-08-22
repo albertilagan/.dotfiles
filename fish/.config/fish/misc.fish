@@ -23,3 +23,12 @@ alias nixd-reload "sudo darwin-rebuild switch --flake ~/.dotfiles/nix-darwin"
 alias nixd-config "nvim ~/.dotfiles/nix-darwin/flake.nix"
 
 abbr p "pnpm run (jq -r '.scripts|to_entries[]|((.key))' package.json | fzf-tmux -p --border-label='pnpm run')"
+alias ssh-list='awk \'$1 == "Host" && $2 != "*" {host=$2} $1 == "HostName" {printf "%-15s %s\n", host, $2}\' ~/.ssh/config'
+function ssh-connect
+    set selected (awk '$1 == "Host" && $2 != "*" {host=$2} $1 == "HostName" {printf "%-15s %s\n", host, $2}' ~/.ssh/config | fzf --prompt="SSH to: " --height=40% --reverse)
+    if test -n "$selected"
+        set host (echo $selected | awk '{print $1}')
+        echo "Connecting to $host..."
+        ssh $host
+    end
+end

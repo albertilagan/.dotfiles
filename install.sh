@@ -35,4 +35,6 @@ git clone https://github.com/fcsonline/tmux-thumbs ~/.dotfiles/tmux/.config/tmux
 
 mkdir -p ~/.kube/shoots
 
+curl https://sh.rustup.rs -sSf | sh
+
 defaults write com.apple.dock expose-group-apps -bool true && killall Dock

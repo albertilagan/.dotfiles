@@ -71,6 +71,9 @@
             pkgs.superfile
             pkgs.podman
             pkgs.jujutsu
+            pkgs.btop
+            pkgs.go
+            pkgs.yt-dlp
           ];
           nixpkgs.config = {
             allowUnfree = true;
@@ -162,7 +165,7 @@
             "ghostty"
             "spotify"
             "git-credential-manager"
-            "goreleaser"
+            # "goreleaser"
             "font-victor-mono"
             "font-victor-mono-nerd-font"
           ];
