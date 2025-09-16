@@ -1,7 +1,7 @@
 shell-integration = fish
 
 # theme = tokyonight
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 # theme = dark:rose-pine,light:rose-pine-dawn
 # theme = dark:catppuccin-mocha,light:catppuccin-latte
 # background = #EFF1F5
@@ -9,7 +9,7 @@ theme = catppuccin-mocha
 
 font-family = VictorMono Nerd Font
 font-size = 16
-background-opacity = 0.90
+background-opacity = 0.95
 background-blur-radius = 10
 macos-window-shadow = false
 # window-decoration = false
@@ -19,13 +19,13 @@ window-padding-color = extend
 window-padding-x = 16
 window-padding-y = 0
 
-keybind = global:cmd+slash=toggle_quick_terminal
+keybind = global:super+slash=toggle_quick_terminal
 
 # nvim bindings
-keybind = cmd+s=text:\x13
-keybind = cmd+p=text:\x10
-keybind = cmd+shift+f=text::SearchFolder\x20
-# keybind = cmd+f=text:\x07
+keybind = super+s=text:\x13
+keybind = super+p=text:\x10
+keybind = super+shift+f=text::SearchFolder\x20
+# keybind = super+f=text:\x07
 
 # vim-like bindings, not working, conflict with aerospace atm,
 # not using anyway right now coz I use tmux split
@@ -35,33 +35,43 @@ keybind = opt+j=goto_split:bottom
 keybind = opt+k=goto_split:top
 
 # sesh
-keybind = cmd+j=text:\x01T
-keybind = cmd+l=text:\x01L
+keybind = super+j=text:\x01T
+keybind = super+l=text:\x01L
 
 # tmux 
-keybind = cmd+k=text:\x01s
-keybind = cmd+b=text:\x01B
-keybind = cmd+o=text:\x01o
-keybind = cmd+shift+g=text:\x01g
-keybind = cmd+g=text:\x09
-keybind = cmd+shift+c=text:\x01C
+keybind = super+k=text:\x01s
+keybind = super+b=text:\x01B
+keybind = super+o=text:\x01o
+keybind = super+shift+g=text:\x01g
+keybind = super+g=text:\x09
+keybind = super+shift+c=text:\x01C
 keybind = ctrl+tab=text:\x01n
 
 # tmux split
-keybind = cmd+e=text:\x01-
-keybind = cmd+shift+e=text:\x01\x7c
+keybind = super+e=text:\x01-
+keybind = super+shift+e=text:\x01\x7c
 
 # create/close tmux tab/window
-keybind = cmd+t=text:\x01c
-keybind = cmd+w=text:\x01x
+keybind = super+t=text:\x01c
+keybind = super+w=text:\x01x
+
+keybind = super+digit_1=unbind
+keybind = super+digit_2=unbind
+keybind = super+digit_3=unbind
+keybind = super+digit_4=unbind
+keybind = super+digit_5=unbind
+keybind = super+digit_6=unbind
+keybind = super+digit_7=unbind
+keybind = super+digit_8=unbind
+keybind = super+digit_9=unbind
 
 # tmux window navigation, <prefix> + <number>
-keybind = cmd+one=text:\x01\x31
-keybind = cmd+two=text:\x01\x32
-keybind = cmd+three=text:\x01\x33
-keybind = cmd+four=text:\x01\x34
-keybind = cmd+five=text:\x01\x35
-keybind = cmd+six=text:\x01\x36
-keybind = cmd+seven=text:\x01\x37
-keybind = cmd+eight=text:\x01\x38
-keybind = cmd+nine=text:\x01\x39
+keybind = super+1=text:\x01\x31
+keybind = super+2=text:\x01\x32
+keybind = super+3=text:\x01\x33
+keybind = super+4=text:\x01\x34
+keybind = super+5=text:\x01\x35
+keybind = super+6=text:\x01\x36
+keybind = super+7=text:\x01\x37
+keybind = super+8=text:\x01\x38
+keybind = super+9=text:\x01\x39

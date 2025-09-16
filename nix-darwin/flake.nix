@@ -74,6 +74,8 @@
             pkgs.btop
             pkgs.go
             pkgs.yt-dlp
+            pkgs.posting
+            pkgs.uv
           ];
           nixpkgs.config = {
             allowUnfree = true;
