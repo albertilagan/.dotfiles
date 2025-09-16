@@ -22,6 +22,7 @@ window-padding-y = 0
 keybind = global:super+slash=toggle_quick_terminal
 
 # nvim bindings
+keybind = super+j=text:,tt
 keybind = super+s=text:\x13
 keybind = super+p=text:\x10
 keybind = super+shift+f=text::SearchFolder\x20
@@ -35,11 +36,11 @@ keybind = opt+j=goto_split:bottom
 keybind = opt+k=goto_split:top
 
 # sesh
-keybind = super+j=text:\x01T
+keybind = super+k=text:\x01T
+# keybind = super+k=text:\x01s
 keybind = super+l=text:\x01L
 
 # tmux 
-keybind = super+k=text:\x01s
 keybind = super+b=text:\x01B
 keybind = super+o=text:\x01o
 keybind = super+shift+g=text:\x01g
