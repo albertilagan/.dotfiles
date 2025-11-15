@@ -16,6 +16,7 @@ fish_add_path ~/.opencode/bin
 fish_add_path ~/miniforge3/bin
 fish_add_path /usr/local/go/bin
 fish_add_path /opt/homebrew/opt/fzf/bin
+fish_add_path /opt/homebrew/opt/curl/bin
 fish_add_path /Applications/Ghostty.app/Contents/MacOS
 fish_add_path ~/.npm-packages/bin
 
