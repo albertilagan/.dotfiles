@@ -23,11 +23,8 @@
             pkgs.git
             pkgs.vim
             pkgs.direnv
+            pkgs.devenv
             pkgs.age
-            pkgs.sshs
-            pkgs.atac
-            pkgs.termshark
-            pkgs.portal
             pkgs.glow
             pkgs.neovim
             pkgs.gnupg
@@ -39,7 +36,6 @@
             pkgs.zf
             pkgs.fd
             pkgs.zoxide
-            pkgs.glow
             pkgs.ripgrep
             pkgs.bat
             pkgs.lf
@@ -50,7 +46,6 @@
             pkgs.delta
             pkgs.kubectl
             pkgs.yazi
-            pkgs.devenv
             pkgs.wget
             pkgs.docker
             pkgs.gh
@@ -59,14 +54,10 @@
             pkgs.nixd
             pkgs.nixfmt-rfc-style
             pkgs.ffmpeg
-            pkgs.minikube
-            pkgs.ngrok
             pkgs.tmuxp
-            pkgs.k3d
-            pkgs.postgresql
             pkgs.ansible
             pkgs.gcrane
-            pkgs.nodejs_22
+            pkgs.nodejs_24
             pkgs.pnpm
             pkgs.superfile
             pkgs.podman

@@ -5,8 +5,7 @@
 1. Clone [.dotfiles](https://github.com/albertilagan/.dotfiles) to `~/.dotfiles`
 2. Install nix
 ```bash
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | \
-  sh -s -- install
+sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
 ```
 > if asked if you wanna `Install Determinate Nix`, type `no`.
 3. Install [brew](https://docs.brew.sh/Installation)

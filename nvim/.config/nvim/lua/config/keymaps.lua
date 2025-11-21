@@ -246,3 +246,6 @@ end, { desc = 'Open tmux split with opencode' })
 vim.keymap.set('n', '<leader>ct', function()
   require('cloak').toggle()
 end, { desc = 'Toggle Cloak' })
+
+-- toggle text wrap
+vim.keymap.set('n', '<leader>w', ':set wrap!<CR>', { noremap = true })

@@ -3,9 +3,9 @@
 {
   packages = [
     pkgs.git
-    pkgs.nodejs_22
+    pkgs.nodejs_24
     pkgs.yarn
-    pkgs.nodePackages.pnpm
+    pkgs.pnpm
   ];
 
   languages.go.enable = true;
