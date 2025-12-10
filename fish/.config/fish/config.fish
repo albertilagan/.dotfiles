@@ -26,6 +26,7 @@ set -x BAT_THEME Catppuccin-mocha
 set -x VISUAL nvim
 set -x EDITOR nvim
 set -x CONFIG_DIR "$HOME/.config/lazygit"
+set -gx PATH $PATH $HOME/.krew/bin
 
 # source ~/.config/fish/keys.fish
 source "$HOME/.cargo/env.fish"

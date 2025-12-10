@@ -76,3 +76,4 @@ keybind = super+6=text:\x01\x36
 keybind = super+7=text:\x01\x37
 keybind = super+8=text:\x01\x38
 keybind = super+9=text:\x01\x39
+keybind = super+f=text:\x01\x5b
