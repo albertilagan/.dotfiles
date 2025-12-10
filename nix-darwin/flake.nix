@@ -67,11 +67,17 @@
             pkgs.yt-dlp
             pkgs.posting
             pkgs.uv
+            pkgs.fluxcd
           ];
           nixpkgs.config = {
             allowUnfree = true;
             allowBroken = false;
             allowUnsupportedSystem = false;
+            allowUnfreePredicate =
+              pkg:
+              builtins.elem (nixpkgs.lib.getName pkg) [
+                "terraform"
+              ];
           };
           nix.settings.experimental-features = "nix-command flakes";
           nix.settings.trusted-users = [
@@ -124,7 +130,6 @@
           homebrew.enable = true;
           homebrew.casks = [
             "arc"
-            "wireshark"
             "google-chrome"
             "wezterm"
             "font-fira-code-nerd-font"
@@ -133,7 +138,7 @@
             "karabiner-elements"
             "nikitabobko/tap/aerospace"
             "discord"
-            "google-cloud-sdk"
+            "gcloud-cli"
             "raycast"
             "amie"
             "postico"
@@ -181,6 +186,7 @@
             "redpanda-data/tap/redpanda"
             "wireguard-tools"
             "tree-sitter"
+            "siderolabs/tap/talosctl"
           ];
         };
     in

@@ -196,6 +196,8 @@ return {
       'gopls',
       'golangci-lint',
       'sqruff',
+      'terraform',
+      'terraform-ls',
     })
 
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
