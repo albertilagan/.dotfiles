@@ -19,6 +19,7 @@ alias ls "eza --color=always --long --git --no-filesize --icons=always --no-time
 alias ll "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --group-directories-first"
 
 alias cat "bat --style=plain"
+alias claudeyolo "claude --dangerously-skip-permissions"
 alias nixd-reload "sudo darwin-rebuild switch --flake ~/.dotfiles/nix-darwin"
 alias nixd-config "nvim ~/.dotfiles/nix-darwin/flake.nix"
 

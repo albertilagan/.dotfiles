@@ -95,6 +95,13 @@ vim.keymap.set('v', '>', '>gv')
 -- save file
 vim.keymap.set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save file' })
 
+-- copy path
+vim.keymap.set('n', '<leader>cp', function()
+  local path = vim.fn.fnamemodify(vim.fn.expand('%'), ':~:.')
+  vim.fn.setreg('+', path)
+  vim.notify('Copied: ' .. path, vim.log.levels.INFO)
+end, { desc = '[C]opy relative [P]ath' })
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -153,6 +160,10 @@ end, { desc = 'Create [G]it Worktree' })
 vim.keymap.set('n', '<leader>go', function()
   Snacks.gitbrowse()
 end, { desc = '[G]it [O]pen in browser' })
+
+vim.keymap.set('n', '<leader>gp', function()
+  vim.fn.jobstart('gh pr view --web', { detach = true })
+end, { desc = '[G]it [P]R open in browser' })
 
 vim.keymap.set('n', '<leader>lg', function()
   Snacks.lazygit()

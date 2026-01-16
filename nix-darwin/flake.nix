@@ -129,7 +129,6 @@
           # Homebrew needs to be installed on its own!
           homebrew.enable = true;
           homebrew.casks = [
-            "arc"
             "google-chrome"
             "wezterm"
             "font-fira-code-nerd-font"
@@ -140,7 +139,6 @@
             "discord"
             "gcloud-cli"
             "raycast"
-            "amie"
             "postico"
             "tableplus"
             "cleanshot"
@@ -151,15 +149,10 @@
             "key-codes"
             "topnotch"
             "visual-studio-code"
-            "whatsapp"
-            "orbstack"
             "linear-linear"
             "jordanbaird-ice"
-            "hammerspoon"
-            "nordvpn"
             "firefox"
             "figma"
-            "lens"
             "ghostty"
             "spotify"
             "git-credential-manager"
@@ -184,7 +177,6 @@
             "kubeone"
             "kubie"
             "redpanda-data/tap/redpanda"
-            "wireguard-tools"
             "tree-sitter"
             "siderolabs/tap/talosctl"
           ];
