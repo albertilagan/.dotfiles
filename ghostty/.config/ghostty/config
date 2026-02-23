@@ -48,6 +48,9 @@ keybind = super+shift+g=text:\x09
 keybind = super+shift+c=text:\x01C
 keybind = ctrl+tab=text:\x01n
 
+keybind = super+shift+left_bracket=text:\x01p
+keybind = super+shift+right_bracket=text:\x01n
+
 # tmux split
 keybind = super+e=text:\x01-
 keybind = super+shift+e=text:\x01\x7c
