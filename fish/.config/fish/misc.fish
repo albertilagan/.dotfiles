@@ -7,6 +7,8 @@ abbr ip "ifconfig en0 | grep inet | awk '{ print \$2 }'"
 abbr da "direnv allow"
 abbr v nvim
 
+abbr ocr 'opencode run ""'
+
 # abbr docker "podman"
 # alias docker "podman"
 alias co "container"

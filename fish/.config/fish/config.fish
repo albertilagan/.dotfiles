@@ -19,6 +19,7 @@ fish_add_path /opt/homebrew/opt/fzf/bin
 fish_add_path /opt/homebrew/opt/curl/bin
 fish_add_path /Applications/Ghostty.app/Contents/MacOS
 fish_add_path ~/.npm-packages/bin
+# fish_add_path $HOME/.cargo/bin
 
 set -U fish_greeting # disable fish greeting
 set -U fish_key_bindings fish_vi_key_bindings # fish_default_key_bindings
