@@ -1,9 +1,14 @@
 return {
   'dmtrKovalenko/fff.nvim',
-  build = 'cargo build --release',
-  -- or if you are using nixos
-  -- build = "nix run .#release",
+  build = function()
+    require('fff.download').download_or_build_binary()
+  end,
+  lazy = true,
   opts = {
+    debug = {
+      enabled = true,
+      show_scores = true,
+    },
     keymaps = {
       select = '<CR>',
       close = { '<Esc>', '<C-c>' },

@@ -125,7 +125,7 @@ return {
               unusedparams = true,
             },
             staticcheck = false,
-            buildFlags = { '-tags=integration' },
+            buildFlags = { '-tags=integration,engine,nodeagent,guestagent' },
           },
         },
       },
@@ -247,7 +247,7 @@ return {
             ST1000 = false, -- disable "at least one file in a package should have a package comment"
           },
           staticcheck = true,
-          buildFlags = { '-tags', 'integration' },
+          buildFlags = { '-tags=integration,engine,nodeagent,guestagent' },
           env = {
             GOFLAGS = '-tags=integration',
           },
