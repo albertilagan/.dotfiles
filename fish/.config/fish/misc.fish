@@ -6,6 +6,7 @@ abbr lg lazygit
 abbr ip "ifconfig en0 | grep inet | awk '{ print \$2 }'"
 abbr da "direnv allow"
 abbr v nvim
+abbr y yazi
 
 abbr ocr 'opencode run ""'
 

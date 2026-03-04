@@ -264,4 +264,9 @@ vim.keymap.set('n', '<leader>ct', function()
 end, { desc = 'Toggle Cloak' })
 
 -- toggle text wrap
-vim.keymap.set('n', '<leader>w', ':set wrap!<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>w', function()
+  local enabled = not vim.wo.wrap
+  vim.wo.wrap = enabled
+  vim.wo.linebreak = enabled
+  vim.wo.breakindent = enabled
+end, { noremap = true, desc = 'Toggle text [W]rap' })
