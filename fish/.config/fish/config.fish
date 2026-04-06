@@ -35,3 +35,10 @@ source ~/.config/fish/fzf.fish
 source ~/.config/fish/git.fish
 source ~/.config/fish/misc.fish
 source ~/.config/fish/kubernetes.fish
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
+# opencode
+fish_add_path /Users/albert/.opencode/bin

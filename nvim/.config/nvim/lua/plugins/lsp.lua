@@ -15,12 +15,24 @@ return {
           mode = mode or 'n'
           vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
+        local test_file_ignore_patterns = {
+          '/__tests__/',
+          '/tests?/',
+          '%.test%.[^/]+$',
+          '%.spec%.[^/]+$',
+          '_test%.[^/]+$',
+        }
+
         map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
         map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
         map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
         map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
         map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-        map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+        map('<leader>ws', function()
+          require('telescope.builtin').lsp_dynamic_workspace_symbols {
+            file_ignore_patterns = test_file_ignore_patterns,
+          }
+        end, '[W]orkspace [S]ymbols')
         map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
         map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
         map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
@@ -125,7 +137,7 @@ return {
               unusedparams = true,
             },
             staticcheck = false,
-            buildFlags = { '-tags=integration,engine,nodeagent,guestagent' },
+            buildFlags = { '-tags=integration,engine,nodeagent,guestagent,gateway' },
           },
         },
       },
@@ -247,7 +259,7 @@ return {
             ST1000 = false, -- disable "at least one file in a package should have a package comment"
           },
           staticcheck = true,
-          buildFlags = { '-tags=integration,engine,nodeagent,guestagent' },
+          buildFlags = { '-tags=integration,engine,nodeagent,guestagent,gateway' },
           env = {
             GOFLAGS = '-tags=integration',
           },

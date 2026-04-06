@@ -19,6 +19,22 @@ return {
   config = function()
     local actions = require 'telescope.actions'
     local open_with_trouble = require('trouble.sources.telescope').open
+    local test_file_globs = {
+      '!**/__tests__/**',
+      '!**/test/**',
+      '!**/tests/**',
+      '!**/*.test.*',
+      '!**/*.spec.*',
+      '!**/*_test.*',
+    }
+    local test_file_ignore_patterns = {
+      '/__tests__/',
+      '/tests?/',
+      '%.test%.[^/]+$',
+      '%.spec%.[^/]+$',
+      '_test%.[^/]+$',
+    }
+
     require('telescope').setup {
       pickers = {
         find_files = {
@@ -29,6 +45,13 @@ return {
         },
         live_grep = {
           theme = 'ivy',
+          additional_args = function()
+            local args = {}
+            for _, glob in ipairs(test_file_globs) do
+              vim.list_extend(args, { '--glob', glob })
+            end
+            return args
+          end,
         },
       },
       defaults = {
@@ -68,12 +91,21 @@ return {
 
     -- See `:help telescope.builtin`
     local builtin = require 'telescope.builtin'
+    local search_functions = function()
+      builtin.lsp_dynamic_workspace_symbols {
+        symbols = { 'function', 'method' },
+        file_ignore_patterns = test_file_ignore_patterns,
+      }
+    end
+
+    vim.keymap.set('n', 'sf', search_functions, { desc = '[S]earch [F]unctions' })
     vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
     vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
+    vim.keymap.set('n', '<leader>sf', search_functions, { desc = '[S]earch [F]unctions' })
     -- vim.keymap.set('n', '<leader>sp', function()
     --   require('telescope.builtin').find_files { hidden = true, no_ignore = true }
     -- end, { desc = '[S]earch [K]eymaps' })
-    vim.keymap.set('n', '<leader>sf', '<cmd>Telescope git_files show_untracked=true<cr>', { desc = '[S]earch [F]iles' })
+    vim.keymap.set('n', '<leader>sF', '<cmd>Telescope git_files show_untracked=true<cr>', { desc = '[S]earch [F]iles' })
     -- vim.keymap.set('n', '<C-p>', '<cmd>Telescope git_files show_untracked=true<cr>', { desc = '[S]earch [F]iles' })
     vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
     vim.keymap.set('n', '<leader>sp', function()

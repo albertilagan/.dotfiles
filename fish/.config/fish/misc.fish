@@ -22,9 +22,10 @@ alias ls "eza --color=always --long --git --no-filesize --icons=always --no-time
 alias ll "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --group-directories-first"
 
 alias cat "bat --style=plain"
-alias claudeyolo "claude --dangerously-skip-permissions"
+alias cc "claude --dangerously-skip-permissions"
 alias nixd-reload "sudo darwin-rebuild switch --flake ~/.dotfiles/nix-darwin"
 alias nixd-config "nvim ~/.dotfiles/nix-darwin/flake.nix"
+alias sshconf "nvim ~/.ssh/config"
 
 abbr p "pnpm run (jq -r '.scripts|to_entries[]|((.key))' package.json | fzf-tmux -p --border-label='pnpm run')"
 alias ssh-list='awk \'$1 == "Host" && $2 != "*" {host=$2} $1 == "HostName" {printf "%-15s %s\n", host, $2}\' ~/.ssh/config'

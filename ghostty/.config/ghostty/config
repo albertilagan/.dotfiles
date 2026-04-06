@@ -45,7 +45,7 @@ keybind = super+b=text:\x01B
 keybind = super+o=text:\x01O
 keybind = opt+o=text:\x01o
 keybind = opt+i=text:\x01i
-keybind = super+g=text:\x01g
+keybind = super+g=text:\x01G
 keybind = super+shift+g=text:\x09
 keybind = super+shift+c=text:\x01C
 keybind = ctrl+tab=text:\x01n
