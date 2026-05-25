@@ -1,5 +1,6 @@
 return {
   'stevearc/aerial.nvim',
+  branch = 'nvim-0.11',
   opts = {
     layout = {
       max_width = { 80, 0.2 },

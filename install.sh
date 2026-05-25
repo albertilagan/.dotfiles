@@ -12,15 +12,15 @@ stow starship
 stow tmux
 stow wezterm
 stow yazi
-# stow zsh
+stow zsh
 stow ghostty
 stow gh-dash
 
 # add fish to valid login shells
-command -v fish | sudo tee -a /etc/shells
+# command -v fish | sudo tee -a /etc/shells
 
 # use fish as default shell
-sudo chsh -s "$(command -v fish)" "${USER}"
+# sudo chsh -s "$(command -v fish)" "${USER}"
 
 bat cache --build
 

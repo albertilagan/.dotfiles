@@ -30,17 +30,15 @@
             pkgs.gnupg
             pkgs.starship
             pkgs.lazygit
-            pkgs.fish
             pkgs.stow
             pkgs.tmux
-            pkgs.zf
             pkgs.fd
             pkgs.zoxide
             pkgs.ripgrep
             pkgs.bat
             pkgs.lf
             pkgs.mkcert
-            pkgs.neofetch
+            pkgs.fastfetch
             pkgs.htop
             pkgs.eza
             pkgs.delta
@@ -52,7 +50,7 @@
             pkgs.lua51Packages.lua
             pkgs.luajitPackages.luarocks_bootstrap
             pkgs.nixd
-            pkgs.nixfmt-rfc-style
+            pkgs.nixfmt
             pkgs.ffmpeg
             pkgs.tmuxp
             pkgs.ansible
@@ -87,8 +85,13 @@
           nix.settings.trusted-substituters = [
             "https://devenv.cachix.org"
           ];
-          # programs.zsh.enable = true;  # default shell on catalina
-          programs.fish.enable = true;
+          programs.zsh = {
+            enable = true;  # default shell on catalina
+            enableSyntaxHighlighting = true;
+            enableAutosuggestions = true;
+            enableCompletion = true;
+          };
+          # programs.fish.enable = true;
           nixpkgs.hostPlatform = "aarch64-darwin";
           security.pam.services.sudo_local.touchIdAuth = true;
 
@@ -126,6 +129,16 @@
             spaces.spans-displays = false;
           };
 
+          environment.etc."gitconfig".text = ''
+            [user]
+              name = Albert Ilagan
+              email = 22500561+albertilagan@users.noreply.github.com
+            [url "git@github.com:"]
+              insteadOf = https://github.com/
+            [init]
+              defaultBranch = main
+          '';
+
           # Homebrew needs to be installed on its own!
           homebrew.enable = true;
           homebrew.casks = [
@@ -135,7 +148,6 @@
             "1password"
             "1password-cli"
             "karabiner-elements"
-            "nikitabobko/tap/aerospace"
             "discord"
             "gcloud-cli"
             "raycast"
@@ -149,7 +161,7 @@
             "key-codes"
             "topnotch"
             "visual-studio-code"
-            "linear-linear"
+            "linear"
             "jordanbaird-ice"
             "firefox"
             "figma"
