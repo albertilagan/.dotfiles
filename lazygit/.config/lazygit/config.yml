@@ -1,3 +1,6 @@
+os:
+  editPreset: nvim
+
 customCommands:
   - key: "<c-v>"
     context: "global"

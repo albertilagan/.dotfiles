@@ -54,6 +54,7 @@
             pkgs.ffmpeg
             pkgs.tmuxp
             pkgs.ansible
+            pkgs.awscli2
             pkgs.gcrane
             pkgs.nodejs_24
             pkgs.pnpm
@@ -66,6 +67,7 @@
             pkgs.posting
             pkgs.uv
             pkgs.fluxcd
+            pkgs.tree-sitter
           ];
           nixpkgs.config = {
             allowUnfree = true;
@@ -82,8 +84,13 @@
             "root"
             "albert"
           ];
-          nix.settings.trusted-substituters = [
+          nix.settings.substituters = [
+            "https://cache.nixos.org"
             "https://devenv.cachix.org"
+          ];
+          nix.settings.trusted-public-keys = [
+            "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+            "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
           ];
           programs.zsh = {
             enable = true;  # default shell on catalina
@@ -185,6 +192,7 @@
             "xdotool"
             "luarocks"
             "kubectx"
+            "kubelogin"
             "hashicorp/tap/terraform"
             "kubeone"
             "kubie"
