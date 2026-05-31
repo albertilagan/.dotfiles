@@ -1,4 +1,13 @@
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.npm-packages/bin:$PATH"
+
+# Default editor
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# Point lazygit at stowed dotfile config (~/Library/Application Support is default on macOS)
+export CONFIG_DIR="$HOME/.config/lazygit"
+
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
@@ -10,6 +19,33 @@ eval "$(/run/current-system/sw/bin/direnv hook zsh)"
 eval "$(/run/current-system/sw/bin/zoxide init zsh)"
 
 # zsh
+bindkey -v
+export KEYTIMEOUT=1
+
+# Keep autosuggestions from accepting suggestions when pressing A in vim normal mode.
+ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(${ZSH_AUTOSUGGEST_ACCEPT_WIDGETS:#vi-add-eol})
+
+# Restore common macOS Option+Backspace sequences in vi insert mode.
+bindkey -M viins '^[^?' backward-kill-word
+bindkey -M viins '^[^H' backward-kill-word
+bindkey -M viins '^W' backward-kill-word
+
+# Use a custom A binding so zsh-autosuggestions cannot treat vi-add-eol as accept.
+function vi-add-eol-no-suggest {
+  CURSOR=${#BUFFER}
+  zle vi-insert
+}
+zle -N vi-add-eol-no-suggest
+bindkey -M vicmd 'A' vi-add-eol-no-suggest
+
+function zle-keymap-select {
+  case $KEYMAP in
+    vicmd) echo -ne '\e[1 q' ;;
+    viins|main) echo -ne '\e[5 q' ;;
+  esac
+}
+zle -N zle-keymap-select
+
 # export ZSH="$HOME/.oh-my-zsh"
 # plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
 # source $ZSH/oh-my-zsh.sh
@@ -52,6 +88,7 @@ alias vim="nvim"
 alias v="nvim"
 alias nix="nix --extra-experimental-features nix-command --extra-experimental-features flakes $@"
 alias lg="lazygit"
+alias k="kubectl"
 
 # alias ls="exa"
 # alias ll="exa -alh"
@@ -85,3 +122,10 @@ t() {
       --bind 'ctrl-d:execute(tmux kill-session -t {})+change-prompt(⚡  )+reload(sesh list)'
   )"
 }
+
+# Added by GitButler installer
+eval "$(but completions zsh)"
+eval "$(~/.local/bin/mise activate zsh)"
+
+# opencode
+export PATH=/Users/albert/.opencode/bin:$PATH
