@@ -82,4 +82,5 @@ keybind = super+7=text:\x01\x37
 keybind = super+8=text:\x01\x38
 keybind = super+9=text:\x01\x39
 keybind = super+f=text:\x01\x5b
-keybind = shift+enter=text:\x1b\r
+# Let apps see real Shift+Enter. tmux handles app-specific remapping.
+# keybind = shift+enter=text:\x1b\r

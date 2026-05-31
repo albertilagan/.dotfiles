@@ -59,12 +59,19 @@ return {
       has_parser = function(lang)
         return pcall(vim.treesitter.language.add, lang)
       end,
+      get_parser = function(bufnr, lang)
+        pcall(vim.treesitter.language.add, lang)
+        return vim.treesitter.get_parser(bufnr, lang)
+      end,
     }
     package.loaded['nvim-treesitter.configs'] = {
       is_enabled = function(mod, _lang, _bufnr)
         return mod == 'highlight'
       end,
-      get_module = function()
+      get_module = function(mod)
+        if mod == 'highlight' then
+          return { additional_vim_regex_highlighting = false }
+        end
         return nil
       end,
       setup = function() end,
