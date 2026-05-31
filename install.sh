@@ -5,6 +5,7 @@ stow bat
 stow direnv
 stow fish
 stow nvim
+stow pi
 stow sesh
 # stow sketchybar
 stow lazygit

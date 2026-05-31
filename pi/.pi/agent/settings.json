@@ -1,0 +1,12 @@
+{
+  "lastChangelogVersion": "0.78.0",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.5",
+  "defaultThinkingLevel": "medium",
+  "packages": [
+    "npm:pi-autoresearch"
+  ],
+  "hideThinkingBlock": true,
+  "terminal.showImages": true,
+  "terminal.imageWidthCells": 80
+}
