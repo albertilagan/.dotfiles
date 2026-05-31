@@ -1,45 +1,73 @@
+-- nvim-treesitter `main` branch (rewritten for Neovim 0.12+).
+-- The old `require('nvim-treesitter.configs').setup{}` API is gone.
+-- `incremental_selection` has no replacement on main — keymaps dropped.
 return {
   'nvim-treesitter/nvim-treesitter',
-  branch = 'master',
+  branch = 'main',
+  lazy = false,
   build = ':TSUpdate',
   config = function()
-    require('nvim-treesitter.configs').setup {
-      ensure_installed = {
-        'bash',
-        'c',
-        'html',
-        'lua',
-        'luadoc',
-        'markdown',
-        'vim',
-        'vimdoc',
-        'yaml',
-        'make',
-        'dockerfile',
-        'typescript',
-        'javascript',
-        'bash',
-        'json',
-        'css',
-        'go',
-        'sql',
-        'gotmpl',
-        'helm',
-        'http',
-      },
-      sync_install = true,
-      auto_install = true,
-      indent = { enable = true },
-      highlight = { enable = true },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = '<Enter>',
-          node_incremental = '<Enter>',
-          scope_incremental = false,
-          node_decremental = '<Backspace>',
-        },
-      },
+    require('nvim-treesitter').setup {
+      install_dir = vim.fn.stdpath 'data' .. '/site',
+    }
+
+    require('nvim-treesitter').install {
+      'bash',
+      'c',
+      'html',
+      'lua',
+      'luadoc',
+      'markdown',
+      'markdown_inline',
+      'vim',
+      'vimdoc',
+      'yaml',
+      'make',
+      'dockerfile',
+      'typescript',
+      'tsx',
+      'javascript',
+      'json',
+      'css',
+      'go',
+      'sql',
+      'gotmpl',
+      'helm',
+      'http',
+    }
+
+    vim.api.nvim_create_autocmd('FileType', {
+      callback = function(args)
+        local ft = vim.bo[args.buf].filetype
+        local lang = vim.treesitter.language.get_lang(ft) or ft
+        if vim.treesitter.language.add(lang) then
+          vim.treesitter.start(args.buf, lang)
+          vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end
+      end,
+    })
+
+    -- Shim master-branch APIs that downstream plugins (telescope previewer,
+    -- etc.) still call. Main branch removed these in favor of vim.treesitter.
+    package.loaded['nvim-treesitter.parsers'] = {
+      ft_to_lang = function(ft)
+        return vim.treesitter.language.get_lang(ft) or ft
+      end,
+      get_parser_configs = function()
+        return {}
+      end,
+      has_parser = function(lang)
+        return pcall(vim.treesitter.language.add, lang)
+      end,
+    }
+    package.loaded['nvim-treesitter.configs'] = {
+      is_enabled = function(mod, _lang, _bufnr)
+        return mod == 'highlight'
+      end,
+      get_module = function()
+        return nil
+      end,
+      setup = function() end,
     }
   end,
 }
