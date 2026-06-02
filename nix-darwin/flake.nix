@@ -19,6 +19,8 @@
         {
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
+          environment.etc."zsh-vi-mode".source = "${pkgs.zsh-vi-mode}/share/zsh-vi-mode";
+
           environment.systemPackages = [
             pkgs.git
             pkgs.vim
@@ -34,6 +36,7 @@
             pkgs.tmux
             pkgs.fd
             pkgs.zoxide
+            pkgs.zsh-vi-mode
             pkgs.ripgrep
             pkgs.bat
             pkgs.lf

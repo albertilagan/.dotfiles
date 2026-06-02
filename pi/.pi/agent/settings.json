@@ -8,5 +8,8 @@
   ],
   "hideThinkingBlock": true,
   "terminal.showImages": true,
-  "terminal.imageWidthCells": 80
+  "terminal.imageWidthCells": 80,
+  "transport": "auto",
+  "quietStartup": true,
+  "theme": "dark"
 }

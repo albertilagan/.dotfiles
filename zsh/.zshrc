@@ -18,33 +18,36 @@ eval "$(/run/current-system/sw/bin/starship init zsh)"
 eval "$(/run/current-system/sw/bin/direnv hook zsh)"
 eval "$(/run/current-system/sw/bin/zoxide init zsh)"
 
-# zsh
-bindkey -v
-export KEYTIMEOUT=1
-
+# zsh vi mode
 # Keep autosuggestions from accepting suggestions when pressing A in vim normal mode.
 ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(${ZSH_AUTOSUGGEST_ACCEPT_WIDGETS:#vi-add-eol})
+ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(${ZSH_AUTOSUGGEST_ACCEPT_WIDGETS:#zvm_append_eol})
+
+function zvm_config() {
+  ZVM_INIT_MODE=sourcing
+  ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+  ZVM_SYSTEM_CLIPBOARD_ENABLED=true
+  ZVM_CLIPBOARD_COPY_CMD='pbcopy'
+  ZVM_CLIPBOARD_PASTE_CMD='pbpaste'
+  ZVM_VI_HIGHLIGHT_BACKGROUND=#3a3f4b
+  ZVM_VI_HIGHLIGHT_FOREGROUND=#cdd6f4
+  ZVM_VI_HIGHLIGHT_EXTRASTYLE=default
+  ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BEAM
+  ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+  ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+}
+
+if [ -r /etc/zsh-vi-mode/zsh-vi-mode.plugin.zsh ]; then
+  source /etc/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+else
+  bindkey -v
+  export KEYTIMEOUT=1
+fi
 
 # Restore common macOS Option+Backspace sequences in vi insert mode.
 bindkey -M viins '^[^?' backward-kill-word
 bindkey -M viins '^[^H' backward-kill-word
 bindkey -M viins '^W' backward-kill-word
-
-# Use a custom A binding so zsh-autosuggestions cannot treat vi-add-eol as accept.
-function vi-add-eol-no-suggest {
-  CURSOR=${#BUFFER}
-  zle vi-insert
-}
-zle -N vi-add-eol-no-suggest
-bindkey -M vicmd 'A' vi-add-eol-no-suggest
-
-function zle-keymap-select {
-  case $KEYMAP in
-    vicmd) echo -ne '\e[1 q' ;;
-    viins|main) echo -ne '\e[5 q' ;;
-  esac
-}
-zle -N zle-keymap-select
 
 # export ZSH="$HOME/.oh-my-zsh"
 # plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
