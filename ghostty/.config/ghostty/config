@@ -37,11 +37,11 @@ keybind = opt+k=goto_split:top
 
 # sesh
 keybind = super+j=text:\x01T
-keybind = super+k=text:\x01s
 keybind = super+l=text:\x01L
 
 # tmux 
-keybind = super+i=text:\x01A
+# keybind = super+k=text:\x01s
+keybind = super+k=text:\x01A
 keybind = super+b=text:\x01B
 keybind = super+o=text:\x01O
 keybind = opt+o=text:\x01o

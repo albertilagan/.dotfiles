@@ -71,6 +71,33 @@ cache_refresh_async() {
   ("$SCRIPT_PATH" cache-refresh >/dev/null 2>&1 &)
 }
 
+state_loop_pid_path() {
+  printf '%s/state-loop.pid' "$(cache_dir)"
+}
+
+state_loop_start() {
+  local dir pid_path pid
+  dir="$(cache_dir)"
+  pid_path="$(state_loop_pid_path)"
+  mkdir -p "$dir"
+
+  if [ -s "$pid_path" ]; then
+    pid="$(cat "$pid_path" 2>/dev/null || true)"
+    if [ -n "$pid" ] && kill -0 "$pid" 2>/dev/null; then
+      return 0
+    fi
+  fi
+
+  ("$SCRIPT_PATH" state-loop >/dev/null 2>&1 & echo $! > "$pid_path")
+}
+
+state_loop() {
+  while tmux display-message -p '#{pid}' >/dev/null 2>&1; do
+    "$SCRIPT_PATH" pane-state-refresh >/dev/null 2>&1 || true
+    sleep 1
+  done
+}
+
 lower() {
   tr '[:upper:]' '[:lower:]'
 }
@@ -149,7 +176,7 @@ quick_status_for() {
     return 0
   fi
 
-  printf 'running'
+  printf 'idle'
 }
 
 status_for() {
@@ -168,21 +195,21 @@ status_for() {
   fi
 
   local text recent
-  text="$(tmux capture-pane -epJ -S -120 -t "$pane_id" 2>/dev/null || true)"
-  recent="$(printf '%s' "$text" | tail -n 60)"
+  text="$(tmux capture-pane -pJ -S -50 -t "$pane_id" 2>/dev/null || true)"
+  recent="$(printf '%s' "$text" | tail -n 30)"
 
-  if printf '%s' "$recent" | grep -Eiq 'permission|approval|approve|allow|deny|confirm|continue\?|proceed\?|yes/no|\(y/n\)|\[y/n\]|\(Y/n\)|\[Y/n\]|ask.?user|askusertool|needs? (your )?input|waiting for (your )?input|press enter|select an option|do you want|would you like|run this command|execute this command|trust this|accept|reject|1\. yes|2\. no'; then
+  if printf '%s' "$recent" | tail -n 10 | grep -Eiq '(^|[[:space:]])(>|›|❯)[[:space:]]*$|type your message|send a message|what can i help|ready|auto mode on'; then
+    printf 'idle'
+    return 0
+  fi
+
+  if printf '%s' "$recent" | tail -n 20 | grep -Eiq 'permission required|needs approval|approval required|approve command|allow command|deny command|continue\?|proceed\?|yes/no|\(y/n\)|\[y/n\]|\(Y/n\)|\[Y/n\]|ask.?user|askusertool|needs? (your )?input|waiting for (your )?input|press enter|select an option|do you want|would you like|run this command|execute this command|trust this command|accept changes|reject changes|1\. yes|2\. no'; then
     printf 'waiting'
     return 0
   fi
 
-  if printf '%s' "$recent" | tail -n 25 | grep -Eiq 'thinking|working|running|processing|executing|searching|reading|writing|editing|calling tool|tool call|esc to interrupt|ctrl-c|interrupt|⠋|⠙|⠹|⠸|⠼|⠴|⠦|⠧|⠇|⠏|✻|●|◐|◓|◑|◒'; then
+  if printf '%s' "$recent" | tail -n 25 | grep -Eiq '^[[:space:]]*(thinking|working|processing|executing|searching|reading|writing|editing)(\.\.\.|…)|^[[:space:]]*(⠋|⠙|⠹|⠸|⠼|⠴|⠦|⠧|⠇|⠏|✻|●|◐|◓|◑|◒)[[:space:]]|calling tool|tool call|esc to interrupt|ctrl-c|interrupt'; then
     printf 'running'
-    return 0
-  fi
-
-  if printf '%s' "$recent" | tail -n 8 | grep -Eiq '(^|[[:space:]])(>|›|❯)[[:space:]]*$|type your message|send a message|what can i help|ready'; then
-    printf 'idle'
     return 0
   fi
 
@@ -217,7 +244,7 @@ title_for() {
     title="$(printf '%s' "$title" | sed -E 's/^[[:space:]]*[✳✻●•*⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏⠐⠂⠄⡀⢀⣀⣄⣤⣦⣶⣷⣿◐◓◑◒-]+[[:space:]]*//')"
   fi
 
-  title="$(printf '%s' "$title" | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//')"
+  title="$(printf '%s' "$title" | sed -E 's/^[[:space:]]*OC[[:space:]]*[|][[:space:]]*//; s/[[:space:]]+-[[:space:]]+[^[:space:]]+$//; s/^[[:space:]]+//; s/[[:space:]]+$//')"
 
   if [ -z "$title" ] || printf '%s' "$title" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+$|^[^[:space:]]+\.local$'; then
     title="$window_name"
@@ -228,6 +255,29 @@ title_for() {
   fi
 
   printf '%s' "$title"
+}
+
+pane_state_refresh() {
+  tmux list-panes -a -F '#{window_name}	#{pane_id}	#{pane_current_command}	#{pane_title}	#{pane_current_path}	#{pane_dead}	#{@pane_status}' |
+  while IFS=$'\t' read -r window_name pane_id pane_command pane_title pane_path pane_dead hook_status; do
+    local agent haystack state title
+    haystack="$pane_command $window_name $pane_title"
+    if ! agent="$(agent_for "$haystack")"; then
+      tmux set-option -p -q -t "$pane_id" @agents_state '' 2>/dev/null || true
+      tmux set-option -p -q -t "$pane_id" @agents_title '' 2>/dev/null || true
+      continue
+    fi
+
+    if [ -n "$hook_status" ]; then
+      state="$hook_status"
+    else
+      state="$(status_for "$pane_id" "$pane_dead" "$pane_title")"
+    fi
+
+    title="$(title_for "$agent" "$pane_title" "$window_name" "$pane_path")"
+    tmux set-option -p -q -t "$pane_id" @agents_state "$state" 2>/dev/null || true
+    tmux set-option -p -q -t "$pane_id" @agents_title "$title" 2>/dev/null || true
+  done
 }
 
 emit_rows() {
@@ -397,6 +447,15 @@ case "${1:-popup}" in
     ;;
   cache-refresh-async)
     cache_refresh_async
+    ;;
+  state-loop-start)
+    state_loop_start
+    ;;
+  state-loop)
+    state_loop
+    ;;
+  pane-state-refresh)
+    pane_state_refresh
     ;;
   list)
     print_table
