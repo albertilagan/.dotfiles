@@ -41,6 +41,7 @@ keybind = super+k=text:\x01s
 keybind = super+l=text:\x01L
 
 # tmux 
+keybind = super+i=text:\x01A
 keybind = super+b=text:\x01B
 keybind = super+o=text:\x01O
 keybind = opt+o=text:\x01o

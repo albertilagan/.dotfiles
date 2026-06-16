@@ -10,7 +10,9 @@ devenv.local.nix
 .pre-commit-config.yaml
 
 fish/.config/fish/keys.fish
-tmux/.config/tmux/plugins
+tmux/.config/tmux/plugins/*
+!tmux/.config/tmux/plugins/tmux-agent-sessions/
+!tmux/.config/tmux/plugins/tmux-agent-sessions/**
 raycast
 fzf
 lazygit/.config/lazygit/state.yml

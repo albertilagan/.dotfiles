@@ -1,8 +1,8 @@
 {
-  "lastChangelogVersion": "0.78.0",
+  "lastChangelogVersion": "0.79.4",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.5",
-  "defaultThinkingLevel": "medium",
+  "defaultThinkingLevel": "high",
   "packages": [
     "npm:pi-autoresearch"
   ],
@@ -11,5 +11,10 @@
   "terminal.imageWidthCells": 80,
   "transport": "auto",
   "quietStartup": true,
-  "theme": "dark"
+  "theme": "dark",
+  "enabledModels": [
+    "openai-codex/gpt-5.5",
+    "anthropic/claude-opus-4-7",
+    "anthropic/claude-opus-4-8"
+  ]
 }
